@@ -13,23 +13,24 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
-/* Community palette: royal blue scale + gold, used calmly */
+/* Palette: #E7EAF9 #98ABE6 #4D6DD4 #012DC1 #0A2184 #071860 #9CFFC9 + gold #FFC93C */
 :root{
   --royal:#012DC1; --royal-2:#4D6DD4; --royal-3:#98ABE6; --royal-deep:#0A2184; --navy:#071860;
   --tint:#E7EAF9; --gold:#FFC93C;
-  --bg:#ffffff; --alt:#F5F7FD; --card:#ffffff; --soft:#E7EAF9; --line:#E1E6F7;
-  --ink:#071860; --ink-2:#26346f; --muted:#5a6591;
+  --mint:#9CFFC9;
+  --bg:#ffffff; --alt:#E7EAF9; --card:#ffffff; --soft:#E7EAF9; --line:rgba(152,171,230,.5);
+  --ink:#071860; --ink-2:#0A2184; --muted:rgba(10,33,132,.78);
   --accent:#012DC1; --accent-soft:rgba(1,45,193,.08);
-  --nav-bg:rgba(255,255,255,.88); --nav-ink:#071860; --nav-line:#E1E6F7;
+  --nav-bg:rgba(255,255,255,.9); --nav-ink:#071860; --nav-line:rgba(152,171,230,.5);
   --radius:16px; --max:1120px;
   --hex:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.045' stroke-width='1.2'%3E%3Cpath d='M28 1l27 15.5v31L28 63 1 47.5v-31z'/%3E%3Cpath d='M28 63v34M1 16.5L-26 1M55 16.5L82 1'/%3E%3C/g%3E%3C/svg%3E");
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#060b29; --alt:#0a1238; --card:#0e1846; --soft:#132060; --line:#1b2768;
-    --ink:#E7EAF9; --ink-2:#c9d1f3; --muted:#98ABE6;
-    --accent:#98ABE6; --accent-soft:rgba(152,171,230,.12);
-    --nav-bg:rgba(6,11,41,.86); --nav-ink:#E7EAF9; --nav-line:#1b2768;
+    --bg:#071860; --alt:#0A2184; --card:rgba(7,24,96,.6); --soft:rgba(152,171,230,.12); --line:rgba(152,171,230,.28);
+    --ink:#E7EAF9; --ink-2:#E7EAF9; --muted:#98ABE6;
+    --accent:#9CFFC9; --accent-soft:rgba(156,255,201,.1);
+    --nav-bg:rgba(7,24,96,.9); --nav-ink:#E7EAF9; --nav-line:rgba(152,171,230,.28);
   }
 }
 *{box-sizing:border-box}
@@ -81,7 +82,7 @@ html[lang="ar"] .phase.now .ph::after{content:"جارٍ الآن";font-family:Al
 .hero .wrap{position:relative}
 .hero h1{font-size:clamp(1.9rem,5vw,3.2rem);font-weight:700;max-width:20ch}
 .hero h1 em{font-style:normal;color:var(--gold)}
-.hero p{font-size:1.05rem;max-width:58ch;color:#c9d1f3}
+.hero p{font-size:1.05rem;max-width:58ch;color:#E7EAF9}
 .hero p.sub{font-size:1.3rem;color:var(--gold);margin-bottom:1.1em}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 .stats{display:flex;flex-wrap:wrap;gap:44px;margin-top:64px;padding-top:28px;border-top:1px solid rgba(231,234,249,.14)}
@@ -152,7 +153,7 @@ html[lang="ar"] .prog h3{text-align:right}
 .join{text-align:center}
 .join .card{padding:64px 28px;background:var(--hex),radial-gradient(80% 120% at 50% 0%,rgba(1,45,193,.6) 0%,transparent 70%),var(--navy);color:#fff;border:0}
 .join .eyebrow{color:var(--gold)!important}
-.join .lead{margin:0 auto 28px;color:#c9d1f3}
+.join .lead{margin:0 auto 28px;color:#E7EAF9}
 .join .note{font-size:.82rem;color:var(--royal-3);margin-top:18px}
 
 
@@ -200,7 +201,7 @@ html[lang="ar"] section:not(.hero):not(.join) h2::before{direction:ltr;text-alig
 html[lang="ar"] .prog .tag,html[lang="ar"] .phase .ph{font-family:Almarai,sans-serif}
 
 /* ---- futuristic tech layer ---- */
-:root{--glow:rgba(1,45,193,.35);--mint:#9CFFC9;--r:10px}
+:root{--glow:rgba(1,45,193,.35);--r:10px}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--glow:rgba(152,171,230,.35)}}
 
 /* hero: fine grid, glow, scan line */
@@ -212,7 +213,7 @@ html[lang="ar"] .prog .tag,html[lang="ar"] .phase .ph{font-family:Almarai,sans-s
   var(--navy)}
 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,transparent,var(--royal) 20%,var(--mint) 50%,var(--gold) 80%,transparent)}
 .hero .hl{color:var(--gold)}
-.hero .meta{display:flex;align-items:center;gap:10px;margin-top:22px;font:600 .88rem/1.3 Verdana,Geneva,"DejaVu Sans",sans-serif;color:#c9d1f3}
+.hero .meta{display:flex;align-items:center;gap:10px;margin-top:22px;font:600 .88rem/1.3 Verdana,Geneva,"DejaVu Sans",sans-serif;color:#E7EAF9}
 html[lang="ar"] .hero .meta{font-family:Almarai,sans-serif;font-size:.9rem}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 0 rgba(156,255,201,.6);animation:pulse 2s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(156,255,201,.55)}70%{box-shadow:0 0 0 10px rgba(156,255,201,0)}100%{box-shadow:0 0 0 0 rgba(156,255,201,0)}}
