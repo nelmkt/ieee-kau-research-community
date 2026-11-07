@@ -11,7 +11,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23012DC1'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23FFC93C'/%3E%3Cellipse cx='32' cy='32' rx='22' ry='9' fill='none' stroke='%23fff' stroke-width='3'/%3E%3Cellipse cx='32' cy='32' rx='22' ry='9' fill='none' stroke='%23fff' stroke-width='3' transform='rotate(60 32 32)'/%3E%3Cellipse cx='32' cy='32' rx='22' ry='9' fill='none' stroke='%23fff' stroke-width='3' transform='rotate(120 32 32)'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
 /* Community palette: royal blue scale + gold, used calmly */
 :root{
@@ -182,12 +182,12 @@ html[lang="ar"] .prog h3{text-align:right}
   .hero{padding:80px 0 90px}
 }
 /* ---- science / tech character ---- */
-:root{--mono:"JetBrains Mono",ui-monospace,Consolas,monospace;--grid:rgba(1,45,193,.055)}
+:root{--mono:Verdana,Geneva,"DejaVu Sans",sans-serif;--grid:rgba(1,45,193,.055)}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--grid:rgba(152,171,230,.06)}}
 
 /* numbered sections, like a paper */
 main{counter-reset:sec}
-section:not(.hero):not(.join) h2::before{counter-increment:sec;content:"\00A7" counter(sec);display:block;font:600 .78rem/1 var(--mono);color:var(--accent);letter-spacing:.06em;margin-bottom:8px}
+section:not(.hero):not(.join) h2::before{counter-increment:sec;content:counter(sec,decimal-leading-zero);display:block;font:600 .78rem/1 var(--mono);color:var(--accent);letter-spacing:.06em;margin-bottom:8px}
 
 html[lang="ar"] section:not(.hero):not(.join) h2::before{direction:ltr;text-align:right}
 
