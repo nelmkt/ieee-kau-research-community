@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Research Community | IEEE KAU Student Branch</title>
-<meta name="description" content="A student-led community at King Abdulaziz University making the first steps into scientific research less intimidating and the journey beyond them more achievable.">
+<meta name="description" content="A student-led research community in the IEEE Student Branch at King Abdulaziz University.">
 <meta property="og:title" content="Research Community | IEEE KAU Student Branch">
-<meta property="og:description" content="We started as students looking for a way into research. Now, we're building that way for others.">
+<meta property="og:description" content="We started as students looking for a way into research. Now we're building that way for others.">
 <meta name="theme-color" content="#012DC1">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23012DC1'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23FFC93C'/%3E%3Cellipse cx='32' cy='32' rx='22' ry='9' fill='none' stroke='%23fff' stroke-width='3'/%3E%3Cellipse cx='32' cy='32' rx='22' ry='9' fill='none' stroke='%23fff' stroke-width='3' transform='rotate(60 32 32)'/%3E%3Cellipse cx='32' cy='32' rx='22' ry='9' fill='none' stroke='%23fff' stroke-width='3' transform='rotate(120 32 32)'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Caveat:wght@600;700&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Caveat:wght@600;700&family=Marhey:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
 /* Community palette: royal blue scale + gold, used calmly */
 :root{
@@ -73,7 +73,7 @@ html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .quote,
 html[lang="ar"] h1,html[lang="ar"] h2{font-weight:700;line-height:1.3}
 html[lang="ar"] .hero h1 em{font-style:normal}
 html[lang="ar"] .eyebrow,html[lang="ar"] .prog .tag,html[lang="ar"] .phase .ph{letter-spacing:0;font-size:.85rem}
-html[lang="ar"] .phase.now .ph::after{content:"نحن هنا!";font-family:"Aref Ruqaa",serif;font-size:.95rem;transform:rotate(4deg)}
+html[lang="ar"] .phase.now .ph::after{content:"إحنا هنا!";font-family:Marhey,cursive;font-weight:700;font-size:.95rem;transform:rotate(4deg)}
 
 /* hero */
 .hero{background:var(--hex),radial-gradient(90% 80% at 90% 0%,rgba(1,45,193,.55) 0%,transparent 60%),var(--navy);color:#fff;position:relative;overflow:hidden;padding:110px 0}
@@ -185,9 +185,9 @@ html[lang="ar"] .prog h3{text-align:right}
 .scribble{position:relative;white-space:nowrap}
 .scribble::after{content:"";position:absolute;left:-3%;bottom:-.22em;width:106%;height:.42em;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 22' preserveAspectRatio='none'%3E%3Cpath d='M3 14C45 5 88 4 128 9s58 8 69-2' fill='none' stroke='%23FFC93C' stroke-width='4.5' stroke-linecap='round'/%3E%3Cpath d='M14 19c52-6 115-6 170-3' fill='none' stroke='%23FFC93C' stroke-width='2.2' stroke-linecap='round' opacity='.7'/%3E%3C/svg%3E") no-repeat center/100% 100%}
 .hand-note{display:inline-flex;align-items:center;gap:6px;font:700 1.45rem/1.1 Caveat,cursive;color:var(--gold);transform:rotate(-3deg);margin-inline-start:6px}
-.doodle-arrow{flex:none}
+.doodle-arrow{flex:none;margin-top:-14px}
 html[dir="rtl"] .doodle-arrow{transform:scaleX(-1)}
-html[lang="ar"] .hand-note{font-family:"Aref Ruqaa",serif;font-size:1.25rem}
+html[lang="ar"] .hand-note{font-family:Marhey,cursive;font-weight:700;font-size:1.15rem}
 .join-note{display:block;margin:18px auto 0;transform:rotate(-2deg)}
 .hero .wave{position:absolute;left:0;bottom:-1px;width:100%;height:46px;fill:var(--bg);z-index:1}
 .hero .wrap{z-index:2}
@@ -210,6 +210,37 @@ section:not(.hero):not(.join) h2{display:inline-block;background:linear-gradient
 .value:nth-child(even)::before{transform:translateX(-50%) rotate(3deg);background:rgba(152,171,230,.55)}
 .values{margin-top:64px;gap:22px}
 @media (prefers-reduced-motion: reduce){.aud,.value,.phase{transition:none}}
+/* ---- science / tech character ---- */
+:root{--mono:"JetBrains Mono",ui-monospace,Consolas,monospace;--grid:rgba(1,45,193,.055)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--grid:rgba(152,171,230,.06)}}
+
+/* numbered sections, like a paper */
+main{counter-reset:sec}
+section:not(.hero):not(.join) h2::before{counter-increment:sec;content:"\00A7" counter(sec);display:block;font:600 .78rem/1 var(--mono);color:var(--accent);letter-spacing:.06em;margin-bottom:8px}
+
+html[lang="ar"] section:not(.hero):not(.join) h2::before{direction:ltr;text-align:right}
+
+/* graph paper on tinted sections */
+.alt{background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:26px 26px;background-position:-1px -1px}
+
+/* mono details */
+.prog .tag,.phase .ph{font-family:var(--mono);letter-spacing:.02em;text-transform:none;font-weight:600}
+.goals li::before{font-family:var(--mono)}
+html[lang="ar"] .prog .tag,html[lang="ar"] .phase .ph{font-family:Almarai,sans-serif}
+
+/* hero code card */
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.9fr);gap:48px;align-items:center}
+.lab{background:rgba(3,10,48,.72);border:1px solid rgba(152,171,230,.25);border-radius:14px 10px 16px 12px;box-shadow:0 20px 50px rgba(0,0,0,.3);rotate:1.2deg;overflow:hidden;backdrop-filter:blur(4px)}
+.lab-bar{display:flex;align-items:center;gap:6px;padding:10px 14px;border-bottom:1px solid rgba(152,171,230,.18);font:400 .75rem/1 var(--mono);color:var(--royal-3)}
+.lab-bar i{width:10px;height:10px;border-radius:50%;background:rgba(152,171,230,.35)}
+.lab-bar i:first-child{background:var(--gold)}
+.lab-bar span{margin-left:8px}
+.lab pre{margin:0;padding:18px 18px 20px;font:400 .82rem/1.65 var(--mono);color:#dfe4fa;white-space:pre;overflow:hidden}
+.lab .k{color:#98ABE6}.lab .s{color:#FFC93C}.lab .n{color:#9CFFC9}.lab .v{color:#fff;font-weight:600}.lab .o{color:#98ABE6}
+.lab .cur{color:#FFC93C;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion: reduce){.lab .cur{animation:none}}
+@media (max-width:960px){.hero-grid{grid-template-columns:1fr}.lab{display:none}}
 </style>
 </head>
 <body>
@@ -225,7 +256,7 @@ section:not(.hero):not(.join) h2{display:inline-block;background:linear-gradient
         <li><a href="#about">About</a></li>
         <li><a href="#vision">Vision</a></li>
         <li><a href="#programs">Programs</a></li>
-        <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="#roadmap">Plan</a></li>
         <li><a href="#team">Team</a></li>
       </ul>
     </nav>
@@ -245,15 +276,30 @@ section:not(.hero):not(.join) h2{display:inline-block;background:linear-gradient
 <section class="hero">
   <canvas id="net" aria-hidden="true"></canvas>
   <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 34C170 12 330 56 530 37S860 6 1050 29 1310 55 1440 24V60H0Z"/></svg>
-  <div class="wrap">
-    <h1 data-ar='بدأنا طلابًا نبحث عن طريق إلى <span class="scribble">البحث العلمي</span>.'>We started as students looking for a way into <span class="scribble">research</span>.</h1>
-    <p class="sub">Now, we're building that way for others.</p>
-    <p>The Research Community is a student-led group within the IEEE Student Branch at King Abdulaziz University. We help students take their first steps into research, build skills, and connect with peers, faculty, and researchers.</p>
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+    <h1 data-ar='بدأنا طلابًا نبحث عن طريقنا إلى <span class="scribble">البحث العلمي</span>.'>We started as students looking for a way into <span class="scribble">research</span>.</h1>
+    <p class="sub">Now we're building that way for others.</p>
+    <p>We're a student-led research community in the IEEE Student Branch at King Abdulaziz University. We help students take their first steps into research, pick up the skills they need, and meet the people who can help them along the way.</p>
     <div class="ctas">
       <a class="btn btn-accent" href="#join">Join us</a>
       <a class="btn btn-ghost" href="#programs">See our programs</a>
-      <span class="hand-note"><svg class="doodle-arrow" width="46" height="28" viewBox="0 0 46 28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M44 20c-9 4-22 5-34-6"/><path d="M9 6l1 9 8-2"/></svg><span>every major is welcome!</span></span>
+      <span class="hand-note"><svg class="doodle-arrow" width="60" height="38" viewBox="0 0 64 40" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M61 31c-9 6-22 6-28-1-4-5 0-12 6-9 5 3 2 10-6 11-9 1-18-3-26-12"/><path d="M7 20l1.2 8.6"/><path d="M7 20l8.4-1.6"/></svg><span>every major is welcome!</span></span>
     </div>
+    </div>
+    <aside class="lab" aria-hidden="true" dir="ltr">
+      <div class="lab-bar"><i></i><i></i><i></i><span>research_community.py</span></div>
+<pre><span class="k">from</span> ieee_kau <span class="k">import</span> curiosity
+
+community = ResearchCommunity(
+    university=<span class="s">"KAU"</span>,
+    majors=<span class="s">"all"</span>,
+    phase=<span class="n">1</span>,
+)
+community.welcome(<span class="v">you</span>)
+
+<span class="o">&gt;&gt;&gt; ready when you are</span><span class="cur">_</span></pre>
+    </aside>
   </div>
 </section>
 
@@ -261,18 +307,18 @@ section:not(.hero):not(.join) h2{display:inline-block;background:linear-gradient
   <div class="wrap two">
     <div class="reveal">
       <h2>Who we are</h2>
-      <p class="lead">The IEEE KAU Student Branch Research Community is a student-led community at King Abdulaziz University that promotes scientific research and a research-oriented culture among students.</p>
-      <p>We give students a place to explore research interests, build research skills, and connect with peers, faculty, and researchers. Through workshops, collaborations, and curated resources, we help students take their first steps into research and turn their ideas into meaningful contributions.</p>
+      <p class="lead">The Research Community is a student-led group within the IEEE KAU Student Branch. We're here to make research a normal part of student life at King Abdulaziz University.</p>
+      <p>We give students a space to explore what interests them, learn how research actually works, and meet peers, faculty, and researchers. Through workshops, collaborations, and shared resources, we help turn early ideas into real contributions.</p>
       <div class="card ieee-card" style="margin-top:28px">
         <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>About IEEE</h3>
-        <p style="margin:0;color:var(--muted)">IEEE (the Institute of Electrical and Electronics Engineers) is a global professional organization dedicated to advancing technology for the benefit of humanity. Through its student branches and technical communities, it helps students learn, collaborate, build skills, and connect with professionals and researchers worldwide.</p>
+        <p style="margin:0;color:var(--muted)">IEEE (the Institute of Electrical and Electronics Engineers) is a global professional organization that works to advance technology for the benefit of humanity. Its student branches and technical communities help students learn, work together, build skills, and connect with professionals and researchers around the world.</p>
       </div>
     </div>
     <div class="reveal">
       <h2>Our story</h2>
-      <p>We started as students who were curious about research but didn't know where to begin. Opportunities, resources, and guidance weren't always easy to find. Research often felt overwhelming, and at times out of reach for students without the experience or connections to get started.</p>
-      <p>We weren't alone in that. So we built a space where students can learn about research, discover opportunities, connect with researchers, and grow together.</p>
-      <p>Research should be open to anyone willing to learn, whatever their background or prior experience. Our goal is to make the first steps less intimidating and the journey after them more achievable.</p>
+      <p>We started out curious about research, with no idea where to begin. Opportunities, resources, and guidance were hard to find, and research often felt overwhelming, or reserved for people who already had the experience or the right connections.</p>
+      <p>We realized we weren't the only ones. So we decided to build the community we wished we'd had: a place to learn about research, find opportunities, meet researchers, and grow together.</p>
+      <p>We believe research should be open to anyone willing to learn, whatever their background. Our goal is simple: make the first steps less intimidating and the rest of the way more doable.</p>
     </div>
   </div>
 </section>
@@ -283,10 +329,10 @@ section:not(.hero):not(.join) h2{display:inline-block;background:linear-gradient
       <h2>Who is it for?</h2>
     </div>
     <div class="grid4">
-      <div class="card aud reveal"><h3>New to research</h3><p>Interested in research but unsure where to start or how to get involved.</p></div>
-      <div class="card aud reveal"><h3>Aspiring researchers</h3><p>Looking to develop research skills, explore scientific fields, and discover academic opportunities.</p></div>
-      <div class="card aud reveal"><h3>Research-active</h3><p>Seeking mentorship, collaboration, further development, and chances to share your work.</p></div>
-      <div class="card aud reveal"><h3>Interdisciplinary</h3><p>Eager to connect with people from other disciplines and explore ideas beyond your own field.</p></div>
+      <div class="card aud reveal"><h3>New to research</h3><p>You're curious about research but don't know where to start or how to get involved.</p></div>
+      <div class="card aud reveal"><h3>Aspiring researchers</h3><p>You want to build research skills, explore different fields, and find academic opportunities.</p></div>
+      <div class="card aud reveal"><h3>Already doing research</h3><p>You're looking for mentorship, collaborators, and places to share your work.</p></div>
+      <div class="card aud reveal"><h3>Curious across fields</h3><p>You want to meet people from other majors and explore ideas outside your own field.</p></div>
     </div>
   </div>
 </section>
@@ -296,25 +342,25 @@ section:not(.hero):not(.join) h2{display:inline-block;background:linear-gradient
     <div class="two">
       <div class="reveal">
         <h2>Our vision</h2>
-        <p>To become a leading research community that connects aspiring researchers across disciplines and empowers students worldwide to explore and contribute to scientific research.</p>
+        <p>To be a leading research community that connects aspiring researchers across disciplines and helps students everywhere explore and contribute to science.</p>
       </div>
       <div class="reveal">
         <h2>Our mission</h2>
-        <p>To build a supportive, collaborative research environment: equipping students with essential research skills, connecting them with researchers and opportunities, fostering interdisciplinary collaboration, and providing the resources and guidance they need to grow as researchers.</p>
+        <p>To build a supportive, collaborative space where students learn essential research skills, meet researchers, find opportunities, work across disciplines, and get the resources and guidance they need to grow.</p>
       </div>
     </div>
     <div class="values">
       <div class="value reveal">
-        <h3>Innovation &amp; Creativity</h3><p>Encouraging curiosity, critical thinking, and original approaches to research challenges.</p>
+        <h3>Innovation &amp; Creativity</h3><p>We encourage curiosity, critical thinking, and fresh approaches to research problems.</p>
       </div>
       <div class="value reveal">
-        <h3>Collaboration &amp; Teamwork</h3><p>Building partnerships and sharing knowledge to reach common research goals.</p>
+        <h3>Collaboration &amp; Teamwork</h3><p>We build partnerships and share what we know to reach common goals.</p>
       </div>
       <div class="value reveal">
-        <h3>Continuous Learning</h3><p>Supporting lifelong learning and the ongoing growth of research skills.</p>
+        <h3>Continuous Learning</h3><p>We keep learning, and we keep sharpening our research skills along the way.</p>
       </div>
       <div class="value reveal">
-        <h3>Social Responsibility</h3><p>Promoting ethical research practices and research that benefits society.</p>
+        <h3>Social Responsibility</h3><p>We care about ethical research and work that gives back to society.</p>
       </div>
     </div>
   </div>
@@ -326,13 +372,13 @@ section:not(.hero):not(.join) h2{display:inline-block;background:linear-gradient
       <h2>What we want to do</h2>
     </div>
     <ol class="goals">
-      <li class="reveal"><b>Promote research literacy</b><span>Teach research fundamentals, methodologies, and scientific thinking.</span></li>
-      <li class="reveal"><b>Develop research skills</b><span>Workshops, lectures, and practical sessions on academic writing, literature reviews, methodology, and scientific communication.</span></li>
-      <li class="reveal"><b>Facilitate collaboration</b><span>Connect students with peers, faculty, and researchers for interdisciplinary projects and knowledge exchange.</span></li>
-      <li class="reveal"><b>Bridge students to opportunities</b><span>Help students find research projects, mentorships, and programs.</span></li>
-      <li class="reveal"><b>Support research development</b><span>Help students refine ideas and proposals and work toward publishable research.</span></li>
-      <li class="reveal"><b>Build a shared resource hub</b><span>Curate research tools, databases, learning materials, and funding opportunities.</span></li>
-      <li class="reveal"><b>Sustain the community</b><span>Encourage members to share knowledge, mentor new researchers, and keep a culture of collaboration alive.</span></li>
+      <li class="reveal"><b>Promote research literacy</b><span>Teach the basics of research, its methods, and scientific thinking.</span></li>
+      <li class="reveal"><b>Develop research skills</b><span>Run workshops, talks, and hands-on sessions on academic writing, literature reviews, methodology, and science communication.</span></li>
+      <li class="reveal"><b>Make collaboration easier</b><span>Connect students with peers, faculty, and researchers for interdisciplinary projects.</span></li>
+      <li class="reveal"><b>Open doors to opportunities</b><span>Help students find research projects, mentors, and programs.</span></li>
+      <li class="reveal"><b>Support research development</b><span>Help students sharpen their ideas and proposals and work toward publishable research.</span></li>
+      <li class="reveal"><b>Build a shared resource hub</b><span>Collect research tools, databases, learning materials, and funding opportunities in one place.</span></li>
+      <li class="reveal"><b>Keep the community going</b><span>Encourage members to share what they know, mentor newer researchers, and keep the culture of collaboration alive.</span></li>
     </ol>
   </div>
 </section>
@@ -340,7 +386,7 @@ section:not(.hero):not(.join) h2{display:inline-block;background:linear-gradient
 <section id="programs" class="programs alt">
   <div class="wrap">
     <h2>Programs</h2>
-    <p class="lead">From your first workshop to your first publication, there's a program for every step.</p>
+    <p class="lead">From your first workshop to your first paper, there's something for every stage.</p>
     <div class="tabs" role="tablist" aria-label="Filter programs">
       <button class="tab" role="tab" aria-selected="true" data-f="all">All</button>
       <button class="tab" role="tab" aria-selected="false" data-f="fellow">Fellowships &amp; Grants</button>
@@ -349,14 +395,14 @@ section:not(.hero):not(.join) h2{display:inline-block;background:linear-gradient
       <button class="tab" role="tab" aria-selected="false" data-f="engage">Community</button>
     </div>
     <div class="pgrid">
-      <article class="prog" data-c="fellow"><span class="tag">Fellowships &amp; Grants</span><h3>Faculty Research Fellowships</h3><p>Connects students with faculty and researchers looking for student collaborators on ongoing projects.</p></article>
-      <article class="prog" data-c="skills"><span class="tag">Development &amp; Skills</span><h3>Research Methods Bootcamp</h3><p>Lab safety, hands-on wet-lab techniques, statistics and plots, publishing as an undergrad, writing papers and abstracts, poster design, and presentation skills.</p></article>
-      <article class="prog" data-c="skills"><span class="tag">Development &amp; Skills</span><h3>Academia Talk, ON!</h3><p>Online and in-person talks, specialized and multidisciplinary, with guest speakers from academia and industry.</p></article>
-      <article class="prog" data-c="hub"><span class="tag">Hub</span><h3>TheRepository</h3><p>One central collection of databases, tools, scholarships, conferences, internships, and programs.</p></article>
-      <article class="prog" data-c="hub"><span class="tag">Hub</span><h3>ResearchDigest</h3><p>A bi-weekly newsletter with upcoming events, national conferences, research opportunities, science news, member and faculty features, and research tips.</p></article>
-      <article class="prog" data-c="hub"><span class="tag">Hub</span><h3>OnlineHub</h3><p>An online space where members share opportunities, resources, questions, and announcements across disciplines.</p></article>
-      <article class="prog" data-c="engage"><span class="tag">Community</span><h3>PaperCafé</h3><p>A relaxed paper club, like a book club for science. Over food and drinks, members present a paper they chose and the group discusses it. A new theme or format every time.</p></article>
-      <article class="prog" data-c="engage"><span class="tag">Community</span><h3>Ambassadors</h3><p>Motivated students who represent the community, promote its goals across campus, and connect us with new audiences.</p></article>
+      <article class="prog" data-c="fellow"><span class="tag">Fellowships &amp; Grants</span><h3>Faculty Research Fellowships</h3><p>Matches students with faculty and researchers who are looking for student collaborators on ongoing projects.</p></article>
+      <article class="prog" data-c="skills"><span class="tag">Development &amp; Skills</span><h3>Research Methods Bootcamp</h3><p>Lab safety, hands-on wet-lab training, statistics and plotting, publishing as an undergrad, writing papers and abstracts, poster design, and presenting your work.</p></article>
+      <article class="prog" data-c="skills"><span class="tag">Development &amp; Skills</span><h3>Academia Talk, ON!</h3><p>A series of talks, online and in person, with guest speakers from academia and industry on specialized and cross-disciplinary topics.</p></article>
+      <article class="prog" data-c="hub"><span class="tag">Hub</span><h3>TheRepository</h3><p>One place for databases, tools, scholarships, conferences, internships, and programs.</p></article>
+      <article class="prog" data-c="hub"><span class="tag">Hub</span><h3>ResearchDigest</h3><p>Our newsletter, every two weeks: upcoming events, national conferences, research opportunities, science news, member and faculty spotlights, and research tips.</p></article>
+      <article class="prog" data-c="hub"><span class="tag">Hub</span><h3>OnlineHub</h3><p>An online space where members share opportunities, resources, questions, and announcements across majors.</p></article>
+      <article class="prog" data-c="engage"><span class="tag">Community</span><h3>PaperCafé</h3><p>Think book club, but for science. Over food and drinks, members take turns presenting a paper they picked, then everyone talks it through. Every meetup has a different theme or format.</p></article>
+      <article class="prog" data-c="engage"><span class="tag">Community</span><h3>Ambassadors</h3><p>Motivated students who represent the community around campus, spread the word, and bring new people in.</p></article>
     </div>
   </div>
 </section>
@@ -365,13 +411,13 @@ section:not(.hero):not(.join) h2{display:inline-block;background:linear-gradient
   <div class="wrap">
     <div class="reveal">
       <h2>Our plan</h2>
-      <p class="lead">We're just getting started. Here's how the community grows from launch to long-term sustainability.</p>
+      <p class="lead">We're just getting started. Here's how we plan to grow, from launch to something that lasts.</p>
     </div>
     <div class="road">
-      <div class="phase now reveal"><div class="ph">Phase 1</div><h3>Set up &amp; launch</h3><ul><li>Membership registration</li><li>Landing page &amp; introduction</li><li>Membership database</li><li>Marketing plan</li><li>Development week participation</li></ul></div>
-      <div class="phase reveal"><div class="ph">Phase 2</div><h3>Build the infrastructure</h3><ul><li>Launch TheRepository</li><li>Establish the OnlineHub</li><li>Develop the Research Bootcamp curriculum</li><li>Start Fellowships &amp; Grants</li></ul></div>
-      <div class="phase reveal"><div class="ph">Phase 3</div><h3>Activate the community</h3><ul><li>First Research Bootcamp</li><li>First PaperCafé</li><li>Launch Academia Talk, ON!</li><li>Faculty outreach &amp; database</li><li>Faculty Research Fellowships</li></ul></div>
-      <div class="phase reveal"><div class="ph">Phase 4</div><h3>Expand &amp; sustain</h3><ul><li>Ambassador Program</li><li>Remaining initiatives</li><li>External academic partnerships</li><li>Interdisciplinary activities</li><li>Sponsorships</li><li>Impact evaluation</li></ul></div>
+      <div class="phase now reveal"><div class="ph">Phase 1</div><h3>Set up &amp; launch</h3><ul><li>Open membership registration</li><li>Launch this website</li><li>Build the membership database</li><li>Put together a marketing plan</li><li>Take part in Development Week</li></ul></div>
+      <div class="phase reveal"><div class="ph">Phase 2</div><h3>Build the foundations</h3><ul><li>Launch TheRepository</li><li>Set up the OnlineHub</li><li>Design the Research Bootcamp curriculum</li><li>Start Fellowships &amp; Grants</li></ul></div>
+      <div class="phase reveal"><div class="ph">Phase 3</div><h3>Get things moving</h3><ul><li>Run the first Research Bootcamp</li><li>Host the first PaperCafé</li><li>Launch Academia Talk, ON!</li><li>Reach out to faculty and build a faculty database</li><li>Introduce the Faculty Research Fellowships</li></ul></div>
+      <div class="phase reveal"><div class="ph">Phase 4</div><h3>Grow &amp; sustain</h3><ul><li>Launch the Ambassador Program</li><li>Roll out the remaining programs</li><li>Build external academic partnerships</li><li>Run interdisciplinary activities</li><li>Find sponsors</li><li>Measure our impact and improve</li></ul></div>
     </div>
   </div>
 </section>
@@ -382,12 +428,12 @@ section:not(.hero):not(.join) h2{display:inline-block;background:linear-gradient
       <h2>How we're organized</h2>
     </div>
     <div class="team">
-      <div class="card role reveal"><h3>Chair &amp; Vice-Chair</h3><p>Set the community's vision and strategy, lead the officers, and represent the community externally.</p></div>
-      <div class="card role reveal"><h3>Secretary / Treasurer</h3><p>Keeps the community's records, membership data, budget, and financial reports.</p></div>
-      <div class="card role reveal"><h3>Outreach Chair</h3><p>Builds sponsorships and external partnerships, and connects with faculty, researchers, and research centers.</p></div>
-      <div class="card role reveal"><h3>Media Chair</h3><p>Shapes the community's visual identity, social media, and campaigns, and highlights member achievements.</p></div>
+      <div class="card role reveal"><h3>Chair &amp; Vice-Chair</h3><p>Set the direction and strategy, lead the officers, and represent the community.</p></div>
+      <div class="card role reveal"><h3>Secretary / Treasurer</h3><p>Keeps the records, membership data, budget, and financial reports.</p></div>
+      <div class="card role reveal"><h3>Outreach Chair</h3><p>Brings in sponsors and partners, and builds relationships with faculty, researchers, and research centers.</p></div>
+      <div class="card role reveal"><h3>Media Chair</h3><p>Runs our visual identity, social media, and campaigns, and shares member achievements.</p></div>
       <div class="card role reveal"><h3>Webmaster</h3><p>Builds the website, forms, and tools, including the fellowship matching platform.</p></div>
-      <div class="card role reveal"><h3>Resources Chair</h3><p>Curates internships, scholarships, grants, conferences, and research tools, and keeps them verified and up to date.</p></div>
+      <div class="card role reveal"><h3>Resources Chair</h3><p>Finds internships, scholarships, grants, conferences, and research tools, and keeps the list accurate and up to date.</p></div>
     </div>
   </div>
 </section>
@@ -396,11 +442,11 @@ section:not(.hero):not(.join) h2{display:inline-block;background:linear-gradient
   <div class="wrap">
     <div class="card reveal">
       <h2>Research is for anyone willing to learn.</h2>
-      <p class="lead">Every discipline is welcome. Become a member and be part of the first cohort shaping the Research Community.</p>
+      <p class="lead">Every major is welcome. Become a member and help shape the Research Community from day one.</p>
       <!-- Replace href below with the membership registration form link when it's ready -->
-      <a class="btn btn-accent" id="join-btn" href="#join">Membership registration opening soon</a>
+      <a class="btn btn-accent" id="join-btn" href="#join">Membership registration opens soon</a>
       <p class="hand-note join-note">see you there :)</p>
-      <p class="note">Achievements and impact will be shared here after launch.</p>
+      <p class="note">We'll share our achievements and impact here after launch.</p>
     </div>
   </div>
 </section>
@@ -432,155 +478,152 @@ document.querySelectorAll('.reveal').forEach(el => io ? io.observe(el) : el.clas
 
 // ---------- English / Arabic ----------
 const AR = {
-  "every major is welcome!": "كل التخصصات مرحّب بها!",
-  "see you there :)": "نراكم هناك :)",
-  "We started as students looking for a way into research.": "بدأنا طلابًا نبحث عن طريق إلى البحث العلمي.",
-  "Now, we're building that way for others.": "واليوم نمهّد هذا الطريق لغيرنا.",
-  "The Research Community is a student-led group within the IEEE Student Branch at King Abdulaziz University. We help students take their first steps into research, build skills, and connect with peers, faculty, and researchers.": "مجتمع البحث العلمي مجموعة يقودها الطلاب ضمن فرع IEEE الطلابي في جامعة الملك عبدالعزيز. نساعد الطلاب على اتخاذ خطواتهم الأولى في البحث العلمي، وبناء مهاراتهم، والتواصل مع زملائهم وأعضاء هيئة التدريس والباحثين.",
-  "See our programs": "تعرّف على برامجنا",
-  "Who is it for?": "لمن هذا المجتمع؟",
-  "What we want to do": "ما نسعى إليه",
-  "Our plan": "خطتنا",
-  "How we're organized": "كيف ننظّم عملنا",
+  // page title and meta
   "Research Community | IEEE KAU Student Branch": "مجتمع البحث العلمي | فرع IEEE الطلابي بجامعة الملك عبدالعزيز",
+  "A student-led research community in the IEEE Student Branch at King Abdulaziz University.": "مجتمع بحثي يقوده الطلاب ضمن فرع IEEE الطلابي في جامعة الملك عبدالعزيز.",
+  "We started as students looking for a way into research. Now we're building that way for others.": "بدأنا طلابًا نبحث عن طريقنا إلى البحث العلمي، واليوم نمهّد هذا الطريق لغيرنا.",
+
+  // nav
   "Research Community": "مجتمع البحث العلمي",
-  "IEEE KAU Student Branch": "فرع IEEE الطلابي – جامعة الملك عبدالعزيز",
   "About": "من نحن",
-  "Vision": "الرؤية",
+  "Vision": "رؤيتنا",
   "Programs": "البرامج",
-  "Roadmap": "خارطة الطريق",
+  "Plan": "خطتنا",
   "Team": "الفريق",
   "Join us": "انضم إلينا",
-  "IEEE Student Branch": "فرع IEEE الطلابي",
-  "King Abdulaziz University – Jeddah": "جامعة الملك عبدالعزيز – جدة",
-  "We started as students looking for a way into research. Now, we're building that way for others: a student-led community where curiosity turns into skills, connections, and real contributions.": "بدأنا طلابًا نبحث عن طريق إلى البحث العلمي، واليوم نمهّد هذا الطريق لغيرنا: مجتمع يقوده الطلاب، يتحوّل فيه الفضول إلى مهارات وعلاقات وإسهامات حقيقية.",
-  "Explore programs": "استكشف البرامج",
-  "Initiatives & programs": "مبادرات وبرامج",
-  "Core values": "قيم أساسية",
-  "All": "الكل",
-  "Disciplines welcome": "جميع التخصصات مرحّب بها",
+
+  // hero
+  "Now we're building that way for others.": "واليوم نمهّد هذا الطريق لغيرنا.",
+  "We're a student-led research community in the IEEE Student Branch at King Abdulaziz University. We help students take their first steps into research, pick up the skills they need, and meet the people who can help them along the way.": "نحن مجتمع بحثي يقوده الطلاب ضمن فرع IEEE الطلابي في جامعة الملك عبدالعزيز. نساعد الطلاب على خطواتهم الأولى في البحث العلمي، ونكسبهم المهارات التي يحتاجونها، ونعرّفهم على من يمكنه دعمهم في الطريق.",
+  "See our programs": "تعرّف على برامجنا",
+  "every major is welcome!": "كل التخصصات مرحّب بها!",
+
+  // about
   "Who we are": "من نحن",
-  "A collaborative space for curious students.": "مساحة تعاونية للطلاب الشغوفين بالمعرفة.",
-  "The IEEE KAU Student Branch Research Community is a student-led community at King Abdulaziz University that promotes scientific research and a research-oriented culture among students.": "مجتمع البحث العلمي في فرع IEEE الطلابي بجامعة الملك عبدالعزيز هو مجتمع يقوده الطلاب، يعزّز البحث العلمي وثقافة البحث بين الطلاب.",
-  "We give students a place to explore research interests, build research skills, and connect with peers, faculty, and researchers. Through workshops, collaborations, and curated resources, we help students take their first steps into research and turn their ideas into meaningful contributions.": "نوفّر للطلاب مكانًا لاستكشاف اهتماماتهم البحثية، وبناء مهاراتهم، والتواصل مع زملائهم وأعضاء هيئة التدريس والباحثين. ومن خلال ورش العمل والتعاون والمصادر المنتقاة، نساعد الطلاب على اتخاذ خطواتهم الأولى في البحث العلمي وتحويل أفكارهم إلى إسهامات ذات قيمة.",
+  "The Research Community is a student-led group within the IEEE KAU Student Branch. We're here to make research a normal part of student life at King Abdulaziz University.": "مجتمع البحث العلمي مجموعة يقودها الطلاب ضمن فرع IEEE الطلابي بجامعة الملك عبدالعزيز. هدفنا أن يصبح البحث العلمي جزءًا طبيعيًا من حياة الطالب الجامعية.",
+  "We give students a space to explore what interests them, learn how research actually works, and meet peers, faculty, and researchers. Through workshops, collaborations, and shared resources, we help turn early ideas into real contributions.": "نوفّر للطلاب مساحة يستكشفون فيها اهتماماتهم، ويتعلّمون كيف يجري البحث العلمي فعلًا، ويتعرّفون على زملائهم وأعضاء هيئة التدريس والباحثين. ومن خلال ورش العمل والتعاون والمصادر المشتركة، نساعدهم على تحويل أفكارهم الأولى إلى إسهامات حقيقية.",
   "About IEEE": "عن IEEE",
-  "IEEE (the Institute of Electrical and Electronics Engineers) is a global professional organization dedicated to advancing technology for the benefit of humanity. Through its student branches and technical communities, it helps students learn, collaborate, build skills, and connect with professionals and researchers worldwide.": "معهد مهندسي الكهرباء والإلكترونيات (\u2068IEEE – Institute of Electrical and Electronics Engineers\u2069) منظمة مهنية عالمية تسعى إلى تطوير التقنية لخدمة الإنسانية. ومن خلال فروعه الطلابية ومجتمعاته التقنية، يساعد الطلاب على التعلّم والتعاون وبناء المهارات والتواصل مع المختصين والباحثين حول العالم.",
-  "At King Abdulaziz University": "في جامعة الملك عبدالعزيز",
-  "We're based at KAU in Jeddah, the Founder's University and one of Saudi Arabia's largest. The community is open to students from every college and discipline across campus, not just engineering.": "مقرّنا جامعة الملك عبدالعزيز في جدة، جامعة المؤسس وإحدى أكبر الجامعات في المملكة العربية السعودية. والمجتمع مفتوح لطلاب جميع الكليات والتخصصات، وليس الهندسة فقط.",
+  "IEEE (the Institute of Electrical and Electronics Engineers) is a global professional organization that works to advance technology for the benefit of humanity. Its student branches and technical communities help students learn, work together, build skills, and connect with professionals and researchers around the world.": "معهد مهندسي الكهرباء والإلكترونيات (⁨IEEE – Institute of Electrical and Electronics Engineers⁩) منظمة مهنية عالمية تعمل على تطوير التقنية لخدمة الإنسانية. وتساعد فروعه الطلابية ومجتمعاته التقنية الطلاب على التعلّم والعمل معًا وبناء مهاراتهم والتواصل مع المختصين والباحثين حول العالم.",
   "Our story": "قصتنا",
-  "We built the community we wished we had.": "بنينا المجتمع الذي تمنّينا وجوده.",
-  "We started as students who were curious about research but didn't know where to begin. Opportunities, resources, and guidance weren't always easy to find. Research often felt overwhelming, and at times out of reach for students without the experience or connections to get started.": "بدأنا طلابًا فضوليين تجاه البحث العلمي، لكننا لم نعرف من أين نبدأ. لم يكن الوصول إلى الفرص والمصادر والتوجيه سهلًا دائمًا، وكثيرًا ما بدا البحث مرهقًا، بل بعيد المنال أحيانًا لمن لا يملك الخبرة أو العلاقات للبدء.",
-  "We weren't alone in that. So we built a space where students can learn about research, discover opportunities, connect with researchers, and grow together.": "ولم نكن وحدنا في ذلك، فبنينا مساحة يتعلّم فيها الطلاب عن البحث العلمي، ويكتشفون الفرص، ويتواصلون مع الباحثين، وينمون معًا.",
-  "Research should be open to anyone willing to learn, whatever their background or prior experience. Our goal is to make the first steps less intimidating and the journey after them more achievable.": "نؤمن بأن البحث العلمي حق لكل من يرغب في التعلّم، مهما كانت خلفيته أو خبرته السابقة. هدفنا أن نجعل الخطوات الأولى أقل رهبة، والرحلة بعدها أيسر تحقيقًا.",
-  "“We started as students looking for a way into research. Now, we're building that way for others.”": "«بدأنا طلابًا نبحث عن طريق إلى البحث العلمي، واليوم نمهّد هذا الطريق لغيرنا.»",
-  "Who it's for": "لمن هذا المجتمع",
-  "Wherever you are on the journey.": "أينما كنت في رحلتك البحثية.",
+  "We started out curious about research, with no idea where to begin. Opportunities, resources, and guidance were hard to find, and research often felt overwhelming, or reserved for people who already had the experience or the right connections.": "بدأنا ولدينا فضول تجاه البحث العلمي، لكن دون أن نعرف من أين نبدأ. كان العثور على الفرص والمصادر والتوجيه صعبًا، وكثيرًا ما بدا البحث مرهقًا، أو حكرًا على من يملك الخبرة أو العلاقات المناسبة.",
+  "We realized we weren't the only ones. So we decided to build the community we wished we'd had: a place to learn about research, find opportunities, meet researchers, and grow together.": "ثم أدركنا أننا لسنا وحدنا، فقررنا أن نبني المجتمع الذي تمنّينا وجوده: مكانًا نتعلّم فيه عن البحث العلمي، ونجد الفرص، ونلتقي بالباحثين، وننمو معًا.",
+  "We believe research should be open to anyone willing to learn, whatever their background. Our goal is simple: make the first steps less intimidating and the rest of the way more doable.": "نؤمن بأن البحث العلمي يجب أن يكون متاحًا لكل من يرغب في التعلّم، مهما كانت خلفيته. وهدفنا بسيط: أن تكون الخطوات الأولى أقل رهبة، وما بعدها أسهل.",
+
+  // audience
+  "Who is it for?": "لمن هذا المجتمع؟",
   "New to research": "جديد على البحث العلمي",
-  "Interested in research but unsure where to start or how to get involved.": "مهتم بالبحث العلمي لكنك لا تعرف من أين تبدأ أو كيف تشارك.",
-  "Aspiring researchers": "باحثون طموحون",
-  "Looking to develop research skills, explore scientific fields, and discover academic opportunities.": "تسعى لتطوير مهاراتك البحثية واستكشاف المجالات العلمية واكتشاف الفرص الأكاديمية.",
-  "Research-active": "ناشطون في البحث",
-  "Seeking mentorship, collaboration, further development, and chances to share your work.": "تبحث عن الإرشاد والتعاون ومزيد من التطوّر وفرص لمشاركة أعمالك.",
-  "Interdisciplinary": "متعددو التخصصات",
-  "Eager to connect with people from other disciplines and explore ideas beyond your own field.": "تتطلّع للتواصل مع أشخاص من تخصصات أخرى واستكشاف أفكار خارج مجالك.",
+  "You're curious about research but don't know where to start or how to get involved.": "لديك فضول تجاه البحث العلمي، لكنك لا تعرف من أين تبدأ أو كيف تشارك.",
+  "Aspiring researchers": "باحث طموح",
+  "You want to build research skills, explore different fields, and find academic opportunities.": "تريد أن تبني مهاراتك البحثية، وتستكشف مجالات مختلفة، وتجد فرصًا أكاديمية.",
+  "Already doing research": "لديك تجربة بحثية",
+  "You're looking for mentorship, collaborators, and places to share your work.": "تبحث عن إرشاد، وشركاء في البحث، ومساحات تعرض فيها عملك.",
+  "Curious across fields": "شغوف بالتخصصات الأخرى",
+  "You want to meet people from other majors and explore ideas outside your own field.": "تريد أن تتعرّف على طلاب من تخصصات أخرى، وتستكشف أفكارًا خارج مجالك.",
+
+  // vision, mission, values
   "Our vision": "رؤيتنا",
-  "Connecting aspiring researchers everywhere.": "نربط الباحثين الطموحين في كل مكان.",
-  "To become a leading research community that connects aspiring researchers across disciplines and empowers students worldwide to explore and contribute to scientific research.": "أن نكون مجتمعًا بحثيًا رائدًا يربط الباحثين الطموحين عبر التخصصات، ويمكّن الطلاب حول العالم من استكشاف البحث العلمي والإسهام فيه.",
+  "To be a leading research community that connects aspiring researchers across disciplines and helps students everywhere explore and contribute to science.": "أن نكون مجتمعًا بحثيًا رائدًا يجمع الباحثين الطموحين من مختلف التخصصات، ويساعد الطلاب في كل مكان على استكشاف العلم والإسهام فيه.",
   "Our mission": "رسالتنا",
-  "A supportive environment to grow.": "بيئة داعمة للنمو.",
-  "To build a supportive, collaborative research environment: equipping students with essential research skills, connecting them with researchers and opportunities, fostering interdisciplinary collaboration, and providing the resources and guidance they need to grow as researchers.": "بناء بيئة بحثية داعمة وتعاونية: نزوّد الطلاب بالمهارات البحثية الأساسية، ونربطهم بالباحثين والفرص، ونعزّز التعاون بين التخصصات، ونوفّر لهم المصادر والتوجيه اللازمين لينموا كباحثين.",
+  "To build a supportive, collaborative space where students learn essential research skills, meet researchers, find opportunities, work across disciplines, and get the resources and guidance they need to grow.": "أن نبني بيئة داعمة وتعاونية يتعلّم فيها الطلاب المهارات البحثية الأساسية، ويلتقون بالباحثين، ويجدون الفرص، ويعملون مع تخصصات أخرى، ويحصلون على المصادر والتوجيه الذي يحتاجونه لينموا.",
   "Innovation & Creativity": "الابتكار والإبداع",
-  "Encouraging curiosity, critical thinking, and original approaches to research challenges.": "تشجيع الفضول والتفكير النقدي والأساليب المبتكرة في مواجهة التحديات البحثية.",
+  "We encourage curiosity, critical thinking, and fresh approaches to research problems.": "نشجّع الفضول والتفكير النقدي والأفكار الجديدة في حل المشكلات البحثية.",
   "Collaboration & Teamwork": "التعاون والعمل الجماعي",
-  "Building partnerships and sharing knowledge to reach common research goals.": "بناء الشراكات وتبادل المعرفة لتحقيق أهداف بحثية مشتركة.",
+  "We build partnerships and share what we know to reach common goals.": "نبني الشراكات ونتشارك ما نعرفه لنصل إلى أهداف مشتركة.",
   "Continuous Learning": "التعلّم المستمر",
-  "Supporting lifelong learning and the ongoing growth of research skills.": "دعم التعلّم مدى الحياة والتطوير المستمر للمهارات البحثية.",
+  "We keep learning, and we keep sharpening our research skills along the way.": "لا نتوقف عن التعلّم، ونطوّر مهاراتنا البحثية باستمرار.",
   "Social Responsibility": "المسؤولية المجتمعية",
-  "Promoting ethical research practices and research that benefits society.": "تعزيز الممارسات البحثية الأخلاقية والأبحاث التي تخدم المجتمع.",
-  "Goals & objectives": "الأهداف والغايات",
-  "What we set out to do.": "ما نسعى إلى تحقيقه.",
+  "We care about ethical research and work that gives back to society.": "نهتم بأخلاقيات البحث، وبالأعمال التي تعود بالنفع على المجتمع.",
+
+  // goals
+  "What we want to do": "ما نسعى إليه",
   "Promote research literacy": "نشر الثقافة البحثية",
-  "Teach research fundamentals, methodologies, and scientific thinking.": "تعليم أساسيات البحث ومناهجه والتفكير العلمي.",
+  "Teach the basics of research, its methods, and scientific thinking.": "تعليم أساسيات البحث العلمي ومناهجه والتفكير العلمي.",
   "Develop research skills": "تطوير المهارات البحثية",
-  "Workshops, lectures, and practical sessions on academic writing, literature reviews, methodology, and scientific communication.": "ورش عمل ومحاضرات وجلسات تطبيقية في الكتابة الأكاديمية ومراجعة الأدبيات ومناهج البحث والتواصل العلمي.",
-  "Facilitate collaboration": "تيسير التعاون",
-  "Connect students with peers, faculty, and researchers for interdisciplinary projects and knowledge exchange.": "ربط الطلاب بزملائهم وأعضاء هيئة التدريس والباحثين لتنفيذ مشاريع متعددة التخصصات وتبادل المعرفة.",
-  "Bridge students to opportunities": "ربط الطلاب بالفرص",
-  "Help students find research projects, mentorships, and programs.": "مساعدة الطلاب في العثور على مشاريع بحثية وفرص إرشاد وبرامج.",
+  "Run workshops, talks, and hands-on sessions on academic writing, literature reviews, methodology, and science communication.": "تقديم ورش عمل ومحاضرات وجلسات تطبيقية في الكتابة الأكاديمية ومراجعة الأدبيات ومنهجية البحث والتواصل العلمي.",
+  "Make collaboration easier": "تسهيل التعاون",
+  "Connect students with peers, faculty, and researchers for interdisciplinary projects.": "ربط الطلاب بزملائهم وأعضاء هيئة التدريس والباحثين في مشاريع متعددة التخصصات.",
+  "Open doors to opportunities": "فتح أبواب الفرص",
+  "Help students find research projects, mentors, and programs.": "مساعدة الطلاب في الوصول إلى مشاريع بحثية ومرشدين وبرامج.",
   "Support research development": "دعم تطوير الأبحاث",
-  "Help students refine ideas and proposals and work toward publishable research.": "مساعدة الطلاب على صقل أفكارهم ومقترحاتهم والوصول إلى أبحاث قابلة للنشر.",
+  "Help students sharpen their ideas and proposals and work toward publishable research.": "مساعدة الطلاب على تطوير أفكارهم ومقترحاتهم والوصول إلى أبحاث قابلة للنشر.",
   "Build a shared resource hub": "بناء مركز مصادر مشترك",
-  "Curate research tools, databases, learning materials, and funding opportunities.": "جمع أدوات البحث وقواعد البيانات والمواد التعليمية وفرص التمويل.",
-  "Sustain the community": "استدامة المجتمع",
-  "Encourage members to share knowledge, mentor new researchers, and keep a culture of collaboration alive.": "تشجيع الأعضاء على مشاركة المعرفة وإرشاد الباحثين الجدد والحفاظ على ثقافة التعاون.",
-  "Ways to get involved.": "طرق المشاركة.",
-  "From your first workshop to your first publication, there's a program for every step.": "من ورشتك الأولى إلى أول بحث منشور لك، هناك برنامج لكل خطوة.",
+  "Collect research tools, databases, learning materials, and funding opportunities in one place.": "جمع أدوات البحث وقواعد البيانات والمواد التعليمية وفرص التمويل في مكان واحد.",
+  "Keep the community going": "استمرار المجتمع",
+  "Encourage members to share what they know, mentor newer researchers, and keep the culture of collaboration alive.": "تشجيع الأعضاء على مشاركة معرفتهم، وإرشاد الباحثين الجدد، والحفاظ على روح التعاون.",
+
+  // programs
+  "From your first workshop to your first paper, there's something for every stage.": "من ورشتك الأولى إلى أول ورقة بحثية لك، هناك ما يناسب كل مرحلة.",
+  "All": "الكل",
   "Fellowships & Grants": "الزمالات والمنح",
   "Development & Skills": "التطوير والمهارات",
   "Hub": "المركز",
   "Community": "المجتمع",
   "Faculty Research Fellowships": "زمالات البحث مع أعضاء هيئة التدريس",
-  "Connects students with faculty and researchers looking for student collaborators on ongoing projects.": "تربط الطلاب بأعضاء هيئة التدريس والباحثين الذين يبحثون عن طلاب للمشاركة في مشاريعهم القائمة.",
-  "Research Methods Bootcamp": "المعسكر التدريبي لمناهج البحث",
-  "Lab safety, hands-on wet-lab techniques, statistics and plots, publishing as an undergrad, writing papers and abstracts, poster design, and presentation skills.": "السلامة في المختبر، وتقنيات المختبر الرطب العملية، والإحصاء والرسوم البيانية، والنشر خلال المرحلة الجامعية، وكتابة الأوراق والملخصات، وتصميم الملصقات العلمية، ومهارات العرض.",
-  "Online and in-person talks, specialized and multidisciplinary, with guest speakers from academia and industry.": "سلسلة لقاءات حضورية وعن بُعد، متخصصة ومتعددة التخصصات، مع متحدثين ضيوف من الأوساط الأكاديمية والصناعية.",
-  "One central collection of databases, tools, scholarships, conferences, internships, and programs.": "مستودع مركزي لقواعد البيانات والأدوات والمنح الدراسية والمؤتمرات والتدريب والبرامج.",
-  "A bi-weekly newsletter with upcoming events, national conferences, research opportunities, science news, member and faculty features, and research tips.": "نشرة إخبارية كل أسبوعين تضم الفعاليات القادمة والمؤتمرات الوطنية والفرص البحثية والأخبار العلمية وزوايا للأعضاء وهيئة التدريس ونصائح بحثية.",
-  "An online space where members share opportunities, resources, questions, and announcements across disciplines.": "مساحة إلكترونية يتشارك فيها الأعضاء الفرص والمصادر والأسئلة والإعلانات عبر التخصصات.",
-  "A relaxed paper club, like a book club for science. Over food and drinks, members present a paper they chose and the group discusses it. A new theme or format every time.": "نادٍ غير رسمي لقراءة الأوراق العلمية، أشبه بنادي كتاب للعلوم. على الطعام والمشروبات، يعرض الأعضاء ورقة اختاروها ويناقشها الجميع، مع موضوع أو أسلوب جديد في كل لقاء.",
-  "Ambassadors": "برنامج السفراء",
-  "Motivated students who represent the community, promote its goals across campus, and connect us with new audiences.": "طلاب متحمسون يمثّلون المجتمع، ويروّجون لأهدافه في أرجاء الجامعة، ويوصلوننا بجماهير جديدة.",
-  "Strategic plan": "الخطة الاستراتيجية",
-  "Where we're headed.": "إلى أين نتجه.",
-  "We're just getting started. Here's how the community grows from launch to long-term sustainability.": "ما زلنا في البداية. هكذا ينمو المجتمع من الانطلاق حتى الاستدامة طويلة المدى.",
+  "Matches students with faculty and researchers who are looking for student collaborators on ongoing projects.": "يربط الطلاب بأعضاء هيئة التدريس والباحثين الذين يبحثون عن طلاب يشاركونهم مشاريعهم القائمة.",
+  "Research Methods Bootcamp": "معسكر مناهج البحث",
+  "Lab safety, hands-on wet-lab training, statistics and plotting, publishing as an undergrad, writing papers and abstracts, poster design, and presenting your work.": "السلامة في المختبر، والتدريب العملي في المختبر الرطب، والإحصاء والرسوم البيانية، والنشر خلال المرحلة الجامعية، وكتابة الأوراق والملخصات، وتصميم الملصقات العلمية، وعرض أعمالك.",
+  "A series of talks, online and in person, with guest speakers from academia and industry on specialized and cross-disciplinary topics.": "سلسلة لقاءات حضورية وعن بُعد، يتحدث فيها ضيوف من الأوساط الأكاديمية والصناعية عن موضوعات متخصصة ومتعددة التخصصات.",
+  "One place for databases, tools, scholarships, conferences, internships, and programs.": "مكان واحد لقواعد البيانات والأدوات والمنح الدراسية والمؤتمرات وفرص التدريب والبرامج.",
+  "Our newsletter, every two weeks: upcoming events, national conferences, research opportunities, science news, member and faculty spotlights, and research tips.": "نشرتنا البريدية كل أسبوعين: الفعاليات القادمة، والمؤتمرات الوطنية، والفرص البحثية، وأخبار العلوم، وتعريف بأعضائنا وأعضاء هيئة التدريس، ونصائح بحثية.",
+  "An online space where members share opportunities, resources, questions, and announcements across majors.": "مساحة إلكترونية يتبادل فيها الأعضاء من مختلف التخصصات الفرص والمصادر والأسئلة والإعلانات.",
+  "Think book club, but for science. Over food and drinks, members take turns presenting a paper they picked, then everyone talks it through. Every meetup has a different theme or format.": "تخيّل نادي كتاب، لكن للعلوم. على الطعام والمشروبات، يعرض الأعضاء بالتناوب ورقة بحثية اختاروها، ثم يناقشها الجميع. ولكل لقاء موضوع أو أسلوب مختلف.",
+  "Ambassadors": "السفراء",
+  "Motivated students who represent the community around campus, spread the word, and bring new people in.": "طلاب متحمسون يمثّلون المجتمع في أرجاء الجامعة، وينشرون فكرته، ويستقطبون أعضاء جددًا.",
+
+  // plan
+  "Our plan": "خطتنا",
+  "We're just getting started. Here's how we plan to grow, from launch to something that lasts.": "ما زلنا في البداية. هذه خطتنا للنمو، من الانطلاق حتى نصبح مجتمعًا مستدامًا.",
   "Phase 1": "المرحلة الأولى",
   "Phase 2": "المرحلة الثانية",
   "Phase 3": "المرحلة الثالثة",
   "Phase 4": "المرحلة الرابعة",
   "Set up & launch": "التأسيس والانطلاق",
-  "Membership registration": "تسجيل العضوية",
-  "Landing page & introduction": "الصفحة التعريفية والتعريف بالمجتمع",
-  "Membership database": "قاعدة بيانات الأعضاء",
-  "Marketing plan": "خطة التسويق",
-  "Development week participation": "المشاركة في أسبوع التطوير",
-  "Build the infrastructure": "بناء البنية التحتية",
-  "Launch TheRepository": "إطلاق TheRepository",
-  "Establish the OnlineHub": "تأسيس OnlineHub",
-  "Develop the Research Bootcamp curriculum": "إعداد منهج المعسكر البحثي",
-  "Start Fellowships & Grants": "بدء مبادرة الزمالات والمنح",
-  "Activate the community": "تفعيل المجتمع",
-  "First Research Bootcamp": "أول معسكر بحثي",
-  "First PaperCafé": "أول لقاء PaperCafé",
+  "Open membership registration": "فتح باب التسجيل في العضوية",
+  "Launch this website": "إطلاق هذا الموقع",
+  "Build the membership database": "بناء قاعدة بيانات الأعضاء",
+  "Put together a marketing plan": "إعداد خطة تسويقية",
+  "Take part in Development Week": "المشاركة في أسبوع التطوير",
+  "Build the foundations": "بناء الأساس",
+  "Launch TheRepository": "إطلاق ⁨TheRepository⁩",
+  "Set up the OnlineHub": "تأسيس ⁨OnlineHub⁩",
+  "Design the Research Bootcamp curriculum": "تصميم منهج معسكر البحث",
+  "Start Fellowships & Grants": "إطلاق مبادرة الزمالات والمنح",
+  "Get things moving": "بدء الأنشطة",
+  "Run the first Research Bootcamp": "تنظيم أول معسكر بحثي",
+  "Host the first PaperCafé": "استضافة أول لقاء ⁨PaperCafé⁩",
   "Launch Academia Talk, ON!": "إطلاق ⁨Academia Talk, ON!⁩",
-  "Faculty outreach & database": "التواصل مع أعضاء هيئة التدريس وبناء قاعدة بياناتهم",
-  "Expand & sustain": "التوسّع والاستدامة",
-  "Ambassador Program": "برنامج السفراء",
-  "Remaining initiatives": "بقية المبادرات",
-  "External academic partnerships": "شراكات أكاديمية خارجية",
-  "Interdisciplinary activities": "أنشطة متعددة التخصصات",
-  "Sponsorships": "الرعايات",
-  "Impact evaluation": "تقييم الأثر",
-  "Organizational structure": "الهيكل التنظيمي",
-  "The team behind it.": "الفريق خلف المجتمع.",
+  "Reach out to faculty and build a faculty database": "التواصل مع أعضاء هيئة التدريس وبناء قاعدة بياناتهم",
+  "Introduce the Faculty Research Fellowships": "إطلاق زمالات البحث مع أعضاء هيئة التدريس",
+  "Grow & sustain": "التوسّع والاستدامة",
+  "Launch the Ambassador Program": "إطلاق برنامج السفراء",
+  "Roll out the remaining programs": "إطلاق بقية البرامج",
+  "Build external academic partnerships": "بناء شراكات أكاديمية خارجية",
+  "Run interdisciplinary activities": "تنظيم أنشطة متعددة التخصصات",
+  "Find sponsors": "البحث عن رعاة",
+  "Measure our impact and improve": "قياس أثرنا والتحسين المستمر",
+
+  // team
+  "How we're organized": "كيف ننظّم عملنا",
   "Chair & Vice-Chair": "الرئيس ونائب الرئيس",
-  "Set the community's vision and strategy, lead the officers, and represent the community externally.": "يحددان رؤية المجتمع واستراتيجيته، ويقودان الفريق، ويمثّلان المجتمع خارجيًا.",
-  "Secretary / Treasurer": "السكرتير / أمين الصندوق",
-  "Keeps the community's records, membership data, budget, and financial reports.": "يحفظ سجلات المجتمع وبيانات العضوية والميزانية والتقارير المالية.",
+  "Set the direction and strategy, lead the officers, and represent the community.": "يحددان التوجه والاستراتيجية، ويقودان الفريق، ويمثّلان المجتمع.",
+  "Secretary / Treasurer": "السكرتير وأمين الصندوق",
+  "Keeps the records, membership data, budget, and financial reports.": "يتولى السجلات وبيانات العضوية والميزانية والتقارير المالية.",
   "Outreach Chair": "رئيس العلاقات الخارجية",
-  "Builds sponsorships and external partnerships, and connects with faculty, researchers, and research centers.": "يبني الرعايات والشراكات الخارجية، ويتواصل مع أعضاء هيئة التدريس والباحثين والمراكز البحثية.",
+  "Brings in sponsors and partners, and builds relationships with faculty, researchers, and research centers.": "يستقطب الرعاة والشركاء، ويبني العلاقات مع أعضاء هيئة التدريس والباحثين والمراكز البحثية.",
   "Media Chair": "رئيس الإعلام",
-  "Shapes the community's visual identity, social media, and campaigns, and highlights member achievements.": "يصوغ الهوية البصرية للمجتمع وحساباته على وسائل التواصل وحملاته، ويبرز إنجازات الأعضاء.",
+  "Runs our visual identity, social media, and campaigns, and shares member achievements.": "يدير هويتنا البصرية وحساباتنا على وسائل التواصل وحملاتنا، وينشر إنجازات الأعضاء.",
   "Webmaster": "مسؤول الموقع",
   "Builds the website, forms, and tools, including the fellowship matching platform.": "يبني الموقع والنماذج والأدوات، ومنها منصة المطابقة لبرنامج الزمالات.",
   "Resources Chair": "رئيس المصادر",
-  "Curates internships, scholarships, grants, conferences, and research tools, and keeps them verified and up to date.": "يجمع فرص التدريب والمنح الدراسية والمنح البحثية والمؤتمرات وأدوات البحث، ويتحقق منها ويحدّثها باستمرار.",
-  "Join the community": "انضم إلى المجتمع",
+  "Finds internships, scholarships, grants, conferences, and research tools, and keeps the list accurate and up to date.": "يبحث عن فرص التدريب والمنح الدراسية والمنح البحثية والمؤتمرات وأدوات البحث، ويحرص على أن تكون القائمة دقيقة ومحدّثة.",
+
+  // join
   "Research is for anyone willing to learn.": "البحث العلمي لكل من يرغب في التعلّم.",
-  "Every discipline is welcome. Become a member and be part of the first cohort shaping the Research Community.": "جميع التخصصات مرحّب بها. انضم كعضو وكن جزءًا من الدفعة الأولى التي تشكّل مجتمع البحث العلمي.",
-  "Membership registration opening soon": "التسجيل في العضوية يفتح قريبًا",
-  "Achievements and impact will be shared here after launch.": "سنشارك الإنجازات والأثر هنا بعد الانطلاق.",
-  "Research Community – IEEE KAU Student Branch": "مجتمع البحث العلمي – فرع IEEE الطلابي بجامعة الملك عبدالعزيز",
-  "King Abdulaziz University, Jeddah": "جامعة الملك عبدالعزيز، جدة",
+  "Every major is welcome. Become a member and help shape the Research Community from day one.": "كل التخصصات مرحّب بها. انضم إلينا وشارك في تشكيل مجتمع البحث العلمي من يومه الأول.",
+  "Membership registration opens soon": "التسجيل في العضوية يفتح قريبًا",
+  "see you there :)": "نشوفكم هناك :)",
+  "We'll share our achievements and impact here after launch.": "سنشارك إنجازاتنا وأثرنا هنا بعد الانطلاق.",
+
   // attributes
   "Research Community home": "الصفحة الرئيسية لمجتمع البحث العلمي",
   "Open menu": "فتح القائمة",
