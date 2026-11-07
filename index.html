@@ -526,6 +526,60 @@ html[dir="rtl"] .recs a:hover .arrow{transform:scaleX(-1) translateX(3px)}
 .join .wrap{max-width:980px}
 
 @media (prefers-reduced-motion: reduce){.panel.on > *,.phase-panel ul:not([hidden]){animation:none}}
+/* ============ story: three-step arc ============ */
+.story{background:var(--soft);color:var(--text);padding:100px 0}
+.story .wrap{display:block}
+.arc{list-style:none;margin:36px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;position:relative}
+.arc::before{content:"";position:absolute;top:8px;left:0;right:0;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--line),var(--accent))}
+html[dir="rtl"] .arc::before{background:linear-gradient(270deg,var(--line),var(--accent))}
+.arc li{position:relative;padding-top:38px}
+.arc li::before{content:"";position:absolute;top:0;inset-inline-start:0;width:18px;height:18px;border-radius:50%;background:var(--soft);border:2px solid var(--accent);box-sizing:border-box}
+.arc li:nth-child(2)::before{background:color-mix(in srgb,var(--accent) 35%,var(--soft))}
+.arc li:last-child::before{background:var(--accent);box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 18%,transparent)}
+.arc .when{display:block;font-size:.74rem;font-weight:700;color:var(--muted);margin-bottom:8px;letter-spacing:.02em}
+.arc h3{font-size:1.3rem;font-weight:400;color:var(--ink);margin:0 0 .55em;letter-spacing:-.015em}
+.arc p{margin:0;color:var(--muted);font-size:.94rem;line-height:1.75}
+.arc li.rv{transition-delay:calc(var(--i,0) * 120ms)}
+html[lang="ar"] .arc h3{font-weight:700}
+@media (max-width:820px){
+  .arc{grid-template-columns:1fr;gap:34px}
+  .arc::before{top:0;bottom:0;left:auto;right:auto;inset-inline-start:8px;width:2px;height:auto;background:linear-gradient(180deg,var(--line),var(--accent))}
+  .arc li{padding-top:0;padding-inline-start:40px}
+  .arc li::before{top:4px}
+  .story{padding:72px 0}
+}
+/* section rhythm: navy / white / soft alternate */
+.finder{background:var(--bg)}
+.programs{background:var(--soft)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .programs .tile:not(.t-fr){background:rgba(7,24,96,.55)}}
+/* ============ shorter page ============ */
+.about,.story,.finder,.programs,.vm,.values,.plan,.team{padding:72px 0}
+.goals{padding:0 0 72px}
+.join{padding:84px 0 76px}
+.hero{min-height:86vh;min-height:86svh}
+.hero .wrap{padding-top:108px;padding-bottom:72px}
+.vm .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;max-width:1200px}
+.vm .item + .item{margin-top:0}
+.fill{font-size:clamp(1.1rem,1.75vw,1.4rem);line-height:1.55}
+.goal-list{grid-template-columns:repeat(3,1fr);gap:0 32px}
+.goal-list li{padding:14px 0}
+.bento{grid-auto-rows:minmax(140px,auto)}
+.tile{padding:20px}
+.arc{margin-top:28px}
+.chips{margin:22px 0 18px}
+.rail{margin:30px 0 18px}
+.org{margin-top:24px}
+.org-row{margin-top:50px}
+.ieee{margin-top:20px}
+@media (max-width:1000px){.goal-list{grid-template-columns:1fr 1fr}.vm .wrap{grid-template-columns:1fr;gap:40px}}
+@media (max-width:760px){
+  .about,.story,.finder,.programs,.vm,.values,.plan,.team{padding:56px 0}
+  .goals{padding-bottom:56px}
+  .join{padding:64px 0}
+  .goal-list{grid-template-columns:1fr}
+  .hero{min-height:auto}
+  .hero .wrap{padding-top:100px;padding-bottom:64px}
+}
 </style>
 </head>
 <body>
@@ -588,16 +642,12 @@ html[dir="rtl"] .recs a:hover .arrow{transform:scaleX(-1) translateX(3px)}
 <!-- ===== STORY ===== -->
 <section class="story" id="story">
   <div class="wrap">
-    <div class="pin">
-      <div class="label">Our story</div>
-      <div class="word" aria-hidden="true"><span class="on">curious</span><span>together</span><span>open</span></div>
-      <div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
-    </div>
-    <div class="chapters">
-      <div class="chapter on" data-w="0"><p>We started out curious about research, with no idea where to begin. Opportunities, resources, and guidance were hard to find, and research often felt overwhelming, or reserved for people who already had the experience or the right connections.</p></div>
-      <div class="chapter" data-w="1"><p>We realized we weren't the only ones. So we decided to build the community we wished we'd had: a place to learn about research, find opportunities, meet researchers, and grow together.</p></div>
-      <div class="chapter" data-w="2"><p>We believe research should be open to anyone willing to learn, whatever their background. Our goal is simple: make the first steps less intimidating and the rest of the way more doable.</p></div>
-    </div>
+    <h2 class="big rv">Our story</h2>
+    <ol class="arc">
+      <li class="rv"><span class="when">Where we started</span><h3>Curious, but stuck</h3><p>We started out curious about research, with no idea where to begin. Opportunities, resources, and guidance were hard to find, and research often felt overwhelming, or reserved for people who already had the experience or the right connections.</p></li>
+      <li class="rv"><span class="when">What we did</span><h3>So we built it</h3><p>We realized we weren't the only ones. So we decided to build the community we wished we'd had: a place to learn about research, find opportunities, meet researchers, and grow together.</p></li>
+      <li class="rv"><span class="when">What we believe</span><h3>Research for everyone</h3><p>We believe research should be open to anyone willing to learn, whatever their background. Our goal is simple: make the first steps less intimidating and the rest of the way more doable.</p></li>
+    </ol>
   </div>
 </section>
 
@@ -768,6 +818,7 @@ list.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { list
 
 // ---- reveal ----
 document.querySelectorAll('.stagger').forEach(g => [...g.children].forEach((c, i) => c.style.setProperty('--i', i)));
+document.querySelectorAll('.arc li').forEach((c, i) => c.style.setProperty('--i', i));
 const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => {
   if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
 }), { threshold: .12 }) : null;
@@ -880,6 +931,12 @@ document.querySelectorAll('.rv').forEach(el => io ? io.observe(el) : el.classLis
 
 // ---------- English / Arabic ----------
 const AR = {
+  "Where we started": "من أين بدأنا",
+  "What we did": "ماذا فعلنا",
+  "What we believe": "بماذا نؤمن",
+  "Curious, but stuck": "فضول بلا طريق",
+  "So we built it": "فبنينا ما كنا نحتاجه",
+  "Research for everyone": "البحث العلمي للجميع",
   "Workshops, mentors, and real research projects for students from every major at KAU.": "ورش عمل، ومرشدون، ومشاريع بحثية حقيقية لطلاب جميع التخصصات في جامعة الملك عبدالعزيز.",
   // v4 layout
   "Open to every major at KAU": "مفتوح لجميع التخصصات في جامعة الملك عبدالعزيز",
