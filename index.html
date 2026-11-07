@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research Community | IEEE KAU Student Branch</title>
+<meta name="description" content="A student-led community at King Abdulaziz University making the first steps into scientific research less intimidating and the journey beyond them more achievable.">
+<meta property="og:title" content="Research Community | IEEE KAU Student Branch">
+<meta property="og:description" content="We started as students looking for a way into research. Now, we're building that way for others.">
+<meta name="theme-color" content="#0b1d3a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1d3a'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23f2a93b'/%3E%3Cellipse cx='32' cy='32' rx='22' ry='9' fill='none' stroke='%23fff' stroke-width='3'/%3E%3Cellipse cx='32' cy='32' rx='22' ry='9' fill='none' stroke='%23fff' stroke-width='3' transform='rotate(60 32 32)'/%3E%3Cellipse cx='32' cy='32' rx='22' ry='9' fill='none' stroke='%23fff' stroke-width='3' transform='rotate(120 32 32)'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0b1d3a; --ink-2:#2a3b57; --muted:#5b6880;
+  --paper:#f7f4ee; --card:#ffffff; --line:#e3ddd1;
+  --accent:#f2a93b; --accent-ink:#8a5200; --blue:#2f6fd6;
+  --hero-bg:#0b1d3a; --hero-ink:#f7f4ee;
+  --radius:18px; --max:1120px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#eef1f7; --ink-2:#c9d1df; --muted:#93a0b6;
+    --paper:#0a1220; --card:#121c2e; --line:#223049;
+    --accent:#f2a93b; --accent-ink:#f2c47a; --blue:#7aa7ff;
+    --hero-bg:#060c17; --hero-ink:#eef1f7;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;margin:0 0 .5em;letter-spacing:-.01em}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:600}
+h3{font-size:1.2rem;font-weight:600}
+p{margin:0 0 1em}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+section{padding:96px 0}
+.eyebrow{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:14px}
+.lead{font-size:1.15rem;color:var(--ink-2);max-width:62ch}
+
+/* nav */
+header.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--hero-bg) 88%,transparent);backdrop-filter:blur(10px);color:var(--hero-ink);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:600}
+.brand svg{flex:none}
+.brand small{display:block;font-weight:400;opacity:.7;font-size:.75rem;line-height:1}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:.92rem}
+.nav ul a{text-decoration:none;opacity:.8}
+.nav ul a:hover{opacity:1}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:600;text-decoration:none;border:0;cursor:pointer;font-size:.95rem;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-accent{background:var(--accent);color:#1d1203;box-shadow:0 6px 20px rgba(242,169,59,.3)}
+.btn-ghost{border:1px solid rgba(255,255,255,.3);color:var(--hero-ink)}
+.nav .btn{padding:8px 16px}
+.menu{display:none;background:none;border:0;color:inherit;cursor:pointer;padding:6px}
+
+/* hero */
+.hero{background:var(--hero-bg);color:var(--hero-ink);position:relative;overflow:hidden;padding:110px 0 120px}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.55}
+.hero .wrap{position:relative}
+.hero .eyebrow{color:var(--accent)}
+.hero h1{font-size:clamp(2.4rem,7vw,4.8rem);font-weight:700;max-width:14ch}
+.hero h1 em{font-style:italic;color:var(--accent);font-weight:600}
+.hero p{font-size:1.2rem;max-width:56ch;opacity:.85}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.stats{display:flex;flex-wrap:wrap;gap:40px;margin-top:64px;padding-top:28px;border-top:1px solid rgba(255,255,255,.12)}
+.stats b{display:block;font-family:Fraunces,serif;font-size:2rem;color:var(--accent)}
+.stats span{font-size:.88rem;opacity:.75}
+
+/* about */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.quote{font-family:Fraunces,serif;font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.35;border-left:4px solid var(--accent);padding-left:24px;margin:28px 0 0;color:var(--ink)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.ieee-card h3{display:flex;align-items:center;gap:10px}
+
+/* audience */
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+.aud .num{font-family:Fraunces,serif;font-size:2.2rem;color:var(--accent);line-height:1;margin-bottom:12px}
+.aud p{color:var(--muted);font-size:.95rem;margin:0}
+
+/* vision */
+.vm{background:var(--card);border-block:1px solid var(--line)}
+.vm .two > div{padding:8px 0}
+.vm p{font-size:1.15rem;color:var(--ink-2)}
+.values{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px}
+.value{padding:22px;border-radius:var(--radius);background:var(--paper);border:1px solid var(--line)}
+.value svg{color:var(--blue);margin-bottom:12px}
+.value p{color:var(--muted);font-size:.93rem;margin:0}
+
+/* goals */
+.goals{list-style:none;padding:0;margin:40px 0 0;display:grid;grid-template-columns:repeat(2,1fr);gap:0 48px;counter-reset:g}
+.goals li{counter-increment:g;padding:20px 0 20px 56px;border-top:1px solid var(--line);position:relative}
+.goals li::before{content:counter(g,decimal-leading-zero);position:absolute;left:0;top:20px;font-family:Fraunces,serif;color:var(--accent-ink);font-weight:600}
+.goals b{display:block;margin-bottom:2px}
+.goals span{color:var(--muted);font-size:.95rem}
+
+/* programs */
+.programs{background:var(--hero-bg);color:var(--hero-ink)}
+.programs .eyebrow{color:var(--accent)}
+.programs .lead{color:inherit;opacity:.8}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:36px 0 26px}
+.tab{background:transparent;color:var(--hero-ink);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:9px 18px;font:inherit;font-size:.92rem;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--accent);color:#1d1203;border-color:var(--accent);font-weight:600}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.prog{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:28px;transition:border-color .2s}
+.prog:hover{border-color:rgba(242,169,59,.6)}
+.prog .tag{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.prog h3{margin-top:8px;font-size:1.35rem}
+.prog p{opacity:.78;font-size:.95rem;margin:0}
+.prog[hidden]{display:none}
+
+/* roadmap */
+.road{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px;position:relative}
+.phase{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;position:relative}
+.phase.now{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 25%,transparent)}
+.phase .ph{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.phase.now .ph::after{content:"  •  We are here";color:var(--accent-ink)}
+.phase h3{margin:6px 0 14px}
+.phase ul{margin:0;padding-left:18px;color:var(--muted);font-size:.92rem}
+.phase li{margin-bottom:6px}
+
+/* team */
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.role h3{margin-bottom:4px}
+.role .who{color:var(--accent-ink);font-weight:600;font-size:.92rem;margin-bottom:10px}
+.role p{color:var(--muted);font-size:.93rem;margin:0}
+
+/* join */
+.join{text-align:center}
+.join .card{padding:64px 28px;background:linear-gradient(135deg,var(--hero-bg),#173a72);color:var(--hero-ink);border:0}
+.join .lead{margin:0 auto 28px;color:inherit;opacity:.85}
+.join .note{font-size:.85rem;opacity:.65;margin-top:18px}
+
+footer{padding:40px 0;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media (max-width:960px){
+  .grid4,.values,.road{grid-template-columns:repeat(2,1fr)}
+  .team{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:760px){
+  section{padding:72px 0}
+  .two,.goals{grid-template-columns:1fr;gap:28px}
+  .nav ul{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0;background:var(--hero-bg);padding:8px 20px 16px}
+  .nav ul.open{display:flex}
+  .nav ul li a{display:block;padding:12px 0}
+  .menu{display:block}
+  .nav .btn{display:none}
+  .stats{gap:28px}
+}
+@media (max-width:520px){
+  .wrap{padding:0 16px}
+  .grid4,.values,.road,.team{grid-template-columns:1fr}
+  .hero{padding:80px 0 90px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Research Community home">
+      <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="6" fill="#f2a93b"/><g fill="none" stroke="currentColor" stroke-width="3"><ellipse cx="32" cy="32" rx="24" ry="9"/><ellipse cx="32" cy="32" rx="24" ry="9" transform="rotate(60 32 32)"/><ellipse cx="32" cy="32" rx="24" ry="9" transform="rotate(120 32 32)"/></g></svg>
+      <span>Research Community<small>IEEE KAU Student Branch</small></span>
+    </a>
+    <nav>
+      <ul id="navlist">
+        <li><a href="#about">About</a></li>
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="#team">Team</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-accent" href="#join">Join us</a>
+    <button class="menu" aria-label="Open menu" aria-expanded="false" aria-controls="navlist">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <span class="eyebrow">IEEE KAU Student Branch · King Abdulaziz University</span>
+    <h1>Your way <em>into</em> research starts here.</h1>
+    <p>We started as students looking for a way into research. Now, we're building that way for others: a student-led community where curiosity turns into skills, connections, and real contributions.</p>
+    <div class="ctas">
+      <a class="btn btn-accent" href="#join">Become a member →</a>
+      <a class="btn btn-ghost" href="#programs">Explore programs</a>
+    </div>
+    <div class="stats">
+      <div><b>8</b><span>Initiatives &amp; programs</span></div>
+      <div><b>4</b><span>Core values</span></div>
+      <div><b>All</b><span>Disciplines welcome</span></div>
+      <div><b>0</b><span>Experience required</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap two">
+    <div class="reveal">
+      <span class="eyebrow">Who we are</span>
+      <h2>A collaborative space for curious students.</h2>
+      <p class="lead">The IEEE KAU Student Branch Research Community is a student-led community at King Abdulaziz University that promotes scientific research and a research-oriented culture among students.</p>
+      <p>We give students a place to explore research interests, build research skills, and connect with peers, faculty, and researchers. Through workshops, collaborations, and curated resources, we help students take their first steps into research and turn their ideas into meaningful contributions.</p>
+      <div class="card ieee-card" style="margin-top:28px">
+        <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>About IEEE</h3>
+        <p style="margin:0;color:var(--muted)">IEEE (the Institute of Electrical and Electronics Engineers) is a global professional organization dedicated to advancing technology for the benefit of humanity. Through its student branches and technical communities, it helps students learn, collaborate, build skills, and connect with professionals and researchers worldwide.</p>
+      </div>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Our story</span>
+      <h2>We built the community we wished we had.</h2>
+      <p>We started as students who were curious about research but didn't know where to begin. Opportunities, resources, and guidance weren't always easy to find. Research often felt overwhelming, and at times out of reach for students without the experience or connections to get started.</p>
+      <p>We weren't alone in that. So we built a space where students can learn about research, discover opportunities, connect with researchers, and grow together.</p>
+      <p>Research should be open to anyone willing to learn, whatever their background or prior experience. Our goal is to make the first steps less intimidating and the journey after them more achievable.</p>
+      <blockquote class="quote">“We started as students looking for a way into research. Now, we're building that way for others.”</blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="audience" style="padding-top:0">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Who it's for</span>
+      <h2>Wherever you are on the journey.</h2>
+    </div>
+    <div class="grid4">
+      <div class="card aud reveal"><div class="num">01</div><h3>New to research</h3><p>Interested in research but unsure where to start or how to get involved.</p></div>
+      <div class="card aud reveal"><div class="num">02</div><h3>Aspiring researchers</h3><p>Looking to develop research skills, explore scientific fields, and discover academic opportunities.</p></div>
+      <div class="card aud reveal"><div class="num">03</div><h3>Research-active</h3><p>Seeking mentorship, collaboration, further development, and chances to share your work.</p></div>
+      <div class="card aud reveal"><div class="num">04</div><h3>Interdisciplinary</h3><p>Eager to connect with people from other disciplines and explore ideas beyond your own field.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="vision" class="vm">
+  <div class="wrap">
+    <div class="two">
+      <div class="reveal">
+        <span class="eyebrow">Our vision</span>
+        <h2>Connecting aspiring researchers everywhere.</h2>
+        <p>To become a leading research community that connects aspiring researchers across disciplines and empowers students worldwide to explore and contribute to scientific research.</p>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Our mission</span>
+        <h2>A supportive environment to grow.</h2>
+        <p>To build a supportive, collaborative research environment: equipping students with essential research skills, connecting them with researchers and opportunities, fostering interdisciplinary collaboration, and providing the resources and guidance they need to grow as researchers.</p>
+      </div>
+    </div>
+    <div class="values">
+      <div class="value reveal">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg>
+        <h3>Innovation &amp; Creativity</h3><p>Encouraging curiosity, critical thinking, and original approaches to research challenges.</p>
+      </div>
+      <div class="value reveal">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20c.5-3.5 3.2-6 6.5-6s6 2.5 6.5 6M15 14.5c3 0 5.5 2 6 5"/></svg>
+        <h3>Collaboration &amp; Teamwork</h3><p>Building partnerships and sharing knowledge to reach common research goals.</p>
+      </div>
+      <div class="value reveal">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8M14 7h7v7"/></svg>
+        <h3>Continuous Learning</h3><p>Supporting lifelong learning and the ongoing growth of research skills.</p>
+      </div>
+      <div class="value reveal">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9.3-9A5.2 5.2 0 0 1 12 6.5 5.2 5.2 0 0 1 21.3 12C19 16.5 12 21 12 21z"/></svg>
+        <h3>Social Responsibility</h3><p>Promoting ethical research practices and research that benefits society.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="goals">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Goals &amp; objectives</span>
+      <h2>What we set out to do.</h2>
+    </div>
+    <ol class="goals">
+      <li class="reveal"><b>Promote research literacy</b><span>Teach research fundamentals, methodologies, and scientific thinking.</span></li>
+      <li class="reveal"><b>Develop research skills</b><span>Workshops, lectures, and practical sessions on academic writing, literature reviews, methodology, and scientific communication.</span></li>
+      <li class="reveal"><b>Facilitate collaboration</b><span>Connect students with peers, faculty, and researchers for interdisciplinary projects and knowledge exchange.</span></li>
+      <li class="reveal"><b>Bridge students to opportunities</b><span>Help students find research projects, mentorships, and programs.</span></li>
+      <li class="reveal"><b>Support research development</b><span>Help students refine ideas and proposals and work toward publishable research.</span></li>
+      <li class="reveal"><b>Build a shared resource hub</b><span>Curate research tools, databases, learning materials, and funding opportunities.</span></li>
+      <li class="reveal"><b>Sustain the community</b><span>Encourage members to share knowledge, mentor new researchers, and keep a culture of collaboration alive.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section id="programs" class="programs">
+  <div class="wrap">
+    <span class="eyebrow">Initiatives &amp; programs</span>
+    <h2>Ways to get involved.</h2>
+    <p class="lead">From your first workshop to your first publication, there's a program for every step.</p>
+    <div class="tabs" role="tablist" aria-label="Filter programs">
+      <button class="tab" role="tab" aria-selected="true" data-f="all">All</button>
+      <button class="tab" role="tab" aria-selected="false" data-f="fellow">Fellowships &amp; Grants</button>
+      <button class="tab" role="tab" aria-selected="false" data-f="skills">Development &amp; Skills</button>
+      <button class="tab" role="tab" aria-selected="false" data-f="hub">Hub</button>
+      <button class="tab" role="tab" aria-selected="false" data-f="engage">Community</button>
+    </div>
+    <div class="pgrid">
+      <article class="prog" data-c="fellow"><span class="tag">Fellowships &amp; Grants</span><h3>Faculty Research Fellowships</h3><p>Connects students with faculty and researchers looking for student collaborators on ongoing projects.</p></article>
+      <article class="prog" data-c="skills"><span class="tag">Development &amp; Skills</span><h3>Research Methods Bootcamp</h3><p>Lab safety, hands-on wet-lab techniques, statistics and plots, publishing as an undergrad, writing papers and abstracts, poster design, and presentation skills.</p></article>
+      <article class="prog" data-c="skills"><span class="tag">Development &amp; Skills</span><h3>Academia Talk, ON!</h3><p>Online and in-person talks, specialized and multidisciplinary, with guest speakers from academia and industry.</p></article>
+      <article class="prog" data-c="hub"><span class="tag">Hub</span><h3>TheRepository</h3><p>One central collection of databases, tools, scholarships, conferences, internships, and programs.</p></article>
+      <article class="prog" data-c="hub"><span class="tag">Hub</span><h3>ResearchDigest</h3><p>A bi-weekly newsletter with upcoming events, national conferences, research opportunities, science news, member and faculty features, and research tips.</p></article>
+      <article class="prog" data-c="hub"><span class="tag">Hub</span><h3>OnlineHub</h3><p>An online space where members share opportunities, resources, questions, and announcements across disciplines.</p></article>
+      <article class="prog" data-c="engage"><span class="tag">Community</span><h3>PaperCafé</h3><p>A relaxed paper club, like a book club for science. Over food and drinks, members present a paper they chose and the group discusses it. A new theme or format every time.</p></article>
+      <article class="prog" data-c="engage"><span class="tag">Community</span><h3>Ambassadors</h3><p>Motivated students who represent the community, promote its goals across campus, and connect us with new audiences.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="roadmap">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Strategic plan</span>
+      <h2>Where we're headed.</h2>
+      <p class="lead">We're just getting started. Here's how the community grows from launch to long-term sustainability.</p>
+    </div>
+    <div class="road">
+      <div class="phase now reveal"><div class="ph">Phase 1</div><h3>Set up &amp; launch</h3><ul><li>Membership registration</li><li>Landing page &amp; introduction</li><li>Membership database</li><li>Marketing plan</li><li>Development week participation</li></ul></div>
+      <div class="phase reveal"><div class="ph">Phase 2</div><h3>Build the infrastructure</h3><ul><li>Launch TheRepository</li><li>Establish the OnlineHub</li><li>Develop the Research Bootcamp curriculum</li><li>Start Fellowships &amp; Grants</li></ul></div>
+      <div class="phase reveal"><div class="ph">Phase 3</div><h3>Activate the community</h3><ul><li>First Research Bootcamp</li><li>First PaperCafé</li><li>Launch Academia Talk, ON!</li><li>Faculty outreach &amp; database</li><li>Faculty Research Fellowships</li></ul></div>
+      <div class="phase reveal"><div class="ph">Phase 4</div><h3>Expand &amp; sustain</h3><ul><li>Ambassador Program</li><li>Remaining initiatives</li><li>External academic partnerships</li><li>Interdisciplinary activities</li><li>Sponsorships</li><li>Impact evaluation</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="team" style="padding-top:0">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Organizational structure</span>
+      <h2>The team behind it.</h2>
+    </div>
+    <div class="team">
+      <div class="card role reveal"><h3>Chair &amp; Vice-Chair</h3><div class="who">Lamis Al Ali &amp; Dana</div><p>Set the community's vision and strategy, lead the officers, and represent the community externally.</p></div>
+      <div class="card role reveal"><h3>Secretary / Treasurer</h3><p>Keeps the community's records, membership data, budget, and financial reports.</p></div>
+      <div class="card role reveal"><h3>Outreach Chair</h3><p>Builds sponsorships and external partnerships, and connects with faculty, researchers, and research centers.</p></div>
+      <div class="card role reveal"><h3>Media Chair</h3><p>Shapes the community's visual identity, social media, and campaigns, and highlights member achievements.</p></div>
+      <div class="card role reveal"><h3>Webmaster</h3><p>Builds the website, forms, and tools, including the fellowship matching platform.</p></div>
+      <div class="card role reveal"><h3>Resources Chair</h3><p>Curates internships, scholarships, grants, conferences, and research tools, and keeps them verified and up to date.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="join" class="join" style="padding-top:0">
+  <div class="wrap">
+    <div class="card reveal">
+      <span class="eyebrow" style="color:var(--accent)">Join the community</span>
+      <h2>Research is for anyone willing to learn.</h2>
+      <p class="lead">No experience needed and every discipline is welcome. Become a member and be part of the first cohort shaping the Research Community.</p>
+      <!-- Replace href below with the membership registration form link when it's ready -->
+      <a class="btn btn-accent" id="join-btn" href="#join">Membership registration opening soon</a>
+      <p class="note">Achievements and impact will be shared here after launch.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Research Community · IEEE KAU Student Branch</span>
+    <span>King Abdulaziz University, Jeddah</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// mobile menu
+const menu = document.querySelector('.menu'), list = document.getElementById('navlist');
+menu.addEventListener('click', () => {
+  const open = list.classList.toggle('open');
+  menu.setAttribute('aria-expanded', open);
+});
+list.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { list.classList.remove('open'); menu.setAttribute('aria-expanded', false); }));
+
+// program filter
+const tabs = document.querySelectorAll('.tab'), progs = document.querySelectorAll('.prog');
+tabs.forEach(t => t.addEventListener('click', () => {
+  tabs.forEach(x => x.setAttribute('aria-selected', x === t));
+  progs.forEach(p => p.hidden = !(t.dataset.f === 'all' || p.dataset.c === t.dataset.f));
+}));
+
+// reveal on scroll
+const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+}), { threshold: .12 }) : null;
+document.querySelectorAll('.reveal').forEach(el => io ? io.observe(el) : el.classList.add('in'));
+
+// hero network animation
+(() => {
+  const c = document.getElementById('net'), ctx = c.getContext('2d');
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let w, h, pts = [], dpr = Math.min(devicePixelRatio || 1, 2);
+  function size() {
+    w = c.offsetWidth; h = c.offsetHeight;
+    c.width = w * dpr; c.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const n = Math.round(Math.min(90, w * h / 14000));
+    pts = Array.from({ length: n }, () => ({ x: Math.random() * w, y: Math.random() * h, vx: (Math.random() - .5) * .3, vy: (Math.random() - .5) * .3, a: Math.random() < .12 }));
+  }
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    for (let i = 0; i < pts.length; i++) {
+      const p = pts[i];
+      if (!still) { p.x += p.vx; p.y += p.vy; if (p.x < 0 || p.x > w) p.vx *= -1; if (p.y < 0 || p.y > h) p.vy *= -1; }
+      for (let j = i + 1; j < pts.length; j++) {
+        const q = pts[j], d = Math.hypot(p.x - q.x, p.y - q.y);
+        if (d < 130) { ctx.strokeStyle = `rgba(150,180,230,${(1 - d / 130) * .35})`; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.stroke(); }
+      }
+      ctx.fillStyle = p.a ? '#f2a93b' : 'rgba(200,215,240,.8)';
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.a ? 3 : 1.8, 0, 7); ctx.fill();
+    }
+    if (!still) requestAnimationFrame(draw);
+  }
+  size(); draw(); addEventListener('resize', () => { size(); if (still) draw(); });
+})();
+</script>
+</body>
+</html>
