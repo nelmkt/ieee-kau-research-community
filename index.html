@@ -48,7 +48,6 @@ section:not(.hero){padding:var(--sec) 0}
 .big{font-size:clamp(1.6rem,3vw,2.25rem);line-height:1.2;margin-bottom:.35em}
 .lead{font-size:1rem;line-height:1.7;color:var(--muted);max-width:60ch}
 
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);transition:transform .28s var(--ease),box-shadow .28s var(--ease),border-color .25s}
 .tile,.val,.node-card,.result,.phase-panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);transition:transform .28s var(--ease),box-shadow .28s var(--ease),border-color .25s}
 .tile:hover,.val:hover,.node-card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:var(--shadow)}
 .tile p,.val p,.node-card p{font-size:.86rem;line-height:1.6;color:var(--muted)}
@@ -228,6 +227,19 @@ html[lang="ar"] .tile h3{text-align:right}
 .o1{width:320px;height:320px;background:rgba(1,45,193,.35);inset-inline-end:-120px;top:-140px}
 .o2{width:200px;height:200px;background:rgba(152,171,230,.12);inset-inline-end:180px;bottom:-110px}
 
+details>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:700;color:var(--ink)}
+details>summary::-webkit-details-marker{display:none}
+details>summary::after{content:"";flex:none;width:7px;height:7px;margin-top:-4px;border-right:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(45deg);transition:transform .25s var(--ease),margin .25s}
+details[open]>summary::after{transform:rotate(-135deg);margin-top:3px}
+details>p{margin-top:8px;font-size:.86rem;line-height:1.6;color:var(--muted);animation:fadein .3s var(--ease)}
+.ieee{padding:12px 16px}
+.ieee summary{font-size:.86rem}
+.goal-list li{align-items:start}
+.goal-list summary{font-size:.95rem;font-weight:700}
+.goal-list li:hover summary{color:var(--accent)}
+.org-row .node-card{padding:14px 16px}
+.org-row .node-card summary{font-size:.9rem}
+.org-row .node-card[open]{border-color:var(--accent)}
 .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .rv.in{opacity:1;transform:none}
 .stagger > *,.arc li{transition-delay:calc(var(--i,0) * 90ms)}
@@ -325,10 +337,7 @@ html[lang="ar"] .join h2{line-height:1.25}
     </div>
     <div class="rv">
       <p class="lead">We give students a space to explore what interests them, learn how research actually works, and meet peers, faculty, and researchers. Through workshops, collaborations, and shared resources, we help turn early ideas into real contributions.</p>
-      <div class="ieee">
-        <b>About IEEE</b>
-        <span>IEEE (the Institute of Electrical and Electronics Engineers) is a global professional organization that works to advance technology for the benefit of humanity. Its student branches and technical communities help students learn, work together, build skills, and connect with professionals and researchers around the world.</span>
-      </div>
+      <details class="ieee"><summary>About IEEE</summary><p>IEEE (the Institute of Electrical and Electronics Engineers) is a global professional organization that works to advance technology for the benefit of humanity. Its student branches and technical communities help students learn, work together, build skills, and connect with professionals and researchers around the world.</p></details>
     </div>
   </div>
 </section>
@@ -429,13 +438,13 @@ html[lang="ar"] .join h2{line-height:1.25}
   <div class="wrap">
     <h2 class="big rv">What we want to do</h2>
     <ul class="goal-list">
-      <li class="rv"><div><b>Promote research literacy</b><span>Teach the basics of research, its methods, and scientific thinking.</span></div></li>
-      <li class="rv"><div><b>Develop research skills</b><span>Run workshops, talks, and hands-on sessions on academic writing, literature reviews, methodology, and science communication.</span></div></li>
-      <li class="rv"><div><b>Make collaboration easier</b><span>Connect students with peers, faculty, and researchers for interdisciplinary projects.</span></div></li>
-      <li class="rv"><div><b>Open doors to opportunities</b><span>Help students find research projects, mentors, and programs.</span></div></li>
-      <li class="rv"><div><b>Support research development</b><span>Help students sharpen their ideas and proposals and work toward publishable research.</span></div></li>
-      <li class="rv"><div><b>Build a shared resource hub</b><span>Collect research tools, databases, learning materials, and funding opportunities in one place.</span></div></li>
-      <li class="rv"><div><b>Keep the community going</b><span>Encourage members to share what they know, mentor newer researchers, and keep the culture of collaboration alive.</span></div></li>
+      <li class="rv"><details><summary>Promote research literacy</summary><p>Teach the basics of research, its methods, and scientific thinking.</p></details></li>
+      <li class="rv"><details><summary>Develop research skills</summary><p>Run workshops, talks, and hands-on sessions on academic writing, literature reviews, methodology, and science communication.</p></details></li>
+      <li class="rv"><details><summary>Make collaboration easier</summary><p>Connect students with peers, faculty, and researchers for interdisciplinary projects.</p></details></li>
+      <li class="rv"><details><summary>Open doors to opportunities</summary><p>Help students find research projects, mentors, and programs.</p></details></li>
+      <li class="rv"><details><summary>Support research development</summary><p>Help students sharpen their ideas and proposals and work toward publishable research.</p></details></li>
+      <li class="rv"><details><summary>Build a shared resource hub</summary><p>Collect research tools, databases, learning materials, and funding opportunities in one place.</p></details></li>
+      <li class="rv"><details><summary>Keep the community going</summary><p>Encourage members to share what they know, mentor newer researchers, and keep the culture of collaboration alive.</p></details></li>
     </ul>
   </div>
 </section>
@@ -465,11 +474,11 @@ html[lang="ar"] .join h2{line-height:1.25}
     <div class="org">
       <div class="node-card org-top rv"><h3>Chair &amp; Vice-Chair</h3><p>Set the direction and strategy, lead the officers, and represent the community.</p></div>
       <div class="org-row stagger">
-        <div class="node-card rv"><h3>Secretary / Treasurer</h3><p>Keeps the records, membership data, budget, and financial reports.</p></div>
-        <div class="node-card rv"><h3>Outreach Chair</h3><p>Brings in sponsors and partners, and builds relationships with faculty, researchers, and research centers.</p></div>
-        <div class="node-card rv"><h3>Media Chair</h3><p>Runs our visual identity, social media, and campaigns, and shares member achievements.</p></div>
-        <div class="node-card rv"><h3>Webmaster</h3><p>Builds the website, forms, and tools, including the fellowship matching platform.</p></div>
-        <div class="node-card rv"><h3>Resources Chair</h3><p>Finds internships, scholarships, grants, conferences, and research tools, and keeps the list accurate and up to date.</p></div>
+        <details class="node-card rv"><summary>Secretary / Treasurer</summary><p>Keeps the records, membership data, budget, and financial reports.</p></details>
+        <details class="node-card rv"><summary>Outreach Chair</summary><p>Brings in sponsors and partners, and builds relationships with faculty, researchers, and research centers.</p></details>
+        <details class="node-card rv"><summary>Media Chair</summary><p>Runs our visual identity, social media, and campaigns, and shares member achievements.</p></details>
+        <details class="node-card rv"><summary>Webmaster</summary><p>Builds the website, forms, and tools, including the fellowship matching platform.</p></details>
+        <details class="node-card rv"><summary>Resources Chair</summary><p>Finds internships, scholarships, grants, conferences, and research tools, and keeps the list accurate and up to date.</p></details>
       </div>
     </div>
   </div>
@@ -511,8 +520,8 @@ document.querySelectorAll('.rv').forEach(el => io ? io.observe(el) : el.classLis
   const cols = ['#98ABE6', '#98ABE6', '#E7EAF9', '#9CFFC9', '#FFC93C'];
   function size() {
     w = c.offsetWidth; h = c.offsetHeight; c.width = w * dpr; c.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const n = Math.round(Math.min(140, w * h / 9000));
-    pts = Array.from({ length: n }, () => ({ x: Math.random() * w, y: Math.random() * h, vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35, r: Math.random() * 1.6 + .8, c: cols[Math.floor(Math.random() * cols.length)] }));
+    const n = Math.round(Math.min(70, w * h / 18000));
+    pts = Array.from({ length: n }, () => ({ x: Math.random() * w, y: Math.random() * h, vx: (Math.random() - .5) * .18, vy: (Math.random() - .5) * .18, r: Math.random() * 1.6 + .8, c: cols[Math.floor(Math.random() * cols.length)] }));
   }
   hero.addEventListener('pointermove', e => { const b = c.getBoundingClientRect(); mouse.x = e.clientX - b.left; mouse.y = e.clientY - b.top; });
   hero.addEventListener('pointerleave', () => { mouse.x = mouse.y = -999; });
@@ -522,36 +531,29 @@ document.querySelectorAll('.rv').forEach(el => io ? io.observe(el) : el.classLis
     for (const p of pts) {
       if (!reduce) {
         const dx = p.x - mouse.x, dy = p.y - mouse.y, d = Math.hypot(dx, dy);
-        if (d < 140) { p.vx += dx / d * .06; p.vy += dy / d * .06; }
+        if (d < 140) { p.vx += dx / d * .025; p.vy += dy / d * .025; }
         p.vx *= .985; p.vy *= .985;
-        p.vx += (Math.random() - .5) * .02; p.vy += (Math.random() - .5) * .02;
+        p.vx += (Math.random() - .5) * .01; p.vy += (Math.random() - .5) * .01;
         p.x += p.vx; p.y += p.vy;
         if (p.x < 0 || p.x > w) p.vx *= -1; if (p.y < 0 || p.y > h) p.vy *= -1;
       }
     }
     for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) {
       const a = pts[i], b = pts[j], d = Math.hypot(a.x - b.x, a.y - b.y);
-      if (d < 120) { ctx.strokeStyle = `rgba(152,171,230,${(1 - d / 120) * .28})`; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
+      if (d < 120) { ctx.strokeStyle = `rgba(152,171,230,${(1 - d / 120) * .14})`; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
     }
     for (const p of pts) {
       const near = Math.hypot(p.x - mouse.x, p.y - mouse.y) < 160;
-      ctx.fillStyle = p.c; ctx.globalAlpha = near ? 1 : .75;
+      ctx.fillStyle = p.c; ctx.globalAlpha = near ? .9 : .5;
       ctx.beginPath(); ctx.arc(p.x, p.y, near ? p.r + 1.2 : p.r, 0, 7); ctx.fill();
     }
     ctx.globalAlpha = 1;
     if (mouse.x > 0) {
-      for (const p of pts) { const d = Math.hypot(p.x - mouse.x, p.y - mouse.y); if (d < 160) { ctx.strokeStyle = `rgba(255,201,60,${(1 - d / 160) * .5})`; ctx.beginPath(); ctx.moveTo(mouse.x, mouse.y); ctx.lineTo(p.x, p.y); ctx.stroke(); } }
+      for (const p of pts) { const d = Math.hypot(p.x - mouse.x, p.y - mouse.y); if (d < 160) { ctx.strokeStyle = `rgba(255,201,60,${(1 - d / 160) * .22})`; ctx.beginPath(); ctx.moveTo(mouse.x, mouse.y); ctx.lineTo(p.x, p.y); ctx.stroke(); } }
     }
     if (running && !reduce) requestAnimationFrame(draw);
   }
   size(); draw(); addEventListener('resize', () => { size(); if (reduce) draw(); });
-})();
-
-(() => {
-  const words = document.querySelectorAll('.word span'), dots = document.querySelectorAll('.dots i'), chs = document.querySelectorAll('.chapter');
-  const set = i => { words.forEach((w, k) => w.classList.toggle('on', k === i)); dots.forEach((d, k) => d.classList.toggle('on', k === i)); chs.forEach((c, k) => c.classList.toggle('on', k === i)); };
-  const ob = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) set(+e.target.dataset.w); }), { rootMargin: '-45% 0px -45% 0px' });
-  chs.forEach(c => ob.observe(c));
 })();
 
 (() => {
@@ -611,29 +613,10 @@ const AR = {
   "So we built it": "فبنينا ما كنا نحتاجه",
   "Research for everyone": "البحث العلمي للجميع",
   "Workshops, mentors, and real research projects for students from every major at KAU.": "ورش عمل، ومرشدون، ومشاريع بحثية حقيقية لطلاب جميع التخصصات في جامعة الملك عبدالعزيز.",
-  "Open to every major at KAU": "مفتوح لجميع التخصصات في جامعة الملك عبدالعزيز",
   "Start here": "ابدأ من هنا",
   "Find your starting point": "اكتشف نقطة انطلاقك",
   "Tell us where you are, and we'll point you to the programs that fit.": "أخبرنا أين أنت الآن، وسنرشدك إلى البرامج التي تناسبك.",
   "Recommended for you": "مقترح لك",
-  "Every major is welcome": "كل التخصصات مرحّب بها",
-  "Medicine": "الطب",
-  "Engineering": "الهندسة",
-  "Computer Science": "علوم الحاسب",
-  "Biology": "الأحياء",
-  "Chemistry": "الكيمياء",
-  "Physics": "الفيزياء",
-  "Mathematics": "الرياضيات",
-  "Pharmacy": "الصيدلة",
-  "Marine Sciences": "علوم البحار",
-  "Earth Sciences": "علوم الأرض",
-  "Economics": "الاقتصاد",
-  "Dentistry": "طب الأسنان",
-  "Nursing": "التمريض",
-  "Design": "التصميم",
-  "curious": "فضول",
-  "together": "معًا",
-  "open": "للجميع",
   "Our values": "قيمنا",
   "now": "الآن",
 
@@ -650,9 +633,6 @@ const AR = {
   "Join us": "انضم إلينا",
 
   "Now we're building that way for others.": "واليوم نمهّد هذا الطريق لغيرنا.",
-  "We're a student-led research community in the IEEE Student Branch at King Abdulaziz University. We help students take their first steps into research, pick up the skills they need, and meet the people who can help them along the way.": "نحن مجتمع بحثي يقوده الطلاب ضمن فرع IEEE الطلابي في جامعة الملك عبدالعزيز. نساعد الطلاب على خطواتهم الأولى في البحث العلمي، ونكسبهم المهارات التي يحتاجونها، ونعرّفهم على من يمكنه دعمهم في الطريق.",
-  "See our programs": "تعرّف على برامجنا",
-  "every major is welcome!": "كل التخصصات مرحّب بها!",
 
   "Who we are": "من نحن",
   "The Research Community is a student-led group within the IEEE KAU Student Branch. We're here to make research a normal part of student life at King Abdulaziz University.": "مجتمع البحث العلمي مجموعة يقودها الطلاب ضمن فرع IEEE الطلابي بجامعة الملك عبدالعزيز. هدفنا أن يصبح البحث العلمي جزءًا طبيعيًا من حياة الطالب الجامعية.",
@@ -704,7 +684,6 @@ const AR = {
   "Encourage members to share what they know, mentor newer researchers, and keep the culture of collaboration alive.": "تشجيع الأعضاء على مشاركة معرفتهم، وإرشاد الباحثين الجدد، والحفاظ على روح التعاون.",
 
   "From your first workshop to your first paper, there's something for every stage.": "من ورشتك الأولى إلى أول ورقة بحثية لك، هناك ما يناسب كل مرحلة.",
-  "All": "الكل",
   "Fellowships & Grants": "الزمالات والمنح",
   "Development & Skills": "التطوير والمهارات",
   "Hub": "المركز",
@@ -769,12 +748,10 @@ const AR = {
   "Research is for anyone willing to learn.": "البحث العلمي لكل من يرغب في التعلّم.",
   "Every major is welcome. Become a member and help shape the Research Community from day one.": "كل التخصصات مرحّب بها. انضم إلينا وشارك في تشكيل مجتمع البحث العلمي من يومه الأول.",
   "Membership registration opens soon": "التسجيل في العضوية يفتح قريبًا",
-  "see you there :)": "نشوفكم هناك :)",
   "We'll share our achievements and impact here after launch.": "سنشارك إنجازاتنا وأثرنا هنا بعد الانطلاق.",
 
   "Research Community home": "الصفحة الرئيسية لمجتمع البحث العلمي",
   "Open menu": "فتح القائمة",
-  "Filter programs": "تصفية البرامج",
   "Switch to Arabic": "التبديل إلى الإنجليزية"
 };
 const ATTRS = ['aria-label', 'content'];
