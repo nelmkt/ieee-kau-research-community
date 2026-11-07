@@ -113,9 +113,8 @@ html[lang="ar"] .phase.now .ph::after{content:"جارٍ الآن";font-family:Al
 .value p{color:var(--muted);font-size:.9rem;margin:0}
 
 /* goals */
-.goals{list-style:none;padding:0;margin:40px 0 0;display:grid;grid-template-columns:repeat(2,1fr);gap:0 48px;counter-reset:g}
-.goals li{counter-increment:g;padding-block:20px;padding-inline:56px 0;border-top:1px solid var(--line);position:relative}
-.goals li::before{content:counter(g);position:absolute;inset-inline-start:0;top:20px;font-family:Verdana,Geneva,sans-serif;color:var(--accent);font-weight:700}
+.goals{list-style:none;padding:0;margin:40px 0 0;display:grid;grid-template-columns:repeat(2,1fr);gap:0 48px}
+.goals li{padding-block:20px;padding-inline:0;border-top:1px solid var(--line);position:relative}
 .goals b{display:block;margin-bottom:2px}
 .goals span{color:var(--muted);font-size:.92rem}
 
@@ -187,10 +186,7 @@ html[lang="ar"] .prog h3{text-align:right}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--grid:rgba(152,171,230,.06)}}
 
 /* numbered sections, like a paper */
-main{counter-reset:sec}
-section:not(.hero):not(.join) h2::before{counter-increment:sec;content:counter(sec);display:block;font:600 .78rem/1 var(--mono);color:var(--accent);letter-spacing:.06em;margin-bottom:8px}
 
-html[lang="ar"] section:not(.hero):not(.join) h2::before{direction:ltr;text-align:right}
 
 /* graph paper on tinted sections */
 .alt{background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:26px 26px;background-position:-1px -1px}
