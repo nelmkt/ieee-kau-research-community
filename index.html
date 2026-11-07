@@ -33,7 +33,7 @@ p{margin:0 0 1em}
 a{color:inherit}
 button{font:inherit;color:inherit}
 .wrap{max-width:1200px;margin:0 auto;padding:0 28px}
-.big{font-size:clamp(2rem,5vw,3.6rem)}
+.big{font-size:clamp(1.9rem,4vw,3rem)}
 .lead{font-size:1.12rem;color:var(--muted);max-width:60ch}
 section{position:relative}
 
@@ -83,7 +83,7 @@ html[dir="rtl"] .hero h1 .hl::after{transform-origin:right}
 /* ============ who we are ============ */
 .about{padding:130px 0 110px}
 .about .grid{display:grid;grid-template-columns:1.25fr 1fr;gap:72px;align-items:start}
-.about .statement{font-size:clamp(1.3rem,2.4vw,1.85rem);line-height:1.45;color:var(--ink);font-weight:700;letter-spacing:-.02em;margin:0}
+.about .statement{font-size:clamp(1.2rem,2vw,1.55rem);line-height:1.55;color:var(--ink);font-weight:400;letter-spacing:-.01em;margin:0;max-width:34ch}
 .about .statement em{font-style:normal;color:var(--accent)}
 .ieee{margin-top:28px;padding:20px 22px;border-radius:18px;background:var(--soft);font-size:.9rem;color:var(--muted)}
 .ieee b{display:block;color:var(--ink);margin-bottom:4px}
@@ -92,7 +92,7 @@ html[dir="rtl"] .hero h1 .hl::after{transform-origin:right}
 .story{background:var(--navy);color:var(--tint);padding:0}
 .story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px}
 .story .pin{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center}
-.story .label{color:var(--r3);font-size:.9rem;margin-bottom:10px}
+.story .label{color:var(--r3);font-size:1.05rem;font-weight:700;margin-bottom:6px}
 .word{position:relative;height:1.2em;font-size:clamp(3.2rem,9vw,7.5rem);font-weight:700;letter-spacing:-.04em;line-height:1.1}
 .word span{position:absolute;inset:0;opacity:0;transform:translateY(30px);transition:opacity .6s var(--ease),transform .6s var(--ease);white-space:nowrap}
 .word span.on{opacity:1;transform:none}
@@ -102,8 +102,8 @@ html[dir="rtl"] .hero h1 .hl::after{transform-origin:right}
 .dots{display:flex;gap:8px;margin-top:22px}
 .dots i{width:28px;height:4px;border-radius:4px;background:rgba(152,171,230,.3);transition:background .4s}
 .dots i.on{background:var(--gold)}
-.chapters{padding:30vh 0}
-.chapter{min-height:70vh;display:flex;align-items:center}
+.chapters{padding:22vh 0 16vh}
+.chapter{min-height:58vh;display:flex;align-items:center}
 .chapter p{font-size:clamp(1.15rem,2vw,1.45rem);line-height:1.6;color:#fff;opacity:.35;transition:opacity .5s}
 .chapter.on p{opacity:1}
 
@@ -145,7 +145,8 @@ html[lang="ar"] .tile h3{text-align:right}
 .t-rd{background:var(--navy);color:#fff}
 .t-oh{background:var(--r3);color:var(--navy)}
 .t-pc{grid-column:span 2;background:var(--mint);color:var(--navy)}
-.t-am{grid-column:span 2;background:var(--tint);color:var(--navy);border:1.5px solid var(--line)}
+.t-am{grid-column:span 4;background:var(--tint);color:var(--navy);border:1.5px solid var(--line);flex-direction:row;align-items:center;gap:40px;min-height:auto}
+.t-am > div{flex:1}.t-am p{flex:1.4}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .t-rd{background:#030b3a}:root:not([data-theme="light"]) .t-am{background:var(--soft);color:#fff}}
 .bento.filtering .tile{opacity:.28;filter:saturate(.4)}
 .bento.filtering .tile.match{opacity:1;filter:none;box-shadow:0 0 0 3px var(--bg),0 0 0 6px var(--accent)}
@@ -208,6 +209,7 @@ html[dir="rtl"] .rail::after{background:linear-gradient(270deg,var(--gold),var(-
 .node-card h3{font-size:1rem;margin-bottom:.35em}
 .node-card p{margin:0;font-size:.86rem;color:var(--muted);line-height:1.55}
 .org-top{max-width:440px;margin:0 auto;text-align:center;background:var(--navy);color:var(--tint)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .org-top{background:var(--deep);box-shadow:inset 0 0 0 1.5px var(--gold)}}
 .org-top h3{color:var(--gold)}
 .org-top p{color:var(--r3)}
 .org-top::after{content:"";position:absolute;left:50%;bottom:-30px;width:2px;height:30px;background:var(--line)}
@@ -253,6 +255,7 @@ html[lang="ar"] .join h2{line-height:1.2}
   .chapter{min-height:auto;padding:22px 0}
   .chapter p{opacity:1}
   .bento{grid-template-columns:1fr 1fr}
+  .t-am{grid-column:span 2;flex-direction:column;align-items:stretch;gap:0}
   .vals{grid-template-columns:1fr 1fr}
   .org-row{grid-template-columns:1fr 1fr;margin-top:14px}
   .org-row::before,.org-row .node-card::before,.org-top::after{display:none}
@@ -276,6 +279,8 @@ html[lang="ar"] .join h2{line-height:1.2}
   .about,.programs,.values,.team,.finder,.plan,.vm{padding:84px 0}
   .goals{padding-bottom:84px}
   .join{padding:96px 0}
+  .join .btn{width:100%;justify-content:center;padding:16px 14px;font-size:.86rem;white-space:nowrap}
+  .join .btn .arrow{display:none}
 }
 </style>
 </head>
