@@ -471,6 +471,61 @@ html[lang="ar"] .hero h1 .hl{font-weight:700}
 }
 @media (max-width:1000px){.chapter p{opacity:1}}
 @media (prefers-reduced-motion: reduce){.chapter p{opacity:1}}
+/* ============ polish ============ */
+::selection{background:#FFC93C;color:#071860}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.hero :focus-visible,.vm :focus-visible,.join :focus-visible,.top:not(.solid) :focus-visible{outline-color:var(--mint)}
+p,.lead{max-width:62ch}
+.big{margin-bottom:.45em}
+.lead{line-height:1.7}
+
+/* header */
+.top{transition:background .35s var(--ease),box-shadow .35s,color .35s,backdrop-filter .35s}
+.top.solid{box-shadow:0 1px 0 var(--line),0 8px 24px -18px rgba(7,24,96,.35)}
+.top nav a{position:relative;padding:4px 0;transition:opacity .2s,color .2s}
+.top nav a::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:2px;border-radius:2px;background:currentColor;transform:scaleX(0);transition:transform .3s var(--ease)}
+.top nav a:hover::after,.top nav a.active::after{transform:scaleX(1)}
+.top nav a.active{opacity:1;font-weight:700}
+.top.solid nav a.active{color:var(--accent)}
+
+/* hero edge */
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(to bottom,transparent,rgba(7,24,96,.65));pointer-events:none;z-index:1}
+
+/* consistent motion */
+.btn,.chip,.recs a,.tile,.val,.node-card,.stop .node,.lang{transition:transform .28s var(--ease),box-shadow .28s var(--ease),background-color .25s,border-color .25s,color .25s}
+.btn:active,.chip:active{transform:translateY(0) scale(.98)}
+.chip:hover{transform:translateY(-1px)}
+
+/* tiles */
+.tile::before{transform-origin:left;transition:transform .45s var(--ease),height .3s}
+html[dir="rtl"] .tile::before{transform-origin:right}
+.tile:hover{transform:translateY(-3px)}
+.tile:hover::before{height:4px}
+.tile h3{margin-top:2px}
+.t-fr::before{height:4px}
+
+/* finder result fades between choices */
+.panel.on > *{animation:fadein .4s var(--ease)}
+@keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.recs a .arrow{opacity:.55;transition:transform .25s var(--ease),opacity .25s}
+.recs a:hover .arrow{opacity:1;transform:translateX(3px)}
+html[dir="rtl"] .recs a:hover .arrow{transform:scaleX(-1) translateX(3px)}
+
+/* roadmap panel fade */
+.phase-panel ul:not([hidden]){animation:fadein .35s var(--ease)}
+.stop:hover .node{border-color:var(--accent)}
+
+/* cards */
+.val:hover,.node-card:hover{box-shadow:0 12px 28px -22px rgba(7,24,96,.45)}
+.ieee{border:1px solid var(--line)}
+
+/* vision / mission */
+.vm .wrap{max-width:980px}
+
+/* join */
+.join .wrap{max-width:980px}
+
+@media (prefers-reduced-motion: reduce){.panel.on > *,.phase-panel ul:not([hidden]){animation:none}}
 </style>
 </head>
 <body>
@@ -811,6 +866,16 @@ document.querySelectorAll('.rv').forEach(el => io ? io.observe(el) : el.classLis
   }));
   new IntersectionObserver(es => { if (es[0].isIntersecting) rail.style.setProperty('--prog', '.18'); }, { threshold: .5 }).observe(rail);
   rail.style.setProperty('--prog', '0');
+})();
+
+// ---- active section in the nav ----
+(() => {
+  const links = [...document.querySelectorAll('#navlist a')];
+  const map = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
+  const ob = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { links.forEach(a => a.classList.remove('active')); const a = map.get(e.target.id); if (a) a.classList.add('active'); }
+  }), { rootMargin: '-45% 0px -50% 0px' });
+  map.forEach((a, id) => { const el = document.getElementById(id); if (el) ob.observe(el); });
 })();
 
 // ---------- English / Arabic ----------
