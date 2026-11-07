@@ -71,7 +71,8 @@ html[dir="rtl"] .btn:hover .arrow{transform:scaleX(-1) translateX(4px)}
 .hero h1 .hl::after{content:"";position:absolute;left:0;right:0;bottom:-.06em;height:.055em;background:var(--gold);transform-origin:left;transform:scaleX(0);animation:line 1s var(--ease) 1.1s forwards;border-radius:2px}
 html[dir="rtl"] .hero h1 .hl::after{transform-origin:right}
 @keyframes line{to{transform:scaleX(1)}}
-.hero .sub{font-size:clamp(1.1rem,1.9vw,1.4rem);color:var(--mint);margin:0 0 1.8em;max-width:40ch}
+.hero .sub{font-size:clamp(1.02rem,1.5vw,1.2rem);line-height:1.65;color:rgba(231,234,249,.82);margin:0 0 2.1em;max-width:46ch}
+.hero .sub strong{display:block;color:var(--mint);font-size:1.15em;margin-bottom:.3em}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
 .hero .meta{margin-top:28px;font-size:.85rem;color:var(--r3)}
 .fade-up{opacity:0;transform:translateY(28px);animation:up 1s var(--ease) forwards}
@@ -310,12 +311,11 @@ html[lang="ar"] .join h2{line-height:1.2}
   <canvas id="field" aria-hidden="true"></canvas>
   <div class="wrap">
     <h1 class="fade-up" data-ar='بدأنا طلابًا نبحث عن طريقنا إلى <span class="hl">البحث العلمي</span>.'>We started as students looking for a way into <span class="hl">research</span>.</h1>
-    <p class="sub fade-up d1">Now we're building that way for others.</p>
+    <p class="sub fade-up d1"><strong>Now we're building that way for others.</strong> <span>Workshops, mentors, and real research projects for students from every major at KAU.</span></p>
     <div class="ctas fade-up d2">
       <a class="btn btn-gold" href="#join">Join us</a>
       <a class="btn btn-line" href="#start"><span>Find your starting point</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
     </div>
-    <p class="meta fade-up d3">Open to every major at KAU</p>
   </div>
 </section>
 
@@ -621,6 +621,7 @@ document.querySelectorAll('.rv').forEach(el => io ? io.observe(el) : el.classLis
 
 // ---------- English / Arabic ----------
 const AR = {
+  "Workshops, mentors, and real research projects for students from every major at KAU.": "ورش عمل، ومرشدون، ومشاريع بحثية حقيقية لطلاب جميع التخصصات في جامعة الملك عبدالعزيز.",
   // v4 layout
   "Open to every major at KAU": "مفتوح لجميع التخصصات في جامعة الملك عبدالعزيز",
   "Start here": "ابدأ من هنا",
