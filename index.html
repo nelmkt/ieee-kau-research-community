@@ -11,7 +11,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23012DC1'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23FFC93C'/%3E%3Cellipse cx='32' cy='32' rx='22' ry='9' fill='none' stroke='%23fff' stroke-width='3'/%3E%3Cellipse cx='32' cy='32' rx='22' ry='9' fill='none' stroke='%23fff' stroke-width='3' transform='rotate(60 32 32)'/%3E%3Cellipse cx='32' cy='32' rx='22' ry='9' fill='none' stroke='%23fff' stroke-width='3' transform='rotate(120 32 32)'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Caveat:wght@600;700&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
 <style>
 /* Community palette: royal blue scale + gold, used calmly */
 :root{
@@ -64,16 +64,16 @@ header.nav{position:sticky;top:0;z-index:20;background:var(--nav-bg);backdrop-fi
 .nav .btn{padding:8px 16px}
 .menu{display:none;background:none;border:0;color:inherit;cursor:pointer;padding:6px}
 .nav-actions{display:flex;align-items:center;gap:10px}
-.lang{background:transparent;color:var(--nav-ink);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font:600 .88rem/1 "IBM Plex Sans Arabic",Verdana,Geneva,sans-serif;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.lang{background:transparent;color:var(--nav-ink);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font:600 .88rem/1 Almarai,Verdana,Geneva,sans-serif;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
 .lang:hover{border-color:var(--accent);color:var(--accent)}
 
 /* Arabic / RTL */
-html[lang="ar"] body{font-family:"IBM Plex Sans Arabic",Verdana,Geneva,"DejaVu Sans",sans-serif;line-height:1.8}
-html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .quote,html[lang="ar"] .stats b,html[lang="ar"] .aud .num,html[lang="ar"] .goals li::before{font-family:"IBM Plex Sans Arabic",sans-serif;letter-spacing:0}
+html[lang="ar"] body{font-family:Almarai,Verdana,Geneva,"DejaVu Sans",sans-serif;line-height:1.8}
+html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .quote,html[lang="ar"] .stats b,html[lang="ar"] .aud .num,html[lang="ar"] .goals li::before{font-family:Almarai,sans-serif;letter-spacing:0}
 html[lang="ar"] h1,html[lang="ar"] h2{font-weight:700;line-height:1.3}
 html[lang="ar"] .hero h1 em{font-style:normal}
 html[lang="ar"] .eyebrow,html[lang="ar"] .prog .tag,html[lang="ar"] .phase .ph{letter-spacing:0;font-size:.85rem}
-html[lang="ar"] .phase.now .ph::after{content:"الآن"}
+html[lang="ar"] .phase.now .ph::after{content:"نحن هنا!";font-family:"Aref Ruqaa",serif;font-size:.95rem;transform:rotate(4deg)}
 
 /* hero */
 .hero{background:var(--hex),radial-gradient(90% 80% at 90% 0%,rgba(1,45,193,.55) 0%,transparent 60%),var(--navy);color:#fff;position:relative;overflow:hidden;padding:110px 0}
@@ -137,7 +137,7 @@ html[lang="ar"] .prog h3{text-align:right}
 .phase{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;position:relative}
 .phase.now{border:2px solid var(--royal)}
 .phase .ph{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;justify-content:space-between;gap:8px}
-.phase.now .ph::after{content:"Now";background:var(--gold);color:#071860;padding:3px 10px;border-radius:999px;letter-spacing:0;text-transform:none;font-size:.72rem}
+.phase.now .ph::after{content:"we're here!";background:var(--gold);color:#071860;padding:0 10px 2px;border-radius:12px 4px 14px 5px;letter-spacing:0;text-transform:none;font:700 1.15rem/1.3 Caveat,cursive;transform:rotate(-5deg);box-shadow:2px 2px 0 rgba(7,24,96,.15)}
 .phase h3{margin:8px 0 14px}
 .phase ul{margin:0;padding-inline-start:18px;color:var(--muted);font-size:.9rem}
 .phase li{margin-bottom:6px}
@@ -181,6 +181,35 @@ html[lang="ar"] .prog h3{text-align:right}
   .grid4,.values,.road,.team{grid-template-columns:1fr}
   .hero{padding:80px 0 90px}
 }
+/* ---- hand-made touches ---- */
+.scribble{position:relative;white-space:nowrap}
+.scribble::after{content:"";position:absolute;left:-3%;bottom:-.22em;width:106%;height:.42em;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 22' preserveAspectRatio='none'%3E%3Cpath d='M3 14C45 5 88 4 128 9s58 8 69-2' fill='none' stroke='%23FFC93C' stroke-width='4.5' stroke-linecap='round'/%3E%3Cpath d='M14 19c52-6 115-6 170-3' fill='none' stroke='%23FFC93C' stroke-width='2.2' stroke-linecap='round' opacity='.7'/%3E%3C/svg%3E") no-repeat center/100% 100%}
+.hand-note{display:inline-flex;align-items:center;gap:6px;font:700 1.45rem/1.1 Caveat,cursive;color:var(--gold);transform:rotate(-3deg);margin-inline-start:6px}
+.doodle-arrow{flex:none}
+html[dir="rtl"] .doodle-arrow{transform:scaleX(-1)}
+html[lang="ar"] .hand-note{font-family:"Aref Ruqaa",serif;font-size:1.25rem}
+.join-note{display:block;margin:18px auto 0;transform:rotate(-2deg)}
+.hero .wave{position:absolute;left:0;bottom:-1px;width:100%;height:46px;fill:var(--bg);z-index:1}
+.hero .wrap{z-index:2}
+.btn-accent{border-radius:255px 18px 225px 16px/16px 225px 18px 255px;border:2px solid #071860}
+
+/* marker highlight on section headings */
+section:not(.hero):not(.join) h2{display:inline-block;background:linear-gradient(101deg,transparent 0 1%,rgba(255,201,60,.38) 2% 96%,transparent 98%) no-repeat 0 88%/100% .45em;padding:0 .18em;margin-inline-start:-.18em}
+
+/* slightly uneven cards */
+.card,.prog,.phase,.value{border-radius:18px 12px 20px 14px/14px 20px 12px 18px}
+.aud:nth-child(odd),.value:nth-child(odd),.phase:nth-child(even){rotate:-.6deg}
+.aud:nth-child(even),.value:nth-child(even),.phase:nth-child(odd){rotate:.5deg}
+.prog:nth-child(3n+2){border-radius:12px 20px 14px 18px/20px 12px 18px 14px}
+.aud,.value,.phase{transition:rotate .25s,transform .2s,border-color .2s}
+.aud:hover,.value:hover,.phase:hover{rotate:0deg}
+
+/* a strip of "tape" on the value cards */
+.value{position:relative;border-top:1px solid var(--line)}
+.value::before{content:"";position:absolute;top:-11px;left:50%;width:74px;height:22px;background:rgba(255,201,60,.6);transform:translateX(-50%) rotate(-4deg);box-shadow:0 1px 2px rgba(7,24,96,.08)}
+.value:nth-child(even)::before{transform:translateX(-50%) rotate(3deg);background:rgba(152,171,230,.55)}
+.values{margin-top:64px;gap:22px}
+@media (prefers-reduced-motion: reduce){.aud,.value,.phase{transition:none}}
 </style>
 </head>
 <body>
@@ -215,13 +244,15 @@ html[lang="ar"] .prog h3{text-align:right}
 <main id="top">
 <section class="hero">
   <canvas id="net" aria-hidden="true"></canvas>
+  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 34C170 12 330 56 530 37S860 6 1050 29 1310 55 1440 24V60H0Z"/></svg>
   <div class="wrap">
-    <h1>We started as students looking for a way into research.</h1>
+    <h1 data-ar='بدأنا طلابًا نبحث عن طريق إلى <span class="scribble">البحث العلمي</span>.'>We started as students looking for a way into <span class="scribble">research</span>.</h1>
     <p class="sub">Now, we're building that way for others.</p>
     <p>The Research Community is a student-led group within the IEEE Student Branch at King Abdulaziz University. We help students take their first steps into research, build skills, and connect with peers, faculty, and researchers.</p>
     <div class="ctas">
       <a class="btn btn-accent" href="#join">Join us</a>
       <a class="btn btn-ghost" href="#programs">See our programs</a>
+      <span class="hand-note"><svg class="doodle-arrow" width="46" height="28" viewBox="0 0 46 28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M44 20c-9 4-22 5-34-6"/><path d="M9 6l1 9 8-2"/></svg><span>every major is welcome!</span></span>
     </div>
   </div>
 </section>
@@ -368,6 +399,7 @@ html[lang="ar"] .prog h3{text-align:right}
       <p class="lead">Every discipline is welcome. Become a member and be part of the first cohort shaping the Research Community.</p>
       <!-- Replace href below with the membership registration form link when it's ready -->
       <a class="btn btn-accent" id="join-btn" href="#join">Membership registration opening soon</a>
+      <p class="hand-note join-note">see you there :)</p>
       <p class="note">Achievements and impact will be shared here after launch.</p>
     </div>
   </div>
@@ -400,6 +432,8 @@ document.querySelectorAll('.reveal').forEach(el => io ? io.observe(el) : el.clas
 
 // ---------- English / Arabic ----------
 const AR = {
+  "every major is welcome!": "كل التخصصات مرحّب بها!",
+  "see you there :)": "نراكم هناك :)",
   "We started as students looking for a way into research.": "بدأنا طلابًا نبحث عن طريق إلى البحث العلمي.",
   "Now, we're building that way for others.": "واليوم نمهّد هذا الطريق لغيرنا.",
   "The Research Community is a student-led group within the IEEE Student Branch at King Abdulaziz University. We help students take their first steps into research, build skills, and connect with peers, faculty, and researchers.": "مجتمع البحث العلمي مجموعة يقودها الطلاب ضمن فرع IEEE الطلابي في جامعة الملك عبدالعزيز. نساعد الطلاب على اتخاذ خطواتهم الأولى في البحث العلمي، وبناء مهاراتهم، والتواصل مع زملائهم وأعضاء هيئة التدريس والباحثين.",
