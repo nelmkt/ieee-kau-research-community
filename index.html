@@ -282,6 +282,118 @@ html[lang="ar"] .join h2{line-height:1.2}
   .join .btn{width:100%;justify-content:center;padding:16px 14px;font-size:.86rem;white-space:nowrap}
   .join .btn .arrow{display:none}
 }
+/* ============ refinement: lighter, less chunky ============ */
+body{font-size:15px;line-height:1.7}
+h1,h2{font-weight:400;letter-spacing:-.02em}
+h3{font-weight:700;letter-spacing:-.005em}
+.big{font-size:clamp(1.6rem,3vw,2.3rem);font-weight:400;margin-bottom:.4em}
+.lead{font-size:1rem}
+
+/* header + buttons */
+.top .wrap{height:60px}
+.top nav ul{gap:24px;font-size:.84rem}
+.btn{padding:10px 18px;font-size:.88rem;border-radius:10px;gap:8px}
+.top .btn{padding:7px 14px;font-size:.82rem;border-radius:8px}
+.btn-gold{box-shadow:0 6px 18px -6px rgba(255,201,60,.55)}
+.lang{padding:4px 11px;font-size:.8rem}
+
+/* hero */
+.hero h1{font-size:clamp(2rem,4.4vw,3.4rem);font-weight:400;letter-spacing:-.025em;line-height:1.15}
+.hero h1 .hl{font-weight:700}
+.hero h1 .hl::after{height:.045em;bottom:-.08em}
+.hero .sub{font-size:clamp(.98rem,1.3vw,1.08rem)}
+.hero .sub strong{font-size:1.08em}
+.hero .wrap{padding-top:120px;padding-bottom:96px}
+
+/* about */
+.about{padding:96px 0 84px}
+.about .grid{gap:56px}
+.about .statement{font-size:clamp(1.1rem,1.7vw,1.35rem)}
+.ieee{border-radius:12px;padding:16px 18px;font-size:.86rem}
+
+/* story */
+.word{font-size:clamp(2.6rem,6vw,4.8rem);font-weight:400;letter-spacing:-.03em}
+.story .label{font-size:.9rem}
+.chapter p{font-size:clamp(1.02rem,1.5vw,1.2rem)}
+
+/* finder */
+.finder,.plan{padding:96px 0}
+.chips{gap:8px;margin:26px 0 22px}
+.chip{padding:8px 15px;font-size:.85rem;border-width:1px}
+.chip[aria-pressed="true"]{box-shadow:0 6px 16px -6px rgba(1,45,193,.45)}
+.result{border-radius:16px;padding:26px;gap:32px;box-shadow:0 18px 40px -28px rgba(7,24,96,.35)}
+.result .who{font-size:1.05rem;font-weight:400}
+.recs{gap:8px}
+.recs a{padding:11px 14px;border-radius:10px;font-size:.86rem}
+
+/* programs */
+.programs{padding:100px 0}
+.programs .head{margin-bottom:28px}
+.bento{gap:12px;grid-auto-rows:minmax(170px,auto)}
+.tile{border-radius:16px;padding:22px}
+.tile:hover{box-shadow:0 16px 34px -22px rgba(7,24,96,.5)}
+.tile .tag{font-size:.7rem;font-weight:400;opacity:.85}
+.tile h3{font-size:1.08rem}
+.tile p{font-size:.86rem}
+.t-fr h3{font-size:clamp(1.3rem,2.2vw,1.7rem);font-weight:400}
+.t-fr p{font-size:.95rem}
+.tile::after{width:140px;height:140px;inset-inline-end:-50px;top:-50px;background:rgba(255,255,255,.1)}
+
+/* vision / mission */
+.vm{padding:100px 0}
+.vm .item + .item{margin-top:52px}
+.vm .lbl{font-size:.72rem;padding:3px 10px;margin-bottom:14px}
+.fill{font-size:clamp(1.25rem,2.4vw,1.85rem);font-weight:400;line-height:1.45}
+
+/* values + goals */
+.values{padding:96px 0}
+.vals{gap:12px;margin-top:28px}
+.val{border-radius:14px;padding:22px 20px;min-height:0}
+.val .sw{width:26px;height:26px;border-radius:8px;margin-bottom:16px}
+.val h3{font-size:.98rem}
+.val p{font-size:.86rem}
+.goals{padding-bottom:96px}
+.goal-list{margin-top:20px}
+.goal-list li{padding:16px 0}
+.goal-list li::before{width:10px;height:10px;border-width:2px}
+.goal-list b{font-size:.95rem}
+.goal-list span{font-size:.86rem}
+
+/* roadmap */
+.rail{margin:38px 0 22px}
+.rail::before,.rail::after{top:16px;height:3px}
+.stop .node{width:34px;height:34px;border-width:2px}
+.stop .node::after{width:9px;height:9px}
+.stop .tt{font-size:.9rem}
+.stop .ph{font-size:.72rem;font-weight:400}
+.phase-panel{border-radius:14px;padding:24px 28px;box-shadow:0 18px 40px -30px rgba(7,24,96,.35)}
+.phase-panel li{font-size:.92rem}
+.phase-panel li::before{width:15px;height:15px;border-radius:4px;border-width:1.5px}
+
+/* team */
+.team{padding:96px 0}
+.org{margin-top:32px}
+.node-card{border-radius:12px;padding:18px}
+.node-card h3{font-size:.92rem}
+.node-card p{font-size:.82rem}
+
+/* join */
+.join{padding:110px 0 96px}
+.join h2{font-size:clamp(2rem,4.6vw,3.4rem);font-weight:400;letter-spacing:-.03em;line-height:1.1;max-width:20ch;text-wrap:balance}
+.join p{font-size:1rem}
+.join .btn{padding:14px 22px;font-size:.92rem;border-radius:10px}
+.join .o1{width:320px;height:320px}
+.join .o2{width:200px;height:200px}
+
+/* Arabic weights */
+html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] .word,html[lang="ar"] .fill,html[lang="ar"] .statement,html[lang="ar"] .result .who{font-weight:400}
+html[lang="ar"] .hero h1 .hl{font-weight:700}
+
+@media (max-width:760px){
+  .about,.programs,.values,.team,.finder,.plan,.vm{padding:72px 0}
+  .join{padding:84px 0}
+  .join .btn{padding:14px 12px;font-size:.84rem}
+}
 </style>
 </head>
 <body>
