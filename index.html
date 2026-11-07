@@ -7,25 +7,29 @@
 <meta name="description" content="A student-led community at King Abdulaziz University making the first steps into scientific research less intimidating and the journey beyond them more achievable.">
 <meta property="og:title" content="Research Community | IEEE KAU Student Branch">
 <meta property="og:description" content="We started as students looking for a way into research. Now, we're building that way for others.">
-<meta name="theme-color" content="#0b1d3a">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1d3a'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23f2a93b'/%3E%3Cellipse cx='32' cy='32' rx='22' ry='9' fill='none' stroke='%23fff' stroke-width='3'/%3E%3Cellipse cx='32' cy='32' rx='22' ry='9' fill='none' stroke='%23fff' stroke-width='3' transform='rotate(60 32 32)'/%3E%3Cellipse cx='32' cy='32' rx='22' ry='9' fill='none' stroke='%23fff' stroke-width='3' transform='rotate(120 32 32)'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#012DC1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23012DC1'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23FFC93C'/%3E%3Cellipse cx='32' cy='32' rx='22' ry='9' fill='none' stroke='%23fff' stroke-width='3'/%3E%3Cellipse cx='32' cy='32' rx='22' ry='9' fill='none' stroke='%23fff' stroke-width='3' transform='rotate(60 32 32)'/%3E%3Cellipse cx='32' cy='32' rx='22' ry='9' fill='none' stroke='%23fff' stroke-width='3' transform='rotate(120 32 32)'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+/* Community palette: royal blue scale + gold + mint */
 :root{
-  --ink:#0b1d3a; --ink-2:#2a3b57; --muted:#5b6880;
-  --paper:#f7f4ee; --card:#ffffff; --line:#e3ddd1;
-  --accent:#f2a93b; --accent-ink:#8a5200; --blue:#2f6fd6;
-  --hero-bg:#0b1d3a; --hero-ink:#f7f4ee;
+  --royal:#012DC1; --royal-2:#4D6DD4; --royal-3:#98ABE6; --royal-deep:#0A2184; --navy:#071860;
+  --tint:#E7EAF9; --gold:#FFC93C; --mint:#9CFFC9;
+  --ink:#071860; --ink-2:#0A2184; --muted:#4a5791;
+  --paper:#E7EAF9; --card:#ffffff; --line:#cdd4f0;
+  --accent:#FFC93C; --accent-ink:#012DC1; --blue:#012DC1;
+  --hero-bg:#0A2184; --hero-ink:#ffffff;
   --radius:18px; --max:1120px;
+  --hex:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.07' stroke-width='1.2'%3E%3Cpath d='M28 1l27 15.5v31L28 63 1 47.5v-31z'/%3E%3Cpath d='M28 63v34M1 16.5L-26 1M55 16.5L82 1'/%3E%3C/g%3E%3C/svg%3E");
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --ink:#eef1f7; --ink-2:#c9d1df; --muted:#93a0b6;
-    --paper:#0a1220; --card:#121c2e; --line:#223049;
-    --accent:#f2a93b; --accent-ink:#f2c47a; --blue:#7aa7ff;
-    --hero-bg:#060c17; --hero-ink:#eef1f7;
+    --ink:#E7EAF9; --ink-2:#c4cff2; --muted:#98ABE6;
+    --paper:#050f42; --card:#0b1a5c; --line:#1c2d78;
+    --accent:#FFC93C; --accent-ink:#FFC93C; --blue:#98ABE6;
+    --hero-bg:#071860; --hero-ink:#ffffff;
   }
 }
 *{box-sizing:border-box}
@@ -52,33 +56,57 @@ header.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--h
 .nav ul a:hover{opacity:1}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:600;text-decoration:none;border:0;cursor:pointer;font-size:.95rem;transition:transform .15s,box-shadow .15s}
 .btn:hover{transform:translateY(-1px)}
-.btn-accent{background:var(--accent);color:#1d1203;box-shadow:0 6px 20px rgba(242,169,59,.3)}
+.btn-accent{background:var(--gold);color:#071860;box-shadow:0 6px 20px rgba(255,201,60,.35)}
 .btn-ghost{border:1px solid rgba(255,255,255,.3);color:var(--hero-ink)}
 .nav .btn{padding:8px 16px}
 .menu{display:none;background:none;border:0;color:inherit;cursor:pointer;padding:6px}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.lang{background:transparent;color:var(--hero-ink);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:7px 14px;font:600 .88rem/1 "IBM Plex Sans Arabic",Inter,sans-serif;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.lang:hover{border-color:var(--gold);color:var(--gold)}
+
+/* Arabic / RTL */
+html[lang="ar"] body{font-family:"IBM Plex Sans Arabic",Inter,system-ui,sans-serif;line-height:1.8}
+html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .quote,html[lang="ar"] .stats b,html[lang="ar"] .aud .num,html[lang="ar"] .goals li::before{font-family:"IBM Plex Sans Arabic",sans-serif;letter-spacing:0}
+html[lang="ar"] h1,html[lang="ar"] h2{font-weight:700;line-height:1.3}
+html[lang="ar"] .hero h1 em{font-style:normal}
+html[lang="ar"] .eyebrow,html[lang="ar"] .prog .tag,html[lang="ar"] .phase .ph{letter-spacing:0;font-size:.85rem}
+html[lang="ar"] .phase.now .ph::after{content:"  –  نحن هنا"}
+html[lang="ar"] .road::before{background:linear-gradient(270deg,var(--gold) 0 25%,var(--royal) 25% 100%)}
 
 /* hero */
-.hero{background:var(--hero-bg);color:var(--hero-ink);position:relative;overflow:hidden;padding:110px 0 120px}
-.hero canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.55}
+.hero{background:var(--hex),radial-gradient(120% 90% at 85% 10%,rgba(77,109,212,.55) 0%,transparent 55%),linear-gradient(160deg,var(--royal) 0%,var(--royal-deep) 55%,var(--navy) 100%);color:var(--hero-ink);position:relative;overflow:hidden;padding:110px 0 120px}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,var(--royal) 0 50%,var(--gold) 50% 100%)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.6}
+.duo{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding-block:6px;padding-inline:8px 14px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.02em;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06)}
+.chip i{width:22px;height:22px;border-radius:6px;display:grid;place-items:center;font-style:normal;font-size:.62rem;font-weight:700;color:#fff}
+.chip.ieee i{background:var(--royal)}
+.chip.kau i{background:var(--gold);color:#071860;clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);border-radius:0}
 .hero .wrap{position:relative}
-.hero .eyebrow{color:var(--accent)}
+.hero .eyebrow{color:var(--gold)}
 .hero h1{font-size:clamp(2.4rem,7vw,4.8rem);font-weight:700;max-width:14ch}
-.hero h1 em{font-style:italic;color:var(--accent);font-weight:600}
+.hero h1 em{font-style:italic;color:var(--gold);font-weight:600}
 .hero p{font-size:1.2rem;max-width:56ch;opacity:.85}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 .stats{display:flex;flex-wrap:wrap;gap:40px;margin-top:64px;padding-top:28px;border-top:1px solid rgba(255,255,255,.12)}
-.stats b{display:block;font-family:Fraunces,serif;font-size:2rem;color:var(--accent)}
+.stats b{display:block;font-family:Fraunces,serif;font-size:2rem;color:var(--gold)}
 .stats span{font-size:.88rem;opacity:.75}
 
 /* about */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
-.quote{font-family:Fraunces,serif;font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.35;border-left:4px solid var(--accent);padding-left:24px;margin:28px 0 0;color:var(--ink)}
+.quote{font-family:Fraunces,serif;font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.35;border-inline-start:4px solid var(--gold);padding-inline-start:24px;margin:28px 0 0;color:var(--ink)}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
-.ieee-card h3{display:flex;align-items:center;gap:10px}
+.ieee-card{border-top:4px solid var(--royal)}
+.kau-card{border-top:4px solid var(--gold)}
+.ieee-card h3,.kau-card h3{display:flex;align-items:center;gap:10px}
+.ieee-card h3 svg{color:var(--blue)}
+.kau-card h3 svg{color:var(--accent-ink)}
 
 /* audience */
 .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
-.aud .num{font-family:Fraunces,serif;font-size:2.2rem;color:var(--accent);line-height:1;margin-bottom:12px}
+.aud{border-bottom:4px solid var(--blue)}
+.aud:nth-child(even){border-bottom-color:var(--gold)}
+.aud .num{font-family:Fraunces,serif;font-size:2.2rem;color:var(--blue);line-height:1;margin-bottom:12px}
 .aud p{color:var(--muted);font-size:.95rem;margin:0}
 
 /* vision */
@@ -88,38 +116,42 @@ header.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--h
 .values{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px}
 .value{padding:22px;border-radius:var(--radius);background:var(--paper);border:1px solid var(--line)}
 .value svg{color:var(--blue);margin-bottom:12px}
+.value:nth-child(even) svg{color:var(--accent-ink)}
 .value p{color:var(--muted);font-size:.93rem;margin:0}
 
 /* goals */
 .goals{list-style:none;padding:0;margin:40px 0 0;display:grid;grid-template-columns:repeat(2,1fr);gap:0 48px;counter-reset:g}
-.goals li{counter-increment:g;padding:20px 0 20px 56px;border-top:1px solid var(--line);position:relative}
-.goals li::before{content:counter(g,decimal-leading-zero);position:absolute;left:0;top:20px;font-family:Fraunces,serif;color:var(--accent-ink);font-weight:600}
+.goals li{counter-increment:g;padding-block:20px;padding-inline:56px 0;border-top:1px solid var(--line);position:relative}
+.goals li::before{content:counter(g,decimal-leading-zero);position:absolute;inset-inline-start:0;top:20px;font-family:Fraunces,serif;color:var(--accent-ink);font-weight:600}
 .goals b{display:block;margin-bottom:2px}
 .goals span{color:var(--muted);font-size:.95rem}
 
 /* programs */
-.programs{background:var(--hero-bg);color:var(--hero-ink)}
-.programs .eyebrow{color:var(--accent)}
+.programs{background:var(--hex),linear-gradient(180deg,var(--hero-bg),var(--navy));color:var(--hero-ink)}
+.programs .eyebrow{color:var(--gold)}
 .programs .lead{color:inherit;opacity:.8}
 .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:36px 0 26px}
 .tab{background:transparent;color:var(--hero-ink);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:9px 18px;font:inherit;font-size:.92rem;cursor:pointer}
-.tab[aria-selected="true"]{background:var(--accent);color:#1d1203;border-color:var(--accent);font-weight:600}
+.tab[aria-selected="true"]{background:var(--gold);color:#071860;border-color:var(--gold);font-weight:600}
 .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
 .prog{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:28px;transition:border-color .2s}
-.prog:hover{border-color:rgba(242,169,59,.6)}
-.prog .tag{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
-.prog h3{margin-top:8px;font-size:1.35rem}
+.prog{border-inline-start:3px solid var(--royal-2)}
+.prog:hover{border-color:rgba(255,201,60,.7)}
+.prog .tag{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mint);font-weight:600}
+.prog h3{margin-top:8px;font-size:1.35rem;unicode-bidi:plaintext}
+html[lang="ar"] .prog h3{text-align:right}
 .prog p{opacity:.78;font-size:.95rem;margin:0}
 .prog[hidden]{display:none}
 
 /* roadmap */
 .road{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px;position:relative}
 .phase{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;position:relative}
-.phase.now{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 25%,transparent)}
+.phase.now{border-color:var(--gold);box-shadow:0 0 0 3px color-mix(in srgb,var(--gold) 30%,transparent)}
+.road::before{content:"";position:absolute;left:0;right:0;top:-18px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--gold) 0 25%,var(--royal) 25% 100%);opacity:.85}
 .phase .ph{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.phase.now .ph::after{content:"  •  We are here";color:var(--accent-ink)}
+.phase.now .ph::after{content:"  –  We are here";color:var(--accent-ink)}
 .phase h3{margin:6px 0 14px}
-.phase ul{margin:0;padding-left:18px;color:var(--muted);font-size:.92rem}
+.phase ul{margin:0;padding-inline-start:18px;color:var(--muted);font-size:.92rem}
 .phase li{margin-bottom:6px}
 
 /* team */
@@ -130,11 +162,11 @@ header.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--h
 
 /* join */
 .join{text-align:center}
-.join .card{padding:64px 28px;background:linear-gradient(135deg,var(--hero-bg),#173a72);color:var(--hero-ink);border:0}
+.join .card{padding:64px 28px;background:var(--hex),linear-gradient(135deg,var(--royal) 0%,var(--hero-bg) 50%,var(--royal-deep) 100%);color:var(--hero-ink);border:0}
 .join .lead{margin:0 auto 28px;color:inherit;opacity:.85}
 .join .note{font-size:.85rem;opacity:.65;margin-top:18px}
 
-footer{padding:40px 0;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line)}
+footer{padding:40px 0;color:var(--muted);font-size:.88rem;border-top:4px solid;border-image:linear-gradient(90deg,var(--royal) 0 50%,var(--gold) 50% 100%) 1}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
@@ -157,6 +189,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 }
 @media (max-width:520px){
   .wrap{padding:0 16px}
+  .brand small{display:none}
+  .brand span{white-space:nowrap}
   .grid4,.values,.road,.team{grid-template-columns:1fr}
   .hero{padding:80px 0 90px}
 }
@@ -167,7 +201,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Research Community home">
-      <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="6" fill="#f2a93b"/><g fill="none" stroke="currentColor" stroke-width="3"><ellipse cx="32" cy="32" rx="24" ry="9"/><ellipse cx="32" cy="32" rx="24" ry="9" transform="rotate(60 32 32)"/><ellipse cx="32" cy="32" rx="24" ry="9" transform="rotate(120 32 32)"/></g></svg>
+      <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="6" fill="#FFC93C"/><g fill="none" stroke="currentColor" stroke-width="3"><ellipse cx="32" cy="32" rx="24" ry="9"/><ellipse cx="32" cy="32" rx="24" ry="9" transform="rotate(60 32 32)"/><ellipse cx="32" cy="32" rx="24" ry="9" transform="rotate(120 32 32)"/></g></svg>
       <span>Research Community<small>IEEE KAU Student Branch</small></span>
     </a>
     <nav>
@@ -179,10 +213,15 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
         <li><a href="#team">Team</a></li>
       </ul>
     </nav>
-    <a class="btn btn-accent" href="#join">Join us</a>
-    <button class="menu" aria-label="Open menu" aria-expanded="false" aria-controls="navlist">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
+    <div class="nav-actions">
+      <button class="lang" id="lang-btn" type="button" lang="ar" aria-label="Switch to Arabic">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg><span>العربية</span>
+      </button>
+      <a class="btn btn-accent" href="#join">Join us</a>
+      <button class="menu" aria-label="Open menu" aria-expanded="false" aria-controls="navlist">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -190,8 +229,11 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 <section class="hero">
   <canvas id="net" aria-hidden="true"></canvas>
   <div class="wrap">
-    <span class="eyebrow">IEEE KAU Student Branch · King Abdulaziz University</span>
-    <h1>Your way <em>into</em> research starts here.</h1>
+    <div class="duo">
+      <span class="chip ieee"><i>IEEE</i>IEEE Student Branch</span>
+      <span class="chip kau"><i>KAU</i>King Abdulaziz University – Jeddah</span>
+    </div>
+    <h1 data-ar="طريقك <em>إلى</em> البحث العلمي يبدأ من هنا.">Your way <em>into</em> research starts here.</h1>
     <p>We started as students looking for a way into research. Now, we're building that way for others: a student-led community where curiosity turns into skills, connections, and real contributions.</p>
     <div class="ctas">
       <a class="btn btn-accent" href="#join">Become a member →</a>
@@ -216,6 +258,10 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
       <div class="card ieee-card" style="margin-top:28px">
         <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>About IEEE</h3>
         <p style="margin:0;color:var(--muted)">IEEE (the Institute of Electrical and Electronics Engineers) is a global professional organization dedicated to advancing technology for the benefit of humanity. Through its student branches and technical communities, it helps students learn, collaborate, build skills, and connect with professionals and researchers worldwide.</p>
+      </div>
+      <div class="card kau-card" style="margin-top:18px">
+        <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2l8.66 5v10L12 22l-8.66-5V7z"/><path d="M12 8l3.46 2v4L12 16l-3.46-2v-4z"/></svg>At King Abdulaziz University</h3>
+        <p style="margin:0;color:var(--muted)">We're based at KAU in Jeddah, the Founder's University and one of Saudi Arabia's largest. The community is open to students from every college and discipline across campus, not just engineering.</p>
       </div>
     </div>
     <div class="reveal">
@@ -371,7 +417,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 
 <footer>
   <div class="wrap">
-    <span>© <span id="yr">2026</span> Research Community · IEEE KAU Student Branch</span>
+    <span>© <span id="yr">2026</span> Research Community – IEEE KAU Student Branch</span>
     <span>King Abdulaziz University, Jeddah</span>
   </div>
 </footer>
@@ -400,6 +446,205 @@ const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.
 }), { threshold: .12 }) : null;
 document.querySelectorAll('.reveal').forEach(el => io ? io.observe(el) : el.classList.add('in'));
 
+// ---------- English / Arabic ----------
+const AR = {
+  "Research Community | IEEE KAU Student Branch": "مجتمع البحث العلمي | فرع IEEE الطلابي بجامعة الملك عبدالعزيز",
+  "Research Community": "مجتمع البحث العلمي",
+  "IEEE KAU Student Branch": "فرع IEEE الطلابي – جامعة الملك عبدالعزيز",
+  "About": "من نحن",
+  "Vision": "الرؤية",
+  "Programs": "البرامج",
+  "Roadmap": "خارطة الطريق",
+  "Team": "الفريق",
+  "Join us": "انضم إلينا",
+  "IEEE Student Branch": "فرع IEEE الطلابي",
+  "King Abdulaziz University – Jeddah": "جامعة الملك عبدالعزيز – جدة",
+  "We started as students looking for a way into research. Now, we're building that way for others: a student-led community where curiosity turns into skills, connections, and real contributions.": "بدأنا طلابًا نبحث عن طريق إلى البحث العلمي، واليوم نمهّد هذا الطريق لغيرنا: مجتمع يقوده الطلاب، يتحوّل فيه الفضول إلى مهارات وعلاقات وإسهامات حقيقية.",
+  "Become a member →": "انضم كعضو ←",
+  "Explore programs": "استكشف البرامج",
+  "Initiatives & programs": "مبادرات وبرامج",
+  "Core values": "قيم أساسية",
+  "All": "الكل",
+  "Disciplines welcome": "جميع التخصصات مرحّب بها",
+  "Experience required": "خبرة مطلوبة",
+  "Who we are": "من نحن",
+  "A collaborative space for curious students.": "مساحة تعاونية للطلاب الشغوفين بالمعرفة.",
+  "The IEEE KAU Student Branch Research Community is a student-led community at King Abdulaziz University that promotes scientific research and a research-oriented culture among students.": "مجتمع البحث العلمي في فرع IEEE الطلابي بجامعة الملك عبدالعزيز هو مجتمع يقوده الطلاب، يعزّز البحث العلمي وثقافة البحث بين الطلاب.",
+  "We give students a place to explore research interests, build research skills, and connect with peers, faculty, and researchers. Through workshops, collaborations, and curated resources, we help students take their first steps into research and turn their ideas into meaningful contributions.": "نوفّر للطلاب مكانًا لاستكشاف اهتماماتهم البحثية، وبناء مهاراتهم، والتواصل مع زملائهم وأعضاء هيئة التدريس والباحثين. ومن خلال ورش العمل والتعاون والمصادر المنتقاة، نساعد الطلاب على اتخاذ خطواتهم الأولى في البحث العلمي وتحويل أفكارهم إلى إسهامات ذات قيمة.",
+  "About IEEE": "عن IEEE",
+  "IEEE (the Institute of Electrical and Electronics Engineers) is a global professional organization dedicated to advancing technology for the benefit of humanity. Through its student branches and technical communities, it helps students learn, collaborate, build skills, and connect with professionals and researchers worldwide.": "معهد مهندسي الكهرباء والإلكترونيات (IEEE) منظمة مهنية عالمية تسعى إلى تطوير التقنية لخدمة الإنسانية. ومن خلال فروعه الطلابية ومجتمعاته التقنية، يساعد الطلاب على التعلّم والتعاون وبناء المهارات والتواصل مع المختصين والباحثين حول العالم.",
+  "At King Abdulaziz University": "في جامعة الملك عبدالعزيز",
+  "We're based at KAU in Jeddah, the Founder's University and one of Saudi Arabia's largest. The community is open to students from every college and discipline across campus, not just engineering.": "مقرّنا جامعة الملك عبدالعزيز في جدة، جامعة المؤسس وإحدى أكبر الجامعات في المملكة العربية السعودية. والمجتمع مفتوح لطلاب جميع الكليات والتخصصات، وليس الهندسة فقط.",
+  "Our story": "قصتنا",
+  "We built the community we wished we had.": "بنينا المجتمع الذي تمنّينا وجوده.",
+  "We started as students who were curious about research but didn't know where to begin. Opportunities, resources, and guidance weren't always easy to find. Research often felt overwhelming, and at times out of reach for students without the experience or connections to get started.": "بدأنا طلابًا فضوليين تجاه البحث العلمي، لكننا لم نعرف من أين نبدأ. لم يكن الوصول إلى الفرص والمصادر والتوجيه سهلًا دائمًا، وكثيرًا ما بدا البحث مرهقًا، بل بعيد المنال أحيانًا لمن لا يملك الخبرة أو العلاقات للبدء.",
+  "We weren't alone in that. So we built a space where students can learn about research, discover opportunities, connect with researchers, and grow together.": "ولم نكن وحدنا في ذلك، فبنينا مساحة يتعلّم فيها الطلاب عن البحث العلمي، ويكتشفون الفرص، ويتواصلون مع الباحثين، وينمون معًا.",
+  "Research should be open to anyone willing to learn, whatever their background or prior experience. Our goal is to make the first steps less intimidating and the journey after them more achievable.": "نؤمن بأن البحث العلمي حق لكل من يرغب في التعلّم، مهما كانت خلفيته أو خبرته السابقة. هدفنا أن نجعل الخطوات الأولى أقل رهبة، والرحلة بعدها أيسر تحقيقًا.",
+  "“We started as students looking for a way into research. Now, we're building that way for others.”": "«بدأنا طلابًا نبحث عن طريق إلى البحث العلمي، واليوم نمهّد هذا الطريق لغيرنا.»",
+  "Who it's for": "لمن هذا المجتمع",
+  "Wherever you are on the journey.": "أينما كنت في رحلتك البحثية.",
+  "New to research": "جديد على البحث العلمي",
+  "Interested in research but unsure where to start or how to get involved.": "مهتم بالبحث العلمي لكنك لا تعرف من أين تبدأ أو كيف تشارك.",
+  "Aspiring researchers": "باحثون طموحون",
+  "Looking to develop research skills, explore scientific fields, and discover academic opportunities.": "تسعى لتطوير مهاراتك البحثية واستكشاف المجالات العلمية واكتشاف الفرص الأكاديمية.",
+  "Research-active": "ناشطون في البحث",
+  "Seeking mentorship, collaboration, further development, and chances to share your work.": "تبحث عن الإرشاد والتعاون ومزيد من التطوّر وفرص لمشاركة أعمالك.",
+  "Interdisciplinary": "متعددو التخصصات",
+  "Eager to connect with people from other disciplines and explore ideas beyond your own field.": "تتطلّع للتواصل مع أشخاص من تخصصات أخرى واستكشاف أفكار خارج مجالك.",
+  "Our vision": "رؤيتنا",
+  "Connecting aspiring researchers everywhere.": "نربط الباحثين الطموحين في كل مكان.",
+  "To become a leading research community that connects aspiring researchers across disciplines and empowers students worldwide to explore and contribute to scientific research.": "أن نكون مجتمعًا بحثيًا رائدًا يربط الباحثين الطموحين عبر التخصصات، ويمكّن الطلاب حول العالم من استكشاف البحث العلمي والإسهام فيه.",
+  "Our mission": "رسالتنا",
+  "A supportive environment to grow.": "بيئة داعمة للنمو.",
+  "To build a supportive, collaborative research environment: equipping students with essential research skills, connecting them with researchers and opportunities, fostering interdisciplinary collaboration, and providing the resources and guidance they need to grow as researchers.": "بناء بيئة بحثية داعمة وتعاونية: نزوّد الطلاب بالمهارات البحثية الأساسية، ونربطهم بالباحثين والفرص، ونعزّز التعاون بين التخصصات، ونوفّر لهم المصادر والتوجيه اللازمين لينموا كباحثين.",
+  "Innovation & Creativity": "الابتكار والإبداع",
+  "Encouraging curiosity, critical thinking, and original approaches to research challenges.": "تشجيع الفضول والتفكير النقدي والأساليب المبتكرة في مواجهة التحديات البحثية.",
+  "Collaboration & Teamwork": "التعاون والعمل الجماعي",
+  "Building partnerships and sharing knowledge to reach common research goals.": "بناء الشراكات وتبادل المعرفة لتحقيق أهداف بحثية مشتركة.",
+  "Continuous Learning": "التعلّم المستمر",
+  "Supporting lifelong learning and the ongoing growth of research skills.": "دعم التعلّم مدى الحياة والتطوير المستمر للمهارات البحثية.",
+  "Social Responsibility": "المسؤولية المجتمعية",
+  "Promoting ethical research practices and research that benefits society.": "تعزيز الممارسات البحثية الأخلاقية والأبحاث التي تخدم المجتمع.",
+  "Goals & objectives": "الأهداف والغايات",
+  "What we set out to do.": "ما نسعى إلى تحقيقه.",
+  "Promote research literacy": "نشر الثقافة البحثية",
+  "Teach research fundamentals, methodologies, and scientific thinking.": "تعليم أساسيات البحث ومناهجه والتفكير العلمي.",
+  "Develop research skills": "تطوير المهارات البحثية",
+  "Workshops, lectures, and practical sessions on academic writing, literature reviews, methodology, and scientific communication.": "ورش عمل ومحاضرات وجلسات تطبيقية في الكتابة الأكاديمية ومراجعة الأدبيات ومناهج البحث والتواصل العلمي.",
+  "Facilitate collaboration": "تيسير التعاون",
+  "Connect students with peers, faculty, and researchers for interdisciplinary projects and knowledge exchange.": "ربط الطلاب بزملائهم وأعضاء هيئة التدريس والباحثين لتنفيذ مشاريع متعددة التخصصات وتبادل المعرفة.",
+  "Bridge students to opportunities": "ربط الطلاب بالفرص",
+  "Help students find research projects, mentorships, and programs.": "مساعدة الطلاب في العثور على مشاريع بحثية وفرص إرشاد وبرامج.",
+  "Support research development": "دعم تطوير الأبحاث",
+  "Help students refine ideas and proposals and work toward publishable research.": "مساعدة الطلاب على صقل أفكارهم ومقترحاتهم والوصول إلى أبحاث قابلة للنشر.",
+  "Build a shared resource hub": "بناء مركز مصادر مشترك",
+  "Curate research tools, databases, learning materials, and funding opportunities.": "جمع أدوات البحث وقواعد البيانات والمواد التعليمية وفرص التمويل.",
+  "Sustain the community": "استدامة المجتمع",
+  "Encourage members to share knowledge, mentor new researchers, and keep a culture of collaboration alive.": "تشجيع الأعضاء على مشاركة المعرفة وإرشاد الباحثين الجدد والحفاظ على ثقافة التعاون.",
+  "Ways to get involved.": "طرق المشاركة.",
+  "From your first workshop to your first publication, there's a program for every step.": "من ورشتك الأولى إلى أول بحث منشور لك، هناك برنامج لكل خطوة.",
+  "Fellowships & Grants": "الزمالات والمنح",
+  "Development & Skills": "التطوير والمهارات",
+  "Hub": "المركز",
+  "Community": "المجتمع",
+  "Faculty Research Fellowships": "زمالات البحث مع أعضاء هيئة التدريس",
+  "Connects students with faculty and researchers looking for student collaborators on ongoing projects.": "تربط الطلاب بأعضاء هيئة التدريس والباحثين الذين يبحثون عن طلاب للمشاركة في مشاريعهم القائمة.",
+  "Research Methods Bootcamp": "المعسكر التدريبي لمناهج البحث",
+  "Lab safety, hands-on wet-lab techniques, statistics and plots, publishing as an undergrad, writing papers and abstracts, poster design, and presentation skills.": "السلامة في المختبر، وتقنيات المختبر الرطب العملية، والإحصاء والرسوم البيانية، والنشر خلال المرحلة الجامعية، وكتابة الأوراق والملخصات، وتصميم الملصقات العلمية، ومهارات العرض.",
+  "Online and in-person talks, specialized and multidisciplinary, with guest speakers from academia and industry.": "سلسلة لقاءات حضورية وعن بُعد، متخصصة ومتعددة التخصصات، مع متحدثين ضيوف من الأوساط الأكاديمية والصناعية.",
+  "One central collection of databases, tools, scholarships, conferences, internships, and programs.": "مستودع مركزي لقواعد البيانات والأدوات والمنح الدراسية والمؤتمرات والتدريب والبرامج.",
+  "A bi-weekly newsletter with upcoming events, national conferences, research opportunities, science news, member and faculty features, and research tips.": "نشرة إخبارية كل أسبوعين تضم الفعاليات القادمة والمؤتمرات الوطنية والفرص البحثية والأخبار العلمية وزوايا للأعضاء وهيئة التدريس ونصائح بحثية.",
+  "An online space where members share opportunities, resources, questions, and announcements across disciplines.": "مساحة إلكترونية يتشارك فيها الأعضاء الفرص والمصادر والأسئلة والإعلانات عبر التخصصات.",
+  "A relaxed paper club, like a book club for science. Over food and drinks, members present a paper they chose and the group discusses it. A new theme or format every time.": "نادٍ غير رسمي لقراءة الأوراق العلمية، أشبه بنادي كتاب للعلوم. على الطعام والمشروبات، يعرض الأعضاء ورقة اختاروها ويناقشها الجميع، مع موضوع أو أسلوب جديد في كل لقاء.",
+  "Ambassadors": "برنامج السفراء",
+  "Motivated students who represent the community, promote its goals across campus, and connect us with new audiences.": "طلاب متحمسون يمثّلون المجتمع، ويروّجون لأهدافه في أرجاء الجامعة، ويوصلوننا بجماهير جديدة.",
+  "Strategic plan": "الخطة الاستراتيجية",
+  "Where we're headed.": "إلى أين نتجه.",
+  "We're just getting started. Here's how the community grows from launch to long-term sustainability.": "ما زلنا في البداية. هكذا ينمو المجتمع من الانطلاق حتى الاستدامة طويلة المدى.",
+  "Phase 1": "المرحلة الأولى",
+  "Phase 2": "المرحلة الثانية",
+  "Phase 3": "المرحلة الثالثة",
+  "Phase 4": "المرحلة الرابعة",
+  "Set up & launch": "التأسيس والانطلاق",
+  "Membership registration": "تسجيل العضوية",
+  "Landing page & introduction": "الصفحة التعريفية والتعريف بالمجتمع",
+  "Membership database": "قاعدة بيانات الأعضاء",
+  "Marketing plan": "خطة التسويق",
+  "Development week participation": "المشاركة في أسبوع التطوير",
+  "Build the infrastructure": "بناء البنية التحتية",
+  "Launch TheRepository": "إطلاق TheRepository",
+  "Establish the OnlineHub": "تأسيس OnlineHub",
+  "Develop the Research Bootcamp curriculum": "إعداد منهج المعسكر البحثي",
+  "Start Fellowships & Grants": "بدء مبادرة الزمالات والمنح",
+  "Activate the community": "تفعيل المجتمع",
+  "First Research Bootcamp": "أول معسكر بحثي",
+  "First PaperCafé": "أول لقاء PaperCafé",
+  "Launch Academia Talk, ON!": "إطلاق ⁨Academia Talk, ON!⁩",
+  "Faculty outreach & database": "التواصل مع أعضاء هيئة التدريس وبناء قاعدة بياناتهم",
+  "Expand & sustain": "التوسّع والاستدامة",
+  "Ambassador Program": "برنامج السفراء",
+  "Remaining initiatives": "بقية المبادرات",
+  "External academic partnerships": "شراكات أكاديمية خارجية",
+  "Interdisciplinary activities": "أنشطة متعددة التخصصات",
+  "Sponsorships": "الرعايات",
+  "Impact evaluation": "تقييم الأثر",
+  "Organizational structure": "الهيكل التنظيمي",
+  "The team behind it.": "الفريق خلف المجتمع.",
+  "Chair & Vice-Chair": "الرئيس ونائب الرئيس",
+  "Set the community's vision and strategy, lead the officers, and represent the community externally.": "يحددان رؤية المجتمع واستراتيجيته، ويقودان الفريق، ويمثّلان المجتمع خارجيًا.",
+  "Secretary / Treasurer": "السكرتير / أمين الصندوق",
+  "Keeps the community's records, membership data, budget, and financial reports.": "يحفظ سجلات المجتمع وبيانات العضوية والميزانية والتقارير المالية.",
+  "Outreach Chair": "رئيس العلاقات الخارجية",
+  "Builds sponsorships and external partnerships, and connects with faculty, researchers, and research centers.": "يبني الرعايات والشراكات الخارجية، ويتواصل مع أعضاء هيئة التدريس والباحثين والمراكز البحثية.",
+  "Media Chair": "رئيس الإعلام",
+  "Shapes the community's visual identity, social media, and campaigns, and highlights member achievements.": "يصوغ الهوية البصرية للمجتمع وحساباته على وسائل التواصل وحملاته، ويبرز إنجازات الأعضاء.",
+  "Webmaster": "مسؤول الموقع",
+  "Builds the website, forms, and tools, including the fellowship matching platform.": "يبني الموقع والنماذج والأدوات، ومنها منصة المطابقة لبرنامج الزمالات.",
+  "Resources Chair": "رئيس المصادر",
+  "Curates internships, scholarships, grants, conferences, and research tools, and keeps them verified and up to date.": "يجمع فرص التدريب والمنح الدراسية والمنح البحثية والمؤتمرات وأدوات البحث، ويتحقق منها ويحدّثها باستمرار.",
+  "Join the community": "انضم إلى المجتمع",
+  "Research is for anyone willing to learn.": "البحث العلمي لكل من يرغب في التعلّم.",
+  "No experience needed and every discipline is welcome. Become a member and be part of the first cohort shaping the Research Community.": "لا تحتاج إلى خبرة سابقة، وجميع التخصصات مرحّب بها. انضم كعضو وكن جزءًا من الدفعة الأولى التي تشكّل مجتمع البحث العلمي.",
+  "Membership registration opening soon": "التسجيل في العضوية يفتح قريبًا",
+  "Achievements and impact will be shared here after launch.": "سنشارك الإنجازات والأثر هنا بعد الانطلاق.",
+  "Research Community – IEEE KAU Student Branch": "مجتمع البحث العلمي – فرع IEEE الطلابي بجامعة الملك عبدالعزيز",
+  "King Abdulaziz University, Jeddah": "جامعة الملك عبدالعزيز، جدة",
+  // attributes
+  "Research Community home": "الصفحة الرئيسية لمجتمع البحث العلمي",
+  "Open menu": "فتح القائمة",
+  "Filter programs": "تصفية البرامج",
+  "Switch to Arabic": "التبديل إلى الإنجليزية"
+};
+const ATTRS = ['aria-label', 'content'];
+const orig = new Map();          // node -> original English text
+let lang = 'en';
+
+function textNodes() {
+  const out = [], w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+    acceptNode: n => n.parentElement.closest('script,style,[data-ar],#lang-btn') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT
+  });
+  while (w.nextNode()) out.push(w.currentNode);
+  return out;
+}
+function setLang(next) {
+  lang = next;
+  const ar = lang === 'ar';
+  document.documentElement.lang = lang;
+  document.documentElement.dir = ar ? 'rtl' : 'ltr';
+  textNodes().forEach(n => {
+    if (!orig.has(n)) orig.set(n, n.nodeValue);
+    const en = orig.get(n), key = en.trim();
+    n.nodeValue = ar && AR[key] ? en.replace(key, AR[key]) : en;
+  });
+  document.querySelectorAll('[data-ar]').forEach(el => {
+    if (!el.dataset.en) el.dataset.en = el.innerHTML;
+    el.innerHTML = ar ? el.dataset.ar : el.dataset.en;
+  });
+  document.querySelectorAll('[aria-label],meta[name="description"],meta[property^="og:"]').forEach(el => {
+    ATTRS.forEach(a => {
+      if (!el.hasAttribute(a)) return;
+      const k = 'en' + a.replace(/\W/g, '');
+      if (!(k in el.dataset)) el.dataset[k] = el.getAttribute(a);
+      const en = el.dataset[k];
+      el.setAttribute(a, ar && AR[en] ? AR[en] : en);
+    });
+  });
+  if (!document.documentElement.dataset.title) document.documentElement.dataset.title = document.title;
+  const t = document.documentElement.dataset.title;
+  document.title = ar ? (AR[t] || t) : t;
+  const btn = document.getElementById('lang-btn');
+  btn.querySelector('span').textContent = ar ? 'English' : 'العربية';
+  btn.setAttribute('lang', ar ? 'en' : 'ar');
+  btn.setAttribute('aria-label', ar ? 'التبديل إلى الإنجليزية' : 'Switch to Arabic');
+  try { localStorage.setItem('rc-lang', lang); } catch (e) {}
+}
+document.getElementById('lang-btn').addEventListener('click', () => setLang(lang === 'ar' ? 'en' : 'ar'));
+(() => {
+  let saved = new URLSearchParams(location.search).get('lang');
+  if (!saved) { try { saved = localStorage.getItem('rc-lang'); } catch (e) {} }
+  if (saved === 'ar') setLang('ar');
+})();
+
 // hero network animation
 (() => {
   const c = document.getElementById('net'), ctx = c.getContext('2d');
@@ -418,10 +663,13 @@ document.querySelectorAll('.reveal').forEach(el => io ? io.observe(el) : el.clas
       if (!still) { p.x += p.vx; p.y += p.vy; if (p.x < 0 || p.x > w) p.vx *= -1; if (p.y < 0 || p.y > h) p.vy *= -1; }
       for (let j = i + 1; j < pts.length; j++) {
         const q = pts[j], d = Math.hypot(p.x - q.x, p.y - q.y);
-        if (d < 130) { ctx.strokeStyle = `rgba(150,180,230,${(1 - d / 130) * .35})`; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.stroke(); }
+        if (d < 130) { ctx.strokeStyle = `rgba(152,171,230,${(1 - d / 130) * .35})`; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.stroke(); }
       }
-      ctx.fillStyle = p.a ? '#f2a93b' : 'rgba(200,215,240,.8)';
-      ctx.beginPath(); ctx.arc(p.x, p.y, p.a ? 3 : 1.8, 0, 7); ctx.fill();
+      ctx.fillStyle = p.a ? '#FFC93C' : 'rgba(231,234,249,.85)';
+      const r = p.a ? 4.5 : 2;
+      ctx.beginPath();
+      for (let k = 0; k < 6; k++) { const t = Math.PI / 3 * k; ctx[k ? 'lineTo' : 'moveTo'](p.x + r * Math.cos(t), p.y + r * Math.sin(t)); }
+      ctx.closePath(); ctx.fill();
     }
     if (!still) requestAnimationFrame(draw);
   }
