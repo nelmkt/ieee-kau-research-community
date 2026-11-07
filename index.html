@@ -394,6 +394,83 @@ html[lang="ar"] .hero h1 .hl{font-weight:700}
   .join{padding:84px 0}
   .join .btn{padding:14px 12px;font-size:.84rem}
 }
+/* ============ color system: calm and consistent ============ */
+/* rule: navy text on white/tint; royal = interactive accent; gold = primary action only; mint = tiny accent on dark */
+
+/* story becomes a light section */
+.story{background:var(--soft);color:var(--text)}
+.story .label{color:var(--muted)}
+.word span:nth-child(1),.word span:nth-child(2),.word span:nth-child(3){color:var(--accent)}
+.dots i{background:var(--line)}
+.dots i.on{background:var(--accent)}
+.chapter p{color:var(--ink)}
+.chapter p{opacity:.3}
+.chapter.on p{opacity:1}
+
+/* program tiles: one calm card style + thin category line, one navy feature */
+.tile,.t-rb,.t-at,.t-tr,.t-rd,.t-oh,.t-pc,.t-am{background:var(--card);color:var(--ink);border:1px solid var(--line);box-shadow:none}
+.tile::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--cat,var(--accent))}
+.tile::after{display:none}
+.tile .tag{color:var(--muted);opacity:1;font-weight:700}
+.tile p{color:var(--muted);opacity:1}
+.tile:hover{border-color:var(--accent);box-shadow:0 14px 30px -22px rgba(7,24,96,.45)}
+.t-at,.t-rb{--cat:#012DC1}
+.t-tr,.t-rd,.t-oh{--cat:#4D6DD4}
+.t-pc,.t-am{--cat:#98ABE6}
+.t-fr{background:var(--navy);color:#fff;border-color:var(--navy);--cat:var(--gold)}
+.t-fr .tag{color:var(--gold)}
+.t-fr p{color:rgba(231,234,249,.85)}
+.t-fr h3{color:#fff}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .tile{background:rgba(255,255,255,.04)}:root:not([data-theme="light"]) .t-fr{background:var(--deep);border-color:rgba(255,201,60,.4)}}
+.bento.filtering .tile.match{box-shadow:0 0 0 2px var(--accent)}
+
+/* values: one accent, no rainbow */
+.val{background:var(--card);border:1px solid var(--line)}
+.val .sw,.val:nth-child(1) .sw,.val:nth-child(2) .sw,.val:nth-child(3) .sw,.val:nth-child(4) .sw{width:24px;height:4px;border-radius:2px;background:var(--accent);box-shadow:none;margin-bottom:18px}
+.val:hover{background:var(--card);color:inherit;border-color:var(--accent);transform:translateY(-3px)}
+.val:hover h3{color:var(--ink)}
+
+/* vision / mission labels: same calm chip */
+.vm .lbl,.vm .item:nth-child(2) .lbl{background:rgba(152,171,230,.18);color:#E7EAF9}
+
+/* roadmap: single accent */
+.rail::after,html[dir="rtl"] .rail::after{background:var(--accent)}
+.stop.now .node{border-color:var(--accent)}
+.stop.now .node::after{background:var(--accent);box-shadow:0 0 0 5px rgba(1,45,193,.15)}
+.stop .now-tag{background:var(--royal);color:#fff}
+
+/* team: soft cards, navy head */
+.node-card{background:var(--card);border:1px solid var(--line)}
+.org-top{background:var(--navy);border-color:var(--navy)}
+.org-top h3{color:#fff}
+
+/* finder */
+.result{border:1px solid var(--line)}
+.recs a{background:var(--soft)}
+.recs a:hover{background:var(--royal);color:#fff}
+
+/* hero: gold only on the word, mint only on the lead-in */
+.hero .sub strong{color:var(--mint)}
+
+/* join: navy band, gold button */
+.join{background:var(--navy);color:var(--tint)}
+.join h2{color:#fff}
+.join p{color:rgba(231,234,249,.85)}
+.join .btn{background:var(--gold);color:var(--navy);box-shadow:0 8px 22px -10px rgba(255,201,60,.6)}
+.join .btn:hover{background:#ffd666}
+.join .small{color:var(--r3);opacity:1}
+.join .o1{background:rgba(1,45,193,.35)}
+.join .o2{background:rgba(152,171,230,.12)}
+
+/* dark-mode story + about box stay readable */
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .story{background:var(--soft)}
+  :root:not([data-theme="light"]) .chapter p{color:#fff}
+  :root:not([data-theme="light"]) .stop .now-tag{background:var(--mint);color:var(--navy)}
+  :root:not([data-theme="light"]) .stop.now .node::after{box-shadow:0 0 0 5px rgba(156,255,201,.15)}
+}
+@media (max-width:1000px){.chapter p{opacity:1}}
+@media (prefers-reduced-motion: reduce){.chapter p{opacity:1}}
 </style>
 </head>
 <body>
