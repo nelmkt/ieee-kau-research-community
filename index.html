@@ -142,6 +142,26 @@ html[dir="rtl"] .btn:hover .arrow{transform:scaleX(-1) translateX(4px)}
 .social span{opacity:.9}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .ico{background:rgba(152,171,230,.18);color:var(--mint)}:root:not([data-theme="light"]) .dark .ico{background:var(--tint);color:var(--royal)}}
 @media (max-width:520px){.btn-lg{width:100%}}
+.numbers{padding:0;background:var(--bg);border-bottom:1px solid var(--line)}
+.stats{list-style:none;margin:0;padding:34px 0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.stats li{display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:6px 0}
+.stats li + li{border-inline-start:1px solid var(--line)}
+.stats b{font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.1;color:var(--royal);font-weight:700}
+.stats span{font-size:.85rem;color:var(--muted)}
+.values{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
+.val{background:var(--card);border-radius:var(--r);padding:20px;border-top:4px solid var(--gold);box-shadow:0 10px 24px -22px rgba(7,24,96,.5)}
+.val h3{font-size:.98rem;margin-bottom:6px}
+.val p{font-size:.86rem;line-height:1.6;color:var(--muted)}
+.sub-title{font-size:1.1rem;margin-top:44px}
+.sub-title + .goal-list{margin-top:18px}
+.dept{display:flex;flex-direction:column;gap:12px}
+.dept h3{margin:0}
+.dept .row{display:flex;flex-direction:column;gap:2px}
+.dept .k{font-size:.72rem;font-weight:700;color:var(--royal)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .stats b{color:var(--mint)}:root:not([data-theme="light"]) .dept .k{color:var(--mint)}:root:not([data-theme="light"]) .val{background:rgba(255,255,255,.05)}}
+@media (max-width:1000px){.values{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){.stats{grid-template-columns:1fr 1fr;row-gap:22px}.stats li:nth-child(3){border-inline-start:0}}
+@media (max-width:520px){.values{grid-template-columns:1fr}}
 .rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .rv.in{opacity:1;transform:none}
 .fade-up{opacity:0;transform:translateY(22px);animation:up .9s var(--ease) forwards}
@@ -188,8 +208,8 @@ html[lang="ar"] .hero h1{line-height:1.4;max-width:24ch}
       <ul id="navlist">
         <li><a href="#about">About</a></li>
         <li><a href="#offer">What we offer</a></li>
-        <li><a href="#initiatives">Initiatives</a></li>
-        <li><a href="#teams">Teams</a></li>
+        <li><a href="#goals">Goals</a></li>
+        <li><a href="#departments">Departments</a></li>
       </ul>
     </nav>
     <div class="right">
@@ -212,10 +232,21 @@ html[lang="ar"] .hero h1{line-height:1.4;max-width:24ch}
     <p class="sub fade-up d2">A student-led research community from the IEEE KAU Student Branch, open to students and researchers everywhere. Learn the skills, find real opportunities, and grow with people who share your curiosity.</p>
     <div class="ctas fade-up d3">
       <a class="btn btn-gold" href="#join">Register now</a>
-      <a class="btn btn-line" href="#teams"><span>Explore teams</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
+      <a class="btn btn-line" href="#departments"><span>Explore departments</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
     </div>
     <ul class="for fade-up d4" aria-label="Who it's for">
       <li>New to research</li><li>Aspiring researchers</li><li>Research-active</li><li>Interdisciplinary learners</li>
+    </ul>
+  </div>
+</section>
+
+<section class="numbers" id="numbers" aria-label="In numbers">
+  <div class="wrap">
+    <ul class="stats">
+      <li class="rv"><b>4</b><span>Initiatives</span></li>
+      <li class="rv"><b>7</b><span>Programs</span></li>
+      <li class="rv"><b>6</b><span>Departments</span></li>
+      <li class="rv"><b>All</b><span>Fields welcome</span></li>
     </ul>
   </div>
 </section>
@@ -281,7 +312,14 @@ html[lang="ar"] .hero h1{line-height:1.4;max-width:24ch}
 
 <section class="soft" id="goals">
   <div class="wrap">
-    <h2 class="title rv">Our goals</h2>
+    <h2 class="title rv">Goals &amp; values</h2>
+    <div class="values">
+      <div class="val rv"><h3>Innovation &amp; Creativity</h3><p>Curiosity, critical thinking, and original approaches to research.</p></div>
+      <div class="val rv"><h3>Collaboration &amp; Teamwork</h3><p>Building partnerships and sharing knowledge toward common goals.</p></div>
+      <div class="val rv"><h3>Continuous Learning</h3><p>Lifelong learning and steady growth in research skills.</p></div>
+      <div class="val rv"><h3>Social Responsibility</h3><p>Ethical research practices and work that benefits society.</p></div>
+    </div>
+    <h3 class="sub-title rv">What we're working toward</h3>
     <ul class="goal-list">
       <li class="rv">Teach research fundamentals, methods, and scientific thinking</li>
       <li class="rv">Build research skills through workshops, lectures, and hands-on sessions</li>
@@ -294,17 +332,35 @@ html[lang="ar"] .hero h1{line-height:1.4;max-width:24ch}
   </div>
 </section>
 
-<section class="light team" id="teams">
+<section class="light team" id="departments">
   <div class="wrap">
-    <h2 class="title rv">Find your team</h2>
-    <p class="lead rv">When you register, pick the team you'd like to help with, or simply join as a member.</p>
+    <h2 class="title rv">Our departments</h2>
+    <p class="lead rv">Pick a department when you register, or simply join as a member.</p>
     <div class="cards c3">
-      <div class="card rv"><h3>Media &amp; Marketing</h3><p>Design, content, and social media. Tell the community's story.</p></div>
-      <div class="card rv"><h3>Tech &amp; Web</h3><p>Build and run the website, forms, and tools like ResearchMatch.</p></div>
-      <div class="card rv"><h3>Public Relations</h3><p>Reach out to faculty, researchers, partners, and sponsors.</p></div>
-      <div class="card rv"><h3>Programs &amp; Events</h3><p>Plan and run workshops, the Bootcamp, PaperCafé, and more.</p></div>
-      <div class="card rv"><h3>Resources</h3><p>Find and verify research opportunities, tools, and databases.</p></div>
-      <div class="card rv"><h3>Project Management</h3><p>Keep initiatives on track with timelines, tasks, and coordination.</p></div>
+      <div class="card dept rv"><h3>Media &amp; Marketing</h3>
+        <div class="row"><span class="k">You'll work on</span><p>Visual identity, social media posts, campaigns, and event coverage.</p></div>
+        <div class="row"><span class="k">You'll gain</span><p>Design and content skills, and real work for your portfolio.</p></div>
+      </div>
+      <div class="card dept rv"><h3>Tech &amp; Web</h3>
+        <div class="row"><span class="k">You'll work on</span><p>The website, registration forms, and the ResearchMatch platform.</p></div>
+        <div class="row"><span class="k">You'll gain</span><p>Hands-on development experience building tools people actually use.</p></div>
+      </div>
+      <div class="card dept rv"><h3>Public Relations</h3>
+        <div class="row"><span class="k">You'll work on</span><p>Reaching out to faculty, research centers, partners, and sponsors.</p></div>
+        <div class="row"><span class="k">You'll gain</span><p>Communication and networking skills, and professional connections.</p></div>
+      </div>
+      <div class="card dept rv"><h3>Programs &amp; Events</h3>
+        <div class="row"><span class="k">You'll work on</span><p>Workshops, the Methods Bootcamp, PaperCafé sessions, and event logistics.</p></div>
+        <div class="row"><span class="k">You'll gain</span><p>Event planning and leadership, and working with speakers and experts.</p></div>
+      </div>
+      <div class="card dept rv"><h3>Resources</h3>
+        <div class="row"><span class="k">You'll work on</span><p>Finding and verifying opportunities, tools, and databases for TheRepository and ResearchDigest.</p></div>
+        <div class="row"><span class="k">You'll gain</span><p>Strong research literacy and first access to new opportunities.</p></div>
+      </div>
+      <div class="card dept rv"><h3>Project Management</h3>
+        <div class="row"><span class="k">You'll work on</span><p>Timelines, tasks, and coordination across all departments.</p></div>
+        <div class="row"><span class="k">You'll gain</span><p>Project management and leadership experience across the whole community.</p></div>
+      </div>
     </div>
   </div>
 </section>
@@ -383,10 +439,41 @@ document.querySelectorAll('.rv').forEach(el => io ? io.observe(el) : el.classLis
 })();
 
 const AR = {
+  "Initiatives": "المبادرات",
+  "Goals": "الأهداف",
+  "Departments": "الأقسام",
+  "Explore departments": "تعرّف على الأقسام",
+  "In numbers": "بالأرقام",
+  "Programs": "البرامج",
+  "Fields welcome": "التخصصات مرحّب بها",
+  "All": "كل",
+  "Goals & values": "الأهداف والقيم",
+  "Innovation & Creativity": "الابتكار والإبداع",
+  "Curiosity, critical thinking, and original approaches to research.": "الفضول والتفكير النقدي والأساليب المبتكرة في البحث.",
+  "Collaboration & Teamwork": "التعاون والعمل الجماعي",
+  "Building partnerships and sharing knowledge toward common goals.": "بناء الشراكات وتبادل المعرفة لتحقيق أهداف مشتركة.",
+  "Continuous Learning": "التعلّم المستمر",
+  "Lifelong learning and steady growth in research skills.": "التعلّم مدى الحياة والتطوّر المستمر في المهارات البحثية.",
+  "Social Responsibility": "المسؤولية المجتمعية",
+  "Ethical research practices and work that benefits society.": "الممارسات البحثية الأخلاقية والأعمال التي تخدم المجتمع.",
+  "What we're working toward": "ما نسعى إليه",
+  "Our departments": "أقسامنا",
+  "Pick a department when you register, or simply join as a member.": "اختر قسمًا عند التسجيل، أو انضم كعضو فقط.",
+  "You'll work on": "ستعمل على",
+  "You'll gain": "ستكتسب",
+  "Visual identity, social media posts, campaigns, and event coverage.": "الهوية البصرية، ومنشورات وسائل التواصل، والحملات، وتغطية الفعاليات.",
+  "Design and content skills, and real work for your portfolio.": "مهارات التصميم وصناعة المحتوى، وأعمالًا حقيقية لملف إنجازاتك.",
+  "The website, registration forms, and the ResearchMatch platform.": "الموقع الإلكتروني، ونماذج التسجيل، ومنصة \u2068ResearchMatch\u2069.",
+  "Hands-on development experience building tools people actually use.": "خبرة عملية في البرمجة وبناء أدوات يستخدمها الناس فعلًا.",
+  "Reaching out to faculty, research centers, partners, and sponsors.": "التواصل مع أعضاء هيئة التدريس والمراكز البحثية والشركاء والرعاة.",
+  "Communication and networking skills, and professional connections.": "مهارات التواصل وبناء العلاقات، وشبكة علاقات مهنية.",
+  "Workshops, the Methods Bootcamp, PaperCafé sessions, and event logistics.": "ورش العمل، ومعسكر مناهج البحث، ولقاءات \u2068PaperCafé\u2069، وتنظيم الفعاليات.",
+  "Event planning and leadership, and working with speakers and experts.": "مهارات تنظيم الفعاليات والقيادة، والعمل مع المتحدثين والخبراء.",
+  "Finding and verifying opportunities, tools, and databases for TheRepository and ResearchDigest.": "البحث عن الفرص والأدوات وقواعد البيانات والتحقق منها لـ \u2068TheRepository\u2069 و\u2068ResearchDigest\u2069.",
+  "Strong research literacy and first access to new opportunities.": "ثقافة بحثية قوية، ووصولًا مبكرًا إلى الفرص الجديدة.",
+  "Timelines, tasks, and coordination across all departments.": "الجداول الزمنية والمهام والتنسيق بين جميع الأقسام.",
+  "Project management and leadership experience across the whole community.": "خبرة في إدارة المشاريع والقيادة على مستوى المجتمع كله.",
   "Register now": "سجّل الآن",
-  "Explore teams": "تعرّف على الفرق",
-  "Find your team": "اختر فريقك",
-  "When you register, pick the team you'd like to help with, or simply join as a member.": "عند التسجيل، اختر الفريق الذي تودّ المساهمة فيه، أو انضم كعضو فقط.",
   "One short form. Join as a member to learn and take part, and choose a team if you'd like to help build the community. Open to students and researchers from any field and any university.": "نموذج واحد قصير. انضم كعضو لتتعلّم وتشارك، واختر فريقًا إن رغبت في المساهمة في بناء المجتمع. مفتوح للطلاب والباحثين من أي تخصص وأي جامعة.",
   "Research Community | an IEEE Group": "المجتمع البحثي | مجموعة تابعة لـ IEEE",
   "A student-led research community from the IEEE KAU Student Branch, open to students and researchers everywhere.": "مجتمع بحثي يقوده الطلاب من فرع IEEE الطلابي بجامعة الملك عبدالعزيز، مفتوح للطلاب والباحثين من كل مكان.",
@@ -395,8 +482,6 @@ const AR = {
   "Research Community home": "الصفحة الرئيسية للمجتمع البحثي",
   "About": "من نحن",
   "What we offer": "ما نقدمه",
-  "Initiatives": "المبادرات",
-  "Teams": "الفرق",
   "Join us": "انضم إلينا",
   "Open menu": "فتح القائمة",
   "Switch to Arabic": "التبديل إلى الإنجليزية",
@@ -432,7 +517,6 @@ const AR = {
   "Builds a connected, collaborative research community through student-led activities, scientific discussions, and outreach.": "تبني مجتمعًا بحثيًا مترابطًا ومتعاونًا من خلال أنشطة يقودها الطلاب ونقاشات علمية ومبادرات تواصل.",
   "Methods Bootcamp": "معسكر مناهج البحث",
   "Ambassadors": "السفراء",
-  "Our goals": "أهدافنا",
   "Teach research fundamentals, methods, and scientific thinking": "تعليم أساسيات البحث ومناهجه والتفكير العلمي",
   "Build research skills through workshops, lectures, and hands-on sessions": "بناء المهارات البحثية عبر ورش العمل والمحاضرات والجلسات التطبيقية",
   "Connect members with peers, faculty, and researchers across fields": "ربط الأعضاء بزملائهم وأعضاء هيئة التدريس والباحثين من مختلف المجالات",
@@ -441,17 +525,11 @@ const AR = {
   "Curate a shared hub of tools, databases, and funding opportunities": "إنشاء مرجع مشترك للأدوات وقواعد البيانات وفرص التمويل",
   "Grow a culture where members share knowledge and mentor newcomers": "بناء ثقافة يتشارك فيها الأعضاء المعرفة ويرشدون القادمين الجدد",
   "Media & Marketing": "الإعلام والتسويق",
-  "Design, content, and social media. Tell the community's story.": "التصميم والمحتوى ووسائل التواصل الاجتماعي. احكِ قصة المجتمع.",
   "Tech & Web": "التقنية والموقع",
-  "Build and run the website, forms, and tools like ResearchMatch.": "بناء الموقع والنماذج والأدوات مثل ⁨ResearchMatch⁩ وإدارتها.",
   "Public Relations": "العلاقات العامة",
-  "Reach out to faculty, researchers, partners, and sponsors.": "التواصل مع أعضاء هيئة التدريس والباحثين والشركاء والرعاة.",
   "Programs & Events": "البرامج والفعاليات",
-  "Plan and run workshops, the Bootcamp, PaperCafé, and more.": "تخطيط وتنفيذ ورش العمل والمعسكر و⁨PaperCafé⁩ وغيرها.",
   "Resources": "المصادر",
-  "Find and verify research opportunities, tools, and databases.": "البحث عن الفرص البحثية والأدوات وقواعد البيانات والتحقق منها.",
   "Project Management": "إدارة المشاريع",
-  "Keep initiatives on track with timelines, tasks, and coordination.": "متابعة سير المبادرات من حيث الجداول الزمنية والمهام والتنسيق.",
   "Research is for anyone willing to learn": "البحث العلمي لكل من يرغب في التعلّم",
   "Registration opens soon.": "التسجيل يفتح قريبًا."
 };
