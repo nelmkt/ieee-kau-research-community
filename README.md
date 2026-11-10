@@ -1,6 +1,6 @@
 # IEEE KAU Research Community
 
-Landing page for the Research Community of the IEEE KAU Student Branch, open to students and researchers everywhere.
+Landing page for the Research Community of the IEEE KAU Student Branch (Female), open to students and researchers everywhere.
 
 Live site: https://nelmkt.github.io/ieee-kau-research-community/
 
