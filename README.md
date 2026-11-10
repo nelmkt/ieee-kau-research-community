@@ -1,4 +1,4 @@
-# Research Community | an IEEE Group
+# IEEE KAU Research Community
 
 Landing page for the Research Community of the IEEE KAU Student Branch, open to students and researchers everywhere.
 
