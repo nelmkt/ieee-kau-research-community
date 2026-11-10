@@ -8,10 +8,9 @@ A single static `index.html` (no build step), deployed with GitHub Pages from th
 
 ## Registration links
 
-When the forms are ready, set these `href` values in `index.html`:
+There is one registration form for everyone (members pick a team inside the form if they want one). When it's ready, set its URL as the `href` of:
 
-- `id="join-btn"`: member registration form
-- `id="team-btn"`: team application form
-- each `class="apply"` link in the "Join a team" section: the team application form (optionally one per team)
+- `id="join-btn"` in the Join section
+- the "Register now" button in the hero (and optionally "Join us" in the top bar)
 
 Then remove the "Registration opens soon." line.

@@ -50,6 +50,7 @@ section{padding:var(--sec) 0}
 .dark .title{color:#fff}
 .dark .lead{color:rgba(231,234,249,.8)}
 .soft{background:var(--soft)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .dark:not(.hero){border-top:1px solid var(--line);border-bottom:1px solid var(--line)}}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:var(--r-sm);padding:12px 22px;font-size:.92rem;font-weight:700;text-decoration:none;border:0;cursor:pointer;transition:transform .25s var(--ease),background-color .25s,border-color .25s,color .25s}
 .btn:hover{transform:translateY(-2px)}
@@ -58,9 +59,9 @@ section{padding:var(--sec) 0}
 .btn-line{border:1px solid rgba(255,255,255,.5);color:#fff;background:rgba(255,255,255,.05)}
 .btn-line:hover{border-color:var(--mint);color:var(--mint)}
 .arrow{display:inline-block;transition:transform .25s var(--ease)}
-.btn:hover .arrow,.apply:hover .arrow{transform:translateX(4px)}
+.btn:hover .arrow{transform:translateX(4px)}
 html[dir="rtl"] .arrow{transform:scaleX(-1)}
-html[dir="rtl"] .btn:hover .arrow,html[dir="rtl"] .apply:hover .arrow{transform:scaleX(-1) translateX(4px)}
+html[dir="rtl"] .btn:hover .arrow{transform:scaleX(-1) translateX(4px)}
 
 .top{position:fixed;inset:0 0 auto 0;z-index:50;color:#fff;transition:background .35s var(--ease),box-shadow .35s,color .35s}
 .top.solid{background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:var(--ink);box-shadow:0 1px 0 var(--line)}
@@ -118,9 +119,6 @@ html[dir="rtl"] .btn:hover .arrow,html[dir="rtl"] .apply:hover .arrow{transform:
 .goal-list li::before{content:"";width:18px;height:18px;margin-top:2px;border-radius:50%;background:var(--gold) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='%23071860' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat}
 
 .team .card{display:flex;flex-direction:column;gap:6px}
-.apply{display:inline-flex;align-items:center;gap:6px;margin-top:auto;padding-top:12px;font-size:.86rem;font-weight:700;color:var(--royal);text-decoration:none}
-.apply:hover{color:var(--deep)}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .apply{color:var(--mint)}}
 
 .join{text-align:center}
 .join .title::after{margin-inline:auto}
@@ -131,6 +129,19 @@ html[dir="rtl"] .btn:hover .arrow,html[dir="rtl"] .apply:hover .arrow{transform:
 .social a{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;border:1px solid rgba(152,171,230,.4);color:#fff;transition:border-color .2s,color .2s}
 .social a:hover{border-color:var(--gold);color:var(--gold)}
 
+.btn-lg{padding:15px 30px;font-size:1rem}
+.ico{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--tint);color:var(--royal);margin-bottom:14px}
+.dark .card{box-shadow:0 1px 0 rgba(255,255,255,.04)}
+.card{position:relative}
+.team .card{gap:8px;padding:22px}
+.team .card h3{margin:0}
+.lead + .cards,.lead + .goal-list{margin-top:28px}
+.title + .goal-list,.title + .cards{margin-top:20px}
+.vision{box-shadow:0 10px 26px -22px rgba(7,24,96,.5)}
+.for{opacity:.95}
+.social span{opacity:.9}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .ico{background:rgba(152,171,230,.18);color:var(--mint)}:root:not([data-theme="light"]) .dark .ico{background:var(--tint);color:var(--royal)}}
+@media (max-width:520px){.btn-lg{width:100%}}
 .rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .rv.in{opacity:1;transform:none}
 .fade-up{opacity:0;transform:translateY(22px);animation:up .9s var(--ease) forwards}
@@ -200,8 +211,8 @@ html[lang="ar"] .hero h1{line-height:1.4;max-width:24ch}
     <h1 class="fade-up d1" data-ar='بدأنا طلابًا نبحث عن طريقنا إلى <span class="hl">البحث العلمي</span>، واليوم نمهّد هذا الطريق لغيرنا.'>We started as students looking for a way into <span class="hl">research</span>. Now we're building that way for others.</h1>
     <p class="sub fade-up d2">A student-led research community from the IEEE KAU Student Branch, open to students and researchers everywhere. Learn the skills, find real opportunities, and grow with people who share your curiosity.</p>
     <div class="ctas fade-up d3">
-      <a class="btn btn-gold" href="#join">Join the community</a>
-      <a class="btn btn-line" href="#teams"><span>Join a team</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
+      <a class="btn btn-gold" href="#join">Register now</a>
+      <a class="btn btn-line" href="#teams"><span>Explore teams</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
     </div>
     <ul class="for fade-up d4" aria-label="Who it's for">
       <li>New to research</li><li>Aspiring researchers</li><li>Research-active</li><li>Interdisciplinary learners</li>
@@ -227,10 +238,10 @@ html[lang="ar"] .hero h1{line-height:1.4;max-width:24ch}
     <h2 class="title rv">What we offer</h2>
     <p class="lead rv">Everything you need to take your first steps into research, and the next ones.</p>
     <div class="cards c4">
-      <div class="card rv"><h3>Workshops &amp; training</h3><p>Hands-on sessions on research writing, literature reviews, methods, and field-specific skills.</p></div>
-      <div class="card rv"><h3>Research with faculty</h3><p>We connect you with faculty and researchers who have ongoing projects and are looking for students.</p></div>
-      <div class="card rv"><h3>Resources &amp; opportunities</h3><p>One place for research tools, databases, scholarships, grants, and calls for participation.</p></div>
-      <div class="card rv"><h3>A community to grow with</h3><p>An open space to share opportunities, ask questions, and talk research with people from every field.</p></div>
+      <div class="card rv"><span class="ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V6a2 2 0 0 1 2-2h12v15H6a2 2 0 0 0-2 2z"/><path d="M8 8h6M8 12h6"/></svg></span><h3>Workshops &amp; training</h3><p>Hands-on sessions on research writing, literature reviews, methods, and field-specific skills.</p></div>
+      <div class="card rv"><span class="ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c.6-3.4 3-5.5 6-5.5s5.4 2.1 6 5.5M15 15c2.6 0 4.5 1.7 5 4.5"/></svg></span><h3>Research with faculty</h3><p>We connect you with faculty and researchers who have ongoing projects and are looking for students.</p></div>
+      <div class="card rv"><span class="ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M12 11v5M9.5 13.5h5"/></svg></span><h3>Resources &amp; opportunities</h3><p>One place for research tools, databases, scholarships, grants, and calls for participation.</p></div>
+      <div class="card rv"><span class="ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v10H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></span><h3>A community to grow with</h3><p>An open space to share opportunities, ask questions, and talk research with people from every field.</p></div>
     </div>
   </div>
 </section>
@@ -285,15 +296,15 @@ html[lang="ar"] .hero h1{line-height:1.4;max-width:24ch}
 
 <section class="light team" id="teams">
   <div class="wrap">
-    <h2 class="title rv">Join a team</h2>
-    <p class="lead rv">Help build the community. Pick the team that fits you and apply.</p>
+    <h2 class="title rv">Find your team</h2>
+    <p class="lead rv">When you register, pick the team you'd like to help with, or simply join as a member.</p>
     <div class="cards c3">
-      <div class="card rv"><h3>Media &amp; Marketing</h3><p>Design, content, and social media. Tell the community's story.</p><a class="apply" href="#join">Apply <span class="arrow" aria-hidden="true">&rarr;</span></a></div>
-      <div class="card rv"><h3>Tech &amp; Web</h3><p>Build and run the website, forms, and tools like ResearchMatch.</p><a class="apply" href="#join">Apply <span class="arrow" aria-hidden="true">&rarr;</span></a></div>
-      <div class="card rv"><h3>Public Relations</h3><p>Reach out to faculty, researchers, partners, and sponsors.</p><a class="apply" href="#join">Apply <span class="arrow" aria-hidden="true">&rarr;</span></a></div>
-      <div class="card rv"><h3>Programs &amp; Events</h3><p>Plan and run workshops, the Bootcamp, PaperCafé, and more.</p><a class="apply" href="#join">Apply <span class="arrow" aria-hidden="true">&rarr;</span></a></div>
-      <div class="card rv"><h3>Resources</h3><p>Find and verify research opportunities, tools, and databases.</p><a class="apply" href="#join">Apply <span class="arrow" aria-hidden="true">&rarr;</span></a></div>
-      <div class="card rv"><h3>Project Management</h3><p>Keep initiatives on track with timelines, tasks, and coordination.</p><a class="apply" href="#join">Apply <span class="arrow" aria-hidden="true">&rarr;</span></a></div>
+      <div class="card rv"><h3>Media &amp; Marketing</h3><p>Design, content, and social media. Tell the community's story.</p></div>
+      <div class="card rv"><h3>Tech &amp; Web</h3><p>Build and run the website, forms, and tools like ResearchMatch.</p></div>
+      <div class="card rv"><h3>Public Relations</h3><p>Reach out to faculty, researchers, partners, and sponsors.</p></div>
+      <div class="card rv"><h3>Programs &amp; Events</h3><p>Plan and run workshops, the Bootcamp, PaperCafé, and more.</p></div>
+      <div class="card rv"><h3>Resources</h3><p>Find and verify research opportunities, tools, and databases.</p></div>
+      <div class="card rv"><h3>Project Management</h3><p>Keep initiatives on track with timelines, tasks, and coordination.</p></div>
     </div>
   </div>
 </section>
@@ -301,14 +312,13 @@ html[lang="ar"] .hero h1{line-height:1.4;max-width:24ch}
 <section class="dark join" id="join">
   <div class="wrap">
     <h2 class="title rv">Research is for anyone willing to learn</h2>
-    <p class="lead rv">Join as a member to learn and take part, or join a team to help build the community. Students and researchers from any field and any university are welcome.</p>
+    <p class="lead rv">One short form. Join as a member to learn and take part, and choose a team if you'd like to help build the community. Open to students and researchers from any field and any university.</p>
     <div class="ctas rv">
-      <a class="btn btn-gold" id="join-btn" href="#join">Register as a member</a>
-      <a class="btn btn-line" id="team-btn" href="#join">Apply to a team</a>
+      <a class="btn btn-gold btn-lg" id="join-btn" href="#join">Register now <span class="arrow" aria-hidden="true">&rarr;</span></a>
     </div>
     <p class="soon rv">Registration opens soon.</p>
     <div class="social rv">
-      <span>@ieee_kau_sb</span>
+      <span dir="ltr">@ieee_kau_sb</span>
       <a href="https://x.com/ieee_kau_sb" target="_blank" rel="noopener" aria-label="X"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.8l-5.3-6.9L4.8 22H1.7l8.1-9.3L1 2h7l4.8 6.3L18.9 2zm-1.2 18h1.9L7 3.9H5L17.7 20z"/></svg></a>
       <a href="https://www.instagram.com/ieee_kau_sb" target="_blank" rel="noopener" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
     </div>
@@ -373,6 +383,11 @@ document.querySelectorAll('.rv').forEach(el => io ? io.observe(el) : el.classLis
 })();
 
 const AR = {
+  "Register now": "سجّل الآن",
+  "Explore teams": "تعرّف على الفرق",
+  "Find your team": "اختر فريقك",
+  "When you register, pick the team you'd like to help with, or simply join as a member.": "عند التسجيل، اختر الفريق الذي تودّ المساهمة فيه، أو انضم كعضو فقط.",
+  "One short form. Join as a member to learn and take part, and choose a team if you'd like to help build the community. Open to students and researchers from any field and any university.": "نموذج واحد قصير. انضم كعضو لتتعلّم وتشارك، واختر فريقًا إن رغبت في المساهمة في بناء المجتمع. مفتوح للطلاب والباحثين من أي تخصص وأي جامعة.",
   "Research Community | an IEEE Group": "المجتمع البحثي | مجموعة تابعة لـ IEEE",
   "A student-led research community from the IEEE KAU Student Branch, open to students and researchers everywhere.": "مجتمع بحثي يقوده الطلاب من فرع IEEE الطلابي بجامعة الملك عبدالعزيز، مفتوح للطلاب والباحثين من كل مكان.",
   "Learn research skills, find opportunities, and grow with a community. Open to everyone.": "تعلّم مهارات البحث، واكتشف الفرص، وانمُ مع مجتمع داعم. مفتوح للجميع.",
@@ -386,8 +401,6 @@ const AR = {
   "Open menu": "فتح القائمة",
   "Switch to Arabic": "التبديل إلى الإنجليزية",
   "A student-led research community from the IEEE KAU Student Branch, open to students and researchers everywhere. Learn the skills, find real opportunities, and grow with people who share your curiosity.": "مجتمع بحثي يقوده الطلاب من فرع IEEE الطلابي بجامعة الملك عبدالعزيز، ومفتوح للطلاب والباحثين من كل مكان. تعلّم المهارات، واكتشف فرصًا حقيقية، وانمُ مع أشخاص يشاركونك الشغف نفسه.",
-  "Join the community": "انضم إلى المجتمع",
-  "Join a team": "انضم إلى فريق",
   "Who it's for": "لمن هذا المجتمع",
   "New to research": "جديد على البحث العلمي",
   "Aspiring researchers": "باحثون طموحون",
@@ -427,7 +440,6 @@ const AR = {
   "Open doors to research projects, mentorships, and programs": "فتح الأبواب أمام المشاريع البحثية وفرص الإرشاد والبرامج",
   "Curate a shared hub of tools, databases, and funding opportunities": "إنشاء مرجع مشترك للأدوات وقواعد البيانات وفرص التمويل",
   "Grow a culture where members share knowledge and mentor newcomers": "بناء ثقافة يتشارك فيها الأعضاء المعرفة ويرشدون القادمين الجدد",
-  "Help build the community. Pick the team that fits you and apply.": "ساهم في بناء المجتمع. اختر الفريق الذي يناسبك وقدّم.",
   "Media & Marketing": "الإعلام والتسويق",
   "Design, content, and social media. Tell the community's story.": "التصميم والمحتوى ووسائل التواصل الاجتماعي. احكِ قصة المجتمع.",
   "Tech & Web": "التقنية والموقع",
@@ -440,11 +452,7 @@ const AR = {
   "Find and verify research opportunities, tools, and databases.": "البحث عن الفرص البحثية والأدوات وقواعد البيانات والتحقق منها.",
   "Project Management": "إدارة المشاريع",
   "Keep initiatives on track with timelines, tasks, and coordination.": "متابعة سير المبادرات من حيث الجداول الزمنية والمهام والتنسيق.",
-  "Apply": "قدّم الآن",
   "Research is for anyone willing to learn": "البحث العلمي لكل من يرغب في التعلّم",
-  "Join as a member to learn and take part, or join a team to help build the community. Students and researchers from any field and any university are welcome.": "انضم كعضو لتتعلّم وتشارك، أو انضم إلى أحد الفرق لتساهم في بناء المجتمع. نرحّب بالطلاب والباحثين من أي تخصص وأي جامعة.",
-  "Register as a member": "سجّل كعضو",
-  "Apply to a team": "قدّم على أحد الفرق",
   "Registration opens soon.": "التسجيل يفتح قريبًا."
 };
 const orig = new Map();
