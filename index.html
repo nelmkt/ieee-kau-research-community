@@ -18,7 +18,7 @@
   --ink:#071860; --text:#0A2184; --muted:rgba(10,33,132,.72); --line:rgba(152,171,230,.5);
   --accent:#012DC1;
   --r-sm:10px; --r:14px;
-  --sec:84px; --gap:32px;
+  --sec:96px; --gap:32px;
   --ease:cubic-bezier(.2,.7,.2,1);
   --night:linear-gradient(180deg,rgba(0,0,0,.32) 0%,rgba(0,0,0,.12) 100%),#071860;
 }
@@ -85,8 +85,6 @@ html[dir="rtl"] .btn:hover .arrow{transform:scaleX(-1) translateX(4px)}
 .hero h1 .hl{color:var(--gold);font-weight:700}
 .hero .sub{font-size:clamp(1rem,1.4vw,1.1rem);line-height:1.7;color:rgba(231,234,249,.85);max-width:60ch;margin-bottom:30px}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:12px}
-.for{display:flex;flex-wrap:wrap;gap:8px;margin-top:34px;list-style:none;padding:0}
-.for li{font-size:.8rem;color:var(--tint);border:1px solid rgba(152,171,230,.35);border-radius:999px;padding:5px 12px}
 
 .about .grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:start}
 .about p{font-size:1.05rem;line-height:1.75;color:var(--ink)}
@@ -99,17 +97,20 @@ html[dir="rtl"] .btn:hover .arrow{transform:scaleX(-1) translateX(4px)}
 .c2{grid-template-columns:repeat(2,1fr)}
 .c3{grid-template-columns:repeat(3,1fr)}
 .card{background:#fff;border-radius:var(--r-sm);padding:22px 22px 24px;border:1px solid var(--line);color:var(--navy)}
-.dark .card{border-color:transparent}
+.open .card{background:none;border:0;border-top:1px solid var(--line);border-radius:0;padding:20px 0 0}
+.open .cards{gap:28px 40px}
+.dark.open .card{border-top-color:rgba(152,171,230,.35)}
+.dark.open .card h3{color:#fff}
+.dark.open .card p{color:rgba(231,234,249,.78)}
 .card h3{font-size:1.02rem;color:var(--navy);margin-bottom:8px}
 .card p{font-size:.88rem;line-height:1.65;color:rgba(10,33,132,.78)}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .light .card{background:rgba(255,255,255,.05)}:root:not([data-theme="light"]) .light .card h3{color:#fff}:root:not([data-theme="light"]) .light .card p{color:var(--muted)}}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .light:not(.open) .card{background:rgba(255,255,255,.05)}:root:not([data-theme="light"]) .light .card h3{color:#fff}:root:not([data-theme="light"]) .light .card p{color:var(--muted)}}
 
 .init .card{display:flex;flex-direction:column;gap:14px;padding:26px}
 .init .card h3{font-size:1.15rem;margin:0}
 .progs{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:auto 0 0;padding:14px 0 0;border-top:1px solid var(--line)}
 .progs li{font-size:.78rem;font-weight:700;color:var(--deep);background:var(--tint);border-radius:999px;padding:5px 12px;unicode-bidi:plaintext}
-.progs-label{font-size:.72rem;font-weight:700;color:rgba(10,33,132,.6);margin-bottom:-6px}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .progs li{background:rgba(152,171,230,.15);color:#fff}:root:not([data-theme="light"]) .progs-label{color:var(--muted)}}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .progs li{background:rgba(152,171,230,.15);color:#fff}}
 
 .goal-list{list-style:none;margin:var(--gap) 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px 40px}
 .goal-list li{display:grid;grid-template-columns:14px 1fr;gap:12px;align-items:start;color:var(--ink);font-size:.95rem;line-height:1.6}
@@ -127,11 +128,10 @@ html[dir="rtl"] .btn:hover .arrow{transform:scaleX(-1) translateX(4px)}
 
 .btn-lg{padding:15px 30px;font-size:1rem}
 .card{position:relative}
-.team .card{gap:8px;padding:22px}
+.team .card{gap:10px}
 .team .card h3{margin:0}
 .lead + .cards,.lead + .goal-list{margin-top:28px}
 .title + .goal-list,.title + .cards{margin-top:20px}
-.for{opacity:.95}
 .social span{opacity:.9}
 @media (max-width:520px){.btn-lg{width:100%}}
 .numbers{padding:0;background:var(--bg);border-bottom:1px solid var(--line)}
@@ -226,9 +226,6 @@ html[lang="ar"] .hero h1{line-height:1.4;max-width:24ch}
       <a class="btn btn-gold" href="#join">Register now</a>
       <a class="btn btn-line" href="#departments"><span>Explore departments</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
     </div>
-    <ul class="for fade-up d4" aria-label="Who it's for">
-      <li>Never read a paper</li><li>Already publishing</li><li>Any major</li><li>Any university</li>
-    </ul>
   </div>
 </section>
 
@@ -256,7 +253,7 @@ html[lang="ar"] .hero h1{line-height:1.4;max-width:24ch}
   </div>
 </section>
 
-<section class="dark" id="offer">
+<section class="dark open" id="offer">
   <div class="wrap">
     <h2 class="title rv">What we offer</h2>
     <p class="lead rv">What you get when you join, whether you're just starting or already deep into a project.</p>
@@ -277,25 +274,21 @@ html[lang="ar"] .hero h1{line-height:1.4;max-width:24ch}
       <div class="card rv">
         <h3>Fellowships &amp; Grants</h3>
         <p>Matches students with faculty and researchers who want student help on projects already underway.</p>
-        <div class="progs-label">Programs</div>
         <ul class="progs"><li>ResearchMatch</li></ul>
       </div>
       <div class="card rv">
         <h3>Development &amp; Skills</h3>
         <p>Practical research training, plus time with researchers and experts who've been doing this for years.</p>
-        <div class="progs-label">Programs</div>
         <ul class="progs"><li>Methods Bootcamp</li></ul>
       </div>
       <div class="card rv">
         <h3>The Hub</h3>
         <p>Where the resources and opportunities live: a shared repository, a regular digest, and an online space for members.</p>
-        <div class="progs-label">Programs</div>
         <ul class="progs"><li>TheRepository</li><li>ResearchDigest</li><li>OnlineHub</li></ul>
       </div>
       <div class="card rv">
         <h3>Community Engagement</h3>
         <p>Paper discussions over coffee, student-led events, and ambassadors who bring new people in.</p>
-        <div class="progs-label">Programs</div>
         <ul class="progs"><li>PaperCafé</li><li>Ambassadors</li></ul>
       </div>
     </div>
@@ -317,14 +310,12 @@ html[lang="ar"] .hero h1{line-height:1.4;max-width:24ch}
       <li class="rv">Run workshops, talks, and hands-on sessions that build real skills</li>
       <li class="rv">Connect members with peers, faculty, and researchers across fields</li>
       <li class="rv">Help members turn an idea into something they can publish</li>
-      <li class="rv">Open doors to research projects, mentorships, and programs</li>
-      <li class="rv">Keep one shared list of tools, databases, and funding</li>
       <li class="rv">Have members who've done it help the ones just starting</li>
     </ul>
   </div>
 </section>
 
-<section class="light team" id="departments">
+<section class="light team open" id="departments">
   <div class="wrap">
     <h2 class="title rv">Our departments</h2>
     <p class="lead rv">You can pick one when you register, or skip it and join as a member.</p>
@@ -477,11 +468,6 @@ const AR = {
   "Open menu": "فتح القائمة",
   "Switch to Arabic": "التبديل إلى الإنجليزية",
   "We're a student group under the IEEE KAU Student Branch, open to anyone from any university or field. We run workshops, share research opportunities, and help match students with faculty who need a hand on their projects.": "نحن مجموعة طلابية تابعة لفرع IEEE الطلابي بجامعة الملك عبدالعزيز، ومفتوحة لأي شخص من أي جامعة أو تخصص. ننظّم ورش العمل، ونشارك الفرص البحثية، ونربط الطلاب بأعضاء هيئة التدريس الذين يحتاجون من يساعدهم في مشاريعهم.",
-  "Who it's for": "لمن هذا المجتمع",
-  "Never read a paper": "لم تقرأ ورقة بحثية من قبل",
-  "Already publishing": "تنشر أبحاثًا بالفعل",
-  "Any major": "أي تخصص",
-  "Any university": "أي جامعة",
   "Who we are": "من نحن",
   "We're students from the IEEE KAU Student Branch. Most of us got curious about research, then spent months working out where to start: who to email, what to read, how a paper even gets written. This community is what we wish we'd found back then.": "نحن طلاب من فرع IEEE الطلابي بجامعة الملك عبدالعزيز. اهتممنا بالبحث العلمي، ثم قضينا أشهرًا نحاول أن نعرف من أين نبدأ: مَن نراسل، وماذا نقرأ، وكيف تُكتب الورقة البحثية أصلًا. هذا المجتمع هو ما تمنّينا أن نجده حينها.",
   "Our vision": "رؤيتنا",
@@ -512,8 +498,6 @@ const AR = {
   "Run workshops, talks, and hands-on sessions that build real skills": "تنظيم ورش عمل ومحاضرات وجلسات تطبيقية تبني مهارات فعلية",
   "Connect members with peers, faculty, and researchers across fields": "ربط الأعضاء بزملائهم وأعضاء هيئة التدريس والباحثين من مختلف المجالات",
   "Help members turn an idea into something they can publish": "مساعدة الأعضاء على تحويل الفكرة إلى عمل قابل للنشر",
-  "Open doors to research projects, mentorships, and programs": "فتح الأبواب أمام المشاريع البحثية وفرص الإرشاد والبرامج",
-  "Keep one shared list of tools, databases, and funding": "الحفاظ على قائمة مشتركة واحدة للأدوات وقواعد البيانات وفرص التمويل",
   "Have members who've done it help the ones just starting": "أن يساعد الأعضاء ذوو الخبرة من هم في بدايتهم",
   "Media & Marketing": "الإعلام والتسويق",
   "Tech & Web": "التقنية والموقع",
