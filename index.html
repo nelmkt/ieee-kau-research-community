@@ -160,6 +160,10 @@ html[dir="rtl"] .btn:hover .arrow{transform:scaleX(-1) translateX(4px)}
 @media (max-width:1000px){.values{grid-template-columns:1fr 1fr}}
 @media (max-width:760px){.stats{grid-template-columns:1fr 1fr;row-gap:22px}.stats li:nth-child(3){border-inline-start:0}}
 @media (max-width:520px){.values{grid-template-columns:1fr}}
+.about .story{margin-top:12px;font-size:.95rem;color:var(--muted)}
+.aud{list-style:none;padding:0;margin:20px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.aud li{font-size:.8rem;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+.vision p + b{margin-top:16px}
 .rv{opacity:0;transform:translateY(8px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
 .rv.in{opacity:1;transform:none}
 .fade-up{opacity:0;transform:translateY(22px);animation:up .9s var(--ease) forwards}
@@ -250,11 +254,15 @@ html[lang="ar"] .hero h1{line-height:1.4;max-width:24ch}
   <div class="wrap grid">
     <div class="rv">
       <h2 class="title">Who we are</h2>
-      <p>We're students who struggled to find a way into research, so we built one for others.</p>
+      <p>A student-led research community that promotes scientific research and a research-oriented culture among students.</p>
+      <p class="story">We started as students curious about research who struggled to find guidance, resources, and connections.</p>
+      <ul class="aud" aria-label="Who it's for"><li>New to research</li><li>Aspiring researchers</li><li>Research-active</li><li>Interdisciplinary learners</li></ul>
     </div>
     <div class="vision rv">
       <b>Our vision</b>
-      <p>Connect aspiring researchers across fields and help students everywhere take part in research.</p>
+      <p>To become a leading research community that connects aspiring researchers across disciplines and empowers students worldwide to explore and contribute to scientific research.</p>
+      <b>Our mission</b>
+      <p>To build a supportive, collaborative research environment by equipping students with essential research skills, connecting them with researchers and opportunities, fostering interdisciplinary collaboration, and providing the resources and guidance they need to grow as researchers.</p>
     </div>
   </div>
 </section>
@@ -277,22 +285,22 @@ html[lang="ar"] .hero h1{line-height:1.4;max-width:24ch}
     <div class="cards c2">
       <div class="card rv">
         <h3>Fellowships &amp; Grants</h3>
-        <p>Match with faculty research projects.</p>
+        <p>Connects students with faculty seeking research collaborators.</p>
         <ul class="progs"><li>ResearchMatch</li></ul>
       </div>
       <div class="card rv">
         <h3>Development &amp; Skills</h3>
-        <p>Hands-on research training.</p>
+        <p>Practical research skills, and learning from experts.</p>
         <ul class="progs"><li>Methods Bootcamp</li></ul>
       </div>
       <div class="card rv">
         <h3>The Hub</h3>
-        <p>Resources, news, and an online space.</p>
+        <p>A central platform for resources and opportunities.</p>
         <ul class="progs"><li>TheRepository</li><li>ResearchDigest</li><li>OnlineHub</li></ul>
       </div>
       <div class="card rv">
         <h3>Community Engagement</h3>
-        <p>Discussions, events, and outreach.</p>
+        <p>Student-led activities, discussions, and outreach.</p>
         <ul class="progs"><li>PaperCafé</li><li>Ambassadors</li></ul>
       </div>
     </div>
@@ -303,16 +311,20 @@ html[lang="ar"] .hero h1{line-height:1.4;max-width:24ch}
   <div class="wrap">
     <h2 class="title rv">Goals &amp; values</h2>
     <div class="values">
-      <div class="val rv"><h3>Innovation &amp; Creativity</h3><p>Ask bold questions.</p></div>
-      <div class="val rv"><h3>Collaboration &amp; Teamwork</h3><p>Research is a team effort.</p></div>
-      <div class="val rv"><h3>Continuous Learning</h3><p>Always learning, at every level.</p></div>
-      <div class="val rv"><h3>Social Responsibility</h3><p>Honest research that helps people.</p></div>
+      <div class="val rv"><h3>Innovation &amp; Creativity</h3><p>Curiosity, critical thinking, and original approaches.</p></div>
+      <div class="val rv"><h3>Collaboration &amp; Teamwork</h3><p>Partnerships and shared knowledge toward common goals.</p></div>
+      <div class="val rv"><h3>Continuous Learning &amp; Development</h3><p>Lifelong learning and growing research skills.</p></div>
+      <div class="val rv"><h3>Social Responsibility</h3><p>Ethical research that benefits society.</p></div>
     </div>
-    <h3 class="sub-title rv">What we're working toward</h3>
+    <h3 class="sub-title rv">Our goals</h3>
     <ul class="goal-list">
-      <li class="rv">Teach research basics and methods</li>
-      <li class="rv">Connect members with researchers</li>
-      <li class="rv">Turn ideas into published work</li>
+      <li class="rv">Promote research literacy</li>
+      <li class="rv">Develop research skills</li>
+      <li class="rv">Facilitate collaboration</li>
+      <li class="rv">Support research development</li>
+      <li class="rv">Bridge students to opportunities</li>
+      <li class="rv">Curate research resources</li>
+      <li class="rv">Sustain the community</li>
     </ul>
   </div>
 </section>
@@ -322,19 +334,19 @@ html[lang="ar"] .hero h1{line-height:1.4;max-width:24ch}
     <h2 class="title rv">Our departments</h2>
     <p class="lead rv">Pick one when you register, or join as a member.</p>
     <div class="cards c3">
-      <div class="card dept rv"><h3>Media &amp; Marketing</h3>
+      <div class="card dept rv"><h3>Media</h3>
         <div class="row"><span class="k">You'll work on</span><p>Design, social media, and campaigns</p></div>
         <div class="row"><span class="k">You'll gain</span><p>A portfolio of real work</p></div>
       </div>
-      <div class="card dept rv"><h3>Tech &amp; Web</h3>
+      <div class="card dept rv"><h3>Web</h3>
         <div class="row"><span class="k">You'll work on</span><p>The website, forms, and ResearchMatch</p></div>
         <div class="row"><span class="k">You'll gain</span><p>Real development experience</p></div>
       </div>
-      <div class="card dept rv"><h3>Public Relations</h3>
+      <div class="card dept rv"><h3>Outreach &amp; PR</h3>
         <div class="row"><span class="k">You'll work on</span><p>Outreach to faculty and partners</p></div>
         <div class="row"><span class="k">You'll gain</span><p>Communication skills and connections</p></div>
       </div>
-      <div class="card dept rv"><h3>Programs &amp; Events</h3>
+      <div class="card dept rv"><h3>Programs</h3>
         <div class="row"><span class="k">You'll work on</span><p>Workshops, Bootcamp, and PaperCafé</p></div>
         <div class="row"><span class="k">You'll gain</span><p>Event and leadership skills</p></div>
       </div>
@@ -423,6 +435,20 @@ document.querySelectorAll('.rv').forEach(el => io ? io.observe(el) : el.classLis
 })();
 
 const AR = {
+  "A student-led research community that promotes scientific research and a research-oriented culture among students.": "مجتمع بحثي يقوده الطلاب، يعزّز البحث العلمي وثقافة البحث بين الطلاب.",
+  "We started as students curious about research who struggled to find guidance, resources, and connections.": "بدأنا طلابًا مهتمين بالبحث العلمي، وواجهنا صعوبة في إيجاد التوجيه والمصادر والعلاقات.",
+  "To become a leading research community that connects aspiring researchers across disciplines and empowers students worldwide to explore and contribute to scientific research.": "أن نكون مجتمعًا بحثيًا رائدًا يجمع الباحثين الطموحين من مختلف التخصصات، ويمكّن الطلاب حول العالم من استكشاف البحث العلمي والإسهام فيه.",
+  "Our mission": "رسالتنا",
+  "To build a supportive, collaborative research environment by equipping students with essential research skills, connecting them with researchers and opportunities, fostering interdisciplinary collaboration, and providing the resources and guidance they need to grow as researchers.": "بناء بيئة بحثية داعمة ومتعاونة، من خلال تزويد الطلاب بالمهارات البحثية الأساسية، وربطهم بالباحثين والفرص، وتعزيز التعاون بين التخصصات، وتوفير المصادر والتوجيه الذي يحتاجونه لينموا كباحثين.",
+  "Who it's for": "لمن هذا المجتمع",
+  "New to research": "جدد على البحث العلمي",
+  "Aspiring researchers": "باحثون طموحون",
+  "Research-active": "ناشطون في البحث",
+  "Interdisciplinary learners": "متعلّمون متعددو التخصصات",
+  "Support research development": "دعم تطوير الأبحاث",
+  "Bridge students to opportunities": "ربط الطلاب بالفرص",
+  "Curate research resources": "توفير المصادر البحثية",
+  "Sustain the community": "استدامة المجتمع",
   "Initiatives": "المبادرات",
   "Goals": "الأهداف",
   "Departments": "الأقسام",
@@ -433,14 +459,14 @@ const AR = {
   "All": "كل",
   "Goals & values": "الأهداف والقيم",
   "Innovation & Creativity": "الابتكار والإبداع",
-  "Ask bold questions.": "اطرح أسئلة جريئة.",
+  "Curiosity, critical thinking, and original approaches.": "الفضول والتفكير النقدي والأساليب المبتكرة.",
   "Collaboration & Teamwork": "التعاون والعمل الجماعي",
-  "Research is a team effort.": "البحث عمل جماعي.",
-  "Continuous Learning": "التعلّم المستمر",
-  "Always learning, at every level.": "نتعلّم دائمًا، في كل مرحلة.",
+  "Partnerships and shared knowledge toward common goals.": "الشراكات وتبادل المعرفة لتحقيق أهداف مشتركة.",
+  "Continuous Learning & Development": "التعلّم والتطوير المستمر",
+  "Lifelong learning and growing research skills.": "التعلّم مدى الحياة وتنمية المهارات البحثية.",
   "Social Responsibility": "المسؤولية المجتمعية",
-  "Honest research that helps people.": "بحث أمين يخدم الناس.",
-  "What we're working toward": "ما نسعى إليه",
+  "Ethical research that benefits society.": "بحث أخلاقي يخدم المجتمع.",
+  "Our goals": "أهدافنا",
   "Our departments": "أقسامنا",
   "Pick one when you register, or join as a member.": "اختر قسمًا عند التسجيل، أو انضم كعضو.",
   "You'll work on": "ستعمل على",
@@ -471,9 +497,7 @@ const AR = {
   "Switch to Arabic": "التبديل إلى الإنجليزية",
   "Part of the IEEE KAU Student Branch (Female). Open to anyone, from any university and any field.": "جزء من فرع IEEE الطلابي (طالبات) بجامعة الملك عبدالعزيز. مفتوح للجميع، من أي جامعة وأي تخصص.",
   "Who we are": "من نحن",
-  "We're students who struggled to find a way into research, so we built one for others.": "طلاب واجهنا صعوبة في إيجاد طريقنا إلى البحث العلمي، فبنينا هذا الطريق لغيرنا.",
   "Our vision": "رؤيتنا",
-  "Connect aspiring researchers across fields and help students everywhere take part in research.": "أن نجمع الباحثين الطموحين من مختلف التخصصات، ونساعد الطلاب في كل مكان على المشاركة في البحث العلمي.",
   "Workshops & training": "ورش العمل والتطوير",
   "Writing, methods, and literature reviews.": "الكتابة البحثية والمناهج ومراجعة الأدبيات.",
   "Research with faculty": "التعاون البحثي مع الدكاترة",
@@ -484,23 +508,23 @@ const AR = {
   "Peers from every field to learn with.": "زملاء من كل التخصصات تتعلّم معهم.",
   "Our initiatives": "مبادراتنا",
   "Fellowships & Grants": "الزمالات والمنح",
-  "Match with faculty research projects.": "انضم إلى مشاريع بحثية مع أعضاء هيئة التدريس.",
+  "Connects students with faculty seeking research collaborators.": "تربط الطلاب بأعضاء هيئة التدريس الباحثين عن متعاونين.",
   "Programs": "البرامج",
   "Development & Skills": "التطوير والمهارات",
-  "Hands-on research training.": "تدريب بحثي تطبيقي.",
+  "Practical research skills, and learning from experts.": "مهارات بحثية عملية، والتعلّم من الخبراء.",
   "The Hub": "المركز",
-  "Resources, news, and an online space.": "مصادر وأخبار ومساحة إلكترونية.",
+  "A central platform for resources and opportunities.": "منصة مركزية للمصادر والفرص.",
   "Community Engagement": "التفاعل المجتمعي",
-  "Discussions, events, and outreach.": "نقاشات وفعاليات وتواصل.",
+  "Student-led activities, discussions, and outreach.": "أنشطة يقودها الطلاب ونقاشات وتواصل.",
   "Methods Bootcamp": "معسكر مناهج البحث",
   "Ambassadors": "السفراء",
-  "Teach research basics and methods": "تعليم أساسيات البحث ومناهجه",
-  "Connect members with researchers": "ربط الأعضاء بالباحثين",
-  "Turn ideas into published work": "تحويل الأفكار إلى أبحاث منشورة",
-  "Media & Marketing": "الإعلام والتسويق",
-  "Tech & Web": "التقنية والموقع",
-  "Public Relations": "العلاقات العامة",
-  "Programs & Events": "البرامج والفعاليات",
+  "Promote research literacy": "نشر الثقافة البحثية",
+  "Develop research skills": "تطوير المهارات البحثية",
+  "Facilitate collaboration": "تسهيل التعاون البحثي",
+  "Media": "الإعلام",
+  "Web": "الويب",
+  "Outreach & PR": "التواصل والعلاقات العامة",
+  "Programs": "البرامج",
   "Resources": "المصادر",
   "Project Management": "إدارة المشاريع",
   "Join the community": "انضم إلى المجتمع",
