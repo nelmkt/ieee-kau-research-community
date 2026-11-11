@@ -164,6 +164,12 @@ html[dir="rtl"] .btn:hover .arrow{transform:scaleX(-1) translateX(4px)}
 .aud{list-style:none;padding:0;margin:20px 0 0;display:flex;flex-wrap:wrap;gap:8px}
 .aud li{font-size:.8rem;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
 .vision p + b{margin-top:16px}
+.ieee{padding:56px 0}
+.ieee .grid{display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:start}
+.ieee .title{margin:0}
+.ieee p{color:var(--ink);font-size:1rem;line-height:1.75}
+.ieee p + p{margin-top:8px;color:var(--muted)}
+@media (max-width:760px){.ieee{padding:44px 0}.ieee .grid{grid-template-columns:1fr;gap:14px}}
 .rv{opacity:0;transform:translateY(8px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
 .rv.in{opacity:1;transform:none}
 .fade-up{opacity:0;transform:translateY(22px);animation:up .9s var(--ease) forwards}
@@ -247,6 +253,16 @@ html[lang="ar"] .hero h1{line-height:1.4;max-width:24ch}
       <li class="rv"><b>6</b><span>Departments</span></li>
       <li class="rv"><b>All</b><span>Fields welcome</span></li>
     </ul>
+  </div>
+</section>
+
+<section class="soft ieee" id="ieee">
+  <div class="wrap grid">
+    <h2 class="title rv">What is IEEE?</h2>
+    <div class="rv">
+      <p>IEEE is a global professional organization dedicated to advancing technology for the benefit of humanity.</p>
+      <p>It helps students learn, collaborate, build technical skills, and connect with professionals and researchers worldwide.</p>
+    </div>
   </div>
 </section>
 
@@ -435,6 +451,9 @@ document.querySelectorAll('.rv').forEach(el => io ? io.observe(el) : el.classLis
 })();
 
 const AR = {
+  "What is IEEE?": "ما هي مؤسسة IEEE؟",
+  "IEEE is a global professional organization dedicated to advancing technology for the benefit of humanity.": "مؤسسة IEEE منظمة مهنية عالمية تعمل على تطوير التقنية لخدمة البشرية.",
+  "It helps students learn, collaborate, build technical skills, and connect with professionals and researchers worldwide.": "وتساعد الطلاب على التعلّم والتعاون وبناء المهارات التقنية، والتواصل مع المهنيين والباحثين حول العالم.",
   "A student-led research community that promotes scientific research and a research-oriented culture among students.": "مجتمع بحثي يقوده الطلاب، يعزّز البحث العلمي وثقافة البحث بين الطلاب.",
   "We started as students curious about research who struggled to find guidance, resources, and connections.": "بدأنا طلابًا مهتمين بالبحث العلمي، وواجهنا صعوبة في إيجاد التوجيه والمصادر والعلاقات.",
   "To become a leading research community that connects aspiring researchers across disciplines and empowers students worldwide to explore and contribute to scientific research.": "أن نكون مجتمعًا بحثيًا رائدًا يجمع الباحثين الطموحين من مختلف التخصصات، ويمكّن الطلاب حول العالم من استكشاف البحث العلمي والإسهام فيه.",
