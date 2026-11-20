@@ -6,11 +6,7 @@ Live site: https://nelmkt.github.io/ieee-kau-research-community/
 
 A single static `index.html` (no build step), deployed with GitHub Pages from the `main` branch. English and Arabic are both built in; the Arabic text lives in the `AR` object at the bottom of the file.
 
-## Registration links
+## Registration
 
-There is one registration form for everyone (members pick a team inside the form if they want one). When it's ready, set its URL as the `href` of:
-
-- `id="join-btn"` in the Join section
-- the "Register now" button in the hero (and optionally "Join us" in the top bar)
-
-Then remove the "Registration opens soon." line.
+The "Register now" buttons (hero and `#join-btn`) open the Google Form:
+https://docs.google.com/forms/d/e/1FAIpQLScTtLVwYiPeJDrXsnJ5JTM1YAIlAIExeyDzvUJbCNk4T1D7EQ/viewform
